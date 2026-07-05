@@ -1,0 +1,9 @@
+data/raw/
+data/private/
+mapping_PRIVATE.csv
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+outputs/generated/
+

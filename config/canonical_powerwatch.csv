@@ -1,0 +1,12 @@
+sensor_id,preferred_version,status,rationale
+CH1-PW-01,updated,verified_exact_superset,305109 original timestamps preserved plus 9623 new timestamps
+CSR2-PW-01,updated,verified_exact_superset,217744 original timestamps preserved plus 14060 new timestamps
+CSR2-PW-02,updated,verified_exact_superset,280310 original timestamps preserved plus 25180 new timestamps
+CSR4-PW-01,updated,verified_exact_superset,96084 original timestamps preserved plus 61043 new timestamps
+HGR1-PW-01,updated,verified_exact_superset,874791 original timestamps preserved plus 61102 new timestamps
+HGR1-PW-02,updated,verified_exact_superset,871581 original timestamps preserved plus 61113 new timestamps
+HGR1-PW-03,updated,verified_exact_superset,353948 original timestamps preserved plus 61079 new timestamps
+CSR3-PW-01,omitted,review_required,Only release file is explicitly marked omitted
+CSR3-PW-02,omitted,review_required,Only release file is explicitly marked omitted
+CSR1-PW-01,missing,blocked,Documented sensor is absent from release assets
+
