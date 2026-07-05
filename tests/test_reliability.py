@@ -28,5 +28,4 @@ def test_paired_outage_requires_both_sensors():
     assert result["confirmed_outage_intervals"] == 1
     assert result["discordant_intervals"] == 1
     assert result["unknown_intervals"] == 1
-    assert result["confirmed_availability_pct"] == 50.0
-
+    assert result["availability_among_assessed_concordant_intervals_pct"] == 50.0

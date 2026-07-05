@@ -53,6 +53,5 @@ def paired_reliability(
         "confirmed_outage_intervals": int(confirmed_outage.sum()),
         "discordant_intervals": int(discordant.sum()),
         "unknown_intervals": int((~both_observed).sum()),
-        "confirmed_availability_pct": float(confirmed_powered.sum() / assessed.sum() * 100) if assessed.sum() else float("nan"),
+        "availability_among_assessed_concordant_intervals_pct": float(confirmed_powered.sum() / assessed.sum() * 100) if assessed.sum() else float("nan"),
     }
-

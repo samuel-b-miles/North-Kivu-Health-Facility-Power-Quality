@@ -61,6 +61,26 @@ python scripts/bootstrap_data.py
 Use `--verify-only` to check files without copying or extracting them. The
 resulting local structure is `data/raw/downloads/` plus `data/raw/extracted/`.
 
+## Reproduce current analyses
+
+After bootstrapping the data and installing the package:
+
+```bash
+python scripts/run_all.py
+```
+
+Or run analyses separately:
+
+```bash
+python scripts/run_power_quality.py
+python scripts/run_reliability.py
+python scripts/run_energy.py
+```
+
+Generated CSVs and SVG figures are written to `outputs/generated/`. These are
+currently labeled **provisional** because exact intervention windows, conflict
+exclusions, and parts of the electrical topology remain under study-team review.
+
 ## Current status
 
 - Raw-asset inventory complete.
@@ -68,4 +88,4 @@ resulting local structure is `data/raw/downloads/` plus `data/raw/extracted/`.
   exact superset of its original.
 - Analysis primitives implemented and tested.
 - Facility periods and exclusions remain provisional pending study-team review.
-- Full outcome regeneration is the next milestone.
+- Provisional power-quality, paired-reliability, and energy regeneration is available.
