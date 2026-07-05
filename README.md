@@ -42,6 +42,25 @@ pip install -e '.[dev]'
 pytest
 ```
 
+## Add the raw data locally
+
+Download the three authorized release ZIPs to your computer. They are verified
+against the checksums in `config/data_sources.toml` and remain excluded from Git.
+
+```bash
+python scripts/bootstrap_data.py --source-dir ~/Downloads
+```
+
+Alternatively, set a machine-specific source location:
+
+```bash
+export DRC_DATA_DOWNLOADS="/path/to/authorized/release-zips"
+python scripts/bootstrap_data.py
+```
+
+Use `--verify-only` to check files without copying or extracting them. The
+resulting local structure is `data/raw/downloads/` plus `data/raw/extracted/`.
+
 ## Current status
 
 - Raw-asset inventory complete.
@@ -50,4 +69,3 @@ pytest
 - Analysis primitives implemented and tested.
 - Facility periods and exclusions remain provisional pending study-team review.
 - Full outcome regeneration is the next milestone.
-

@@ -1,0 +1,15 @@
+[release]
+name = "v2.0-pqr-anonymized"
+
+[[release.assets]]
+filename = "HOP_daily_energy.zip"
+sha256 = "eb393b4e97b22db3dff508cc42bb21ad388a523377bbf08113622f4a3f1d58c1"
+
+[[release.assets]]
+filename = "HOP_voltage_power_1min.zip"
+sha256 = "3fc36b60380af20cf59374902b36ecab2fe21e1192e34f06510c6745f89d6c6d"
+
+[[release.assets]]
+filename = "PowerWatch_voltage_frequency_2min.zip"
+sha256 = "470eab92d91847d72c723ff92c52fc90ea4235e0d4dafda09d059aa798e9893b"
+
