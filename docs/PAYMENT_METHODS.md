@@ -21,10 +21,20 @@ or recurring maintenance.
 - a three-panel provisional Figure 6 separating monthly cash flow, CAPEX, and
   OPEX.
 
-For Figure 6, `Installation & deployment` and `Additional Requested Upgrade`
-are treated as CAPEX. All other outflow categories are treated as OPEX. The
-facility-requested additional system therefore appears only in the CAPEX panel,
-not in maintenance or operating expenditure.
+Figure 6 keeps the funding stages distinct:
+
+1. Initial standardized CAPEX comes from the USAID-funded planning budget and
+   is not reconstructed by facility from the operating ledger.
+2. Every ledger outflow except `Additional Requested Upgrade` is treated as
+   OPEX for the working-fund analysis. This includes deployment,
+   reinstallation, maintenance, administration, telemetry, labor, and
+   transport during implementation and operation.
+3. `Additional Requested Upgrade` is the only subsequent CAPEX drawn from the
+   accumulated facility-payment working fund.
+
+The figure therefore presents initial budgeted CAPEX, ledger-recorded OPEX,
+facility revenue and lateness, and the bridge from revenue to the working fund
+that enabled the later capital deployment.
 
 On time means `days_late <= 0`. The share paid within 30 or 60 days includes
 on-time remittances. Payment completion against expected facility-months is not

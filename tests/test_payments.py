@@ -20,6 +20,7 @@ def test_payment_timing_summary():
     assert result["payment_revenue_usd"] == 100
     assert result["on_time_pct"] == 50
     assert result["additional_system_capex_usd"] == 30
+    assert result["opex_total_usd"] == 20
     assert result["ledger_cash_balance_usd"] == 50
 
 
@@ -32,6 +33,6 @@ def test_facility_codes_are_stable():
 
 def test_capex_and_opex_cash_flow_are_separate():
     result = monthly_cash_flow(sample_ledger())
-    assert result["capex_outflows_usd"].sum() == 50
-    assert result["opex_outflows_usd"].sum() == 0
+    assert result["capex_outflows_usd"].sum() == 30
+    assert result["opex_outflows_usd"].sum() == 20
     assert result["recorded_outflows_usd"].sum() == 50

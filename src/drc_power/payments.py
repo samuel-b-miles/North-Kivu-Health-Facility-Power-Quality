@@ -8,7 +8,7 @@ import pandas as pd
 
 FACILITY_CODES = ("CH1", "CSR1", "CSR2", "CSR3", "CSR4", "HGR1")
 ALLOWED_CODES = set(FACILITY_CODES) | {"ADMIN"}
-CAPEX_CATEGORIES = {"Installation & deployment", "Additional Requested Upgrade"}
+SUBSEQUENT_CAPEX_CATEGORIES = {"Additional Requested Upgrade"}
 
 
 def read_payment_ledger(path: Path) -> pd.DataFrame:
@@ -45,7 +45,6 @@ def overall_payment_summary(data: pd.DataFrame) -> pd.DataFrame:
     delays = pd.to_numeric(payments["days_late"], errors="coerce").fillna(0)
     delayed = delays[delays > 0]
     outflows = data[data["transaction_direction"] == "outflow"]
-    installation = outflows["transaction_category"].eq("Installation & deployment")
     expansion = outflows["transaction_category"].eq("Additional Requested Upgrade")
     values = {
         "payment_revenue_usd": payments["amount_received_usd"].sum(),
@@ -56,9 +55,11 @@ def overall_payment_summary(data: pd.DataFrame) -> pd.DataFrame:
         "within_60_days_pct": delays.le(60).mean() * 100,
         "median_delay_among_delayed_days": delayed.median(),
         "mean_delay_among_delayed_days": delayed.mean(),
-        "installation_deployment_usd": outflows.loc[installation, "amount_paid_usd"].sum(),
+        "deployment_reinstallation_opex_usd": outflows.loc[
+            outflows["transaction_category"].eq("Installation & deployment"), "amount_paid_usd"
+        ].sum(),
         "additional_system_capex_usd": outflows.loc[expansion, "amount_paid_usd"].sum(),
-        "recurring_om_and_other_usd": outflows.loc[~installation & ~expansion, "amount_paid_usd"].sum(),
+        "opex_total_usd": outflows.loc[~expansion, "amount_paid_usd"].sum(),
         "total_outflows_usd": outflows["amount_paid_usd"].sum(),
     }
     values["ledger_cash_balance_usd"] = values["payment_revenue_usd"] - values["total_outflows_usd"]
@@ -76,10 +77,10 @@ def monthly_cash_flow(data: pd.DataFrame) -> pd.DataFrame:
             inflows[code] = 0.0
     outflow_rows = working[working["transaction_direction"] == "outflow"].copy()
     outflow_rows["cost_class"] = outflow_rows["transaction_category"].map(
-        lambda value: "CAPEX" if value in CAPEX_CATEGORIES else "OPEX"
+        lambda value: "SUBSEQUENT_CAPEX" if value in SUBSEQUENT_CAPEX_CATEGORIES else "OPEX"
     )
     outflows = outflow_rows.groupby("month")["amount_paid_usd"].sum()
-    capex = outflow_rows[outflow_rows["cost_class"] == "CAPEX"].groupby("month")["amount_paid_usd"].sum()
+    capex = outflow_rows[outflow_rows["cost_class"] == "SUBSEQUENT_CAPEX"].groupby("month")["amount_paid_usd"].sum()
     opex = outflow_rows[outflow_rows["cost_class"] == "OPEX"].groupby("month")["amount_paid_usd"].sum()
     start, end = working["month"].min(), working["month"].max()
     result = inflows.reindex(pd.date_range(start, end, freq="MS"), fill_value=0)[list(FACILITY_CODES)]

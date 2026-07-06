@@ -1,0 +1,12 @@
+funding_source,cost_group,component,amount_usd,status
+USAID,equipment,OGB FLEX,4000.00,internal_budget_model
+USAID,equipment,CHIARA water system,1650.00,internal_budget_model
+USAID,equipment,Embrace infant warmer,500.00,internal_budget_model
+USAID,equipment,Sterilizer,800.00,internal_budget_model
+USAID,equipment,Oxygen concentrator,500.00,internal_budget_model
+USAID,implementation,Ocean freight,375.00,internal_budget_model
+USAID,implementation,Import agent and documentation,160.00,internal_budget_model
+USAID,implementation,Import duties,1862.50,internal_budget_model
+USAID,implementation,CIF port and other duties,260.75,internal_budget_model
+USAID,implementation,VAT,1341.00,internal_budget_model
+USAID,implementation,In-country delivery and installation,500.00,internal_budget_model
