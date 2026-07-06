@@ -88,3 +88,27 @@ def write_stacked_svg(path: Path, frame: pd.DataFrame, title: str) -> None:
     parts += [f'<line x1="{left}" y1="{top+plot_h}" x2="{width-40}" y2="{top+plot_h}" stroke="black"/>',
               f'<text transform="translate(22 {top+plot_h/2}) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="14">Cumulative energy (kWh)</text>', '</svg>']
     path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def write_value_bar_svg(path: Path, labels: list[str], values: list[float], title: str, ylabel: str) -> None:
+    width, height, left, top, bottom = 1000, 560, 100, 70, 100
+    plot_w, plot_h = width - left - 30, height - top - bottom
+    maximum = max(values) * 1.12 if values else 1.0
+    bar_w = plot_w / max(len(values), 1) * 0.65
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+             '<rect width="100%" height="100%" fill="white"/>',
+             f'<text x="{width/2}" y="35" text-anchor="middle" font-family="sans-serif" font-size="22">{html.escape(title)}</text>']
+    for step in range(6):
+        value = maximum * step / 5
+        y = top + plot_h * (1 - step / 5)
+        parts += [f'<line x1="{left}" y1="{y}" x2="{width-30}" y2="{y}" stroke="#dddddd"/>',
+                  f'<text x="{left-10}" y="{y+5}" text-anchor="end" font-family="sans-serif" font-size="12">{value:,.0f}</text>']
+    for index, (label, value) in enumerate(zip(labels, values)):
+        x = left + (index + 0.5) * plot_w / len(values) - bar_w / 2
+        bar_h = plot_h * float(value) / maximum
+        y = top + plot_h - bar_h
+        parts += [f'<rect x="{x}" y="{y}" width="{bar_w}" height="{bar_h}" fill="#f28e2b"/>',
+                  f'<text x="{x+bar_w/2}" y="{y-7}" text-anchor="middle" font-family="sans-serif" font-size="12">{value:,.1f}</text>',
+                  f'<text x="{x+bar_w/2}" y="{top+plot_h+24}" text-anchor="middle" font-family="sans-serif" font-size="13">{html.escape(label)}</text>']
+    parts += [f'<text transform="translate(22 {top+plot_h/2}) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="14">{html.escape(ylabel)}</text>', '</svg>']
+    path.write_text("\n".join(parts), encoding="utf-8")

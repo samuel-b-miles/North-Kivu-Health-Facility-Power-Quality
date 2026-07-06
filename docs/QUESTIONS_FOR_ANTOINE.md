@@ -36,8 +36,8 @@ headline outcomes.
 
 11. Is the legacy CH1 sterilizer meter part of the intervention
     evaluation, and what public anonymized identifier should it receive?
-12. At CSR3, are the F1/F2, F3, F4, and sterilizer meters mutually exclusive
-    downstream loads, or can summing them double-count energy?
+12. Please confirm that the CSR3 sterilizer meter is downstream of the parallel
+    F1/F2 meter and should be excluded from system-level consumption totals.
 13. Are daily-energy zeros true zero-use days, pre-installation padding, or
     missing telemetry encoded as zero?
 14. Was `02_energy_generation_consumption.ipynb` intentionally excluded, and
@@ -49,3 +49,7 @@ headline outcomes.
 16. What software/environment generated the release results?
 17. What license, citation, author order, and contribution statement should the
     public repository carry?
+
+18. The manuscript states that three facilities added morgue-dedicated systems,
+    while the released HOP mapping identifies morgue meters at CSR1 and CSR3.
+    Which third morgue system is referenced, and is its energy meter in the release?

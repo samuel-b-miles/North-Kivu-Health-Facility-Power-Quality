@@ -1,14 +1,13 @@
-facility_code,sensor_id,load,include,status
-HGR1,HGR1-HOP-01,FLEX ICU,true,provisional
-CH1,CH1-HOP-01,FLEX F1 operating/X-ray,true,provisional
-CSR1,CSR1-HOP-01,FLEX operating/admin/maternity,true,provisional
-CSR1,CSR1-HOP-02,Morgue circuit,true,topology_review
-CSR2,CSR2-HOP-01,FLEX F1 resuscitation,true,provisional
-CSR3,CSR3-HOP-01,Parallel FLEX F1/F2,true,topology_review
-CSR3,CSR3-HOP-02,FLEX F3 maternity,true,topology_review
-CSR3,CSR3-HOP-03,FLEX F4 morgue,true,topology_review
-CSR3,CSR3-HOP-04,Sterilizer,true,topology_review
-CSR3,CSR3-HOP-05,Grid/generator feed,false,excluded_non_flex
-CSR4,CSR4-HOP-01,FLEX F1,true,provisional
-CH1,CH1-HOP-LEGACY-613,Sterilizer,false,needs_anonymized_id
-
+facility_code,sensor_id,load,analysis_group,include,status
+HGR1,HGR1-HOP-01,FLEX ICU,critical_core,true,provisional
+CH1,CH1-HOP-01,FLEX F1 operating/X-ray,critical_core,true,provisional
+CSR1,CSR1-HOP-01,FLEX operating/admin/maternity,critical_core,true,provisional
+CSR1,CSR1-HOP-02,Morgue circuit,supplemental_morgue,true,separate_from_critical_intervention
+CSR2,CSR2-HOP-01,FLEX F1 resuscitation,critical_core,true,provisional
+CSR3,CSR3-HOP-01,Parallel FLEX F1/F2,critical_core,true,topology_review
+CSR3,CSR3-HOP-02,FLEX F3 maternity,critical_core,true,topology_review
+CSR3,CSR3-HOP-03,FLEX F4 morgue,supplemental_morgue,true,separate_from_critical_intervention
+CSR3,CSR3-HOP-04,Sterilizer,downstream_equipment,false,excluded_to_avoid_double_counting
+CSR3,CSR3-HOP-05,Grid/generator feed,non_intervention,false,excluded_non_flex
+CSR4,CSR4-HOP-01,FLEX F1,critical_core,true,provisional
+CH1,CH1-HOP-LEGACY-613,Sterilizer,unresolved,false,needs_anonymized_id

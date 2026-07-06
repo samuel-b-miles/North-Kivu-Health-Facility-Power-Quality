@@ -24,6 +24,17 @@ conflicts. See the canonical audit output for pair-level counts.
 Actual facility names and original hardware identifiers belong in a local-only
 private mapping. All code, configurations, results, and logs use anonymized IDs.
 
+### Exclude the CSR3 sterilizer meter from system-level consumption
+
+The sterilizer is a downstream load supplied by the parallel FLEX F1/F2 system.
+Adding its HOP total to the producing FLEX circuit would double-count energy.
+
+### Separate morgue systems from the critical-circuit estimand
+
+CSR1 and CSR3 morgue FLEX systems are intervention-funded installed systems but
+are not part of the clinically critical-circuit estimand. Energy outputs report
+core critical-circuit and supplemental morgue consumption separately.
+
 ## Pending decisions
 
 - Exact intervention and conflict-exclusion dates.
