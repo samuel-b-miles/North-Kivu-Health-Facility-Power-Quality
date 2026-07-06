@@ -137,7 +137,9 @@ def write_value_bar_svg(path: Path, labels: list[str], values: list[float], titl
     path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def write_monthly_facility_panels_svg(path: Path, frame: pd.DataFrame) -> None:
+def write_monthly_facility_panels_svg(
+    path: Path, frame: pd.DataFrame, telemetry_exclusions: list[dict[str, str]] | None = None
+) -> None:
     """Write six comparable monthly-consumption panels using anonymized facility codes."""
     columns = list(frame.columns)
     width, height = 1500, 850
@@ -146,7 +148,9 @@ def write_monthly_facility_panels_svg(path: Path, frame: pd.DataFrame) -> None:
     plot_left, plot_top, plot_w, plot_h = 58, 35, 345, 205
     maximum = max(float(frame.max().max()), 1.0) * 1.08
     colors = ["#2b8cbe", "#f28e2b", "#59a14f", "#e78ac3", "#756bb1", "#edc948"]
+    telemetry_exclusions = telemetry_exclusions or []
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+             '<defs><pattern id="telemetry-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#d9d9d9" fill-opacity="0.72"/><line x1="0" y1="0" x2="0" y2="10" stroke="#888" stroke-width="3"/></pattern></defs>',
              '<rect width="100%" height="100%" fill="white"/>',
              f'<text x="{width/2}" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Monthly monitored electricity consumption by facility</text>']
     for index, column in enumerate(columns):
@@ -164,6 +168,23 @@ def write_monthly_facility_panels_svg(path: Path, frame: pd.DataFrame) -> None:
             x = px + j * plot_w / max(len(values), 1) + (plot_w / max(len(values), 1) - bar_w) / 2
             bar_h = plot_h * value / maximum; y = py + plot_h - bar_h
             parts.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{bar_w:.2f}" height="{bar_h:.2f}" fill="{colors[index % len(colors)]}"/>')
+        # Overlay continuous hatched bands for confirmed periods without reliable
+        # telemetry. These are missing-measurement periods, not inferred outages.
+        for exclusion in [e for e in telemetry_exclusions if e["facility_code"] == column]:
+            exclusion_start = pd.Timestamp(exclusion["start_date"], tz="UTC")
+            exclusion_end = (pd.Timestamp(exclusion["end_date"], tz="UTC") + pd.Timedelta(days=1)
+                             if exclusion["end_date"] else pd.Timestamp(frame.index[-1]) + pd.offsets.MonthBegin(1))
+            for j, month_start in enumerate(pd.DatetimeIndex(frame.index)):
+                month_end = month_start + pd.offsets.MonthBegin(1)
+                overlap_start = max(month_start, exclusion_start); overlap_end = min(month_end, exclusion_end)
+                if overlap_start >= overlap_end:
+                    continue
+                cell_x = px + j * plot_w / len(values); cell_w = plot_w / len(values)
+                start_fraction = (overlap_start - month_start) / (month_end - month_start)
+                end_fraction = (overlap_end - month_start) / (month_end - month_start)
+                shade_x = cell_x + cell_w * float(start_fraction)
+                shade_w = cell_w * float(end_fraction - start_fraction)
+                parts.append(f'<rect x="{shade_x:.2f}" y="{py}" width="{shade_w:.2f}" height="{plot_h}" fill="url(#telemetry-hatch)" stroke="none"/>')
         parts += [f'<line x1="{px}" y1="{py+plot_h}" x2="{px+plot_w}" y2="{py+plot_h}" stroke="#444"/>',
                   f'<text transform="translate({x0+12} {py+plot_h/2}) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="12">kWh</text>']
         if len(frame.index):
@@ -172,7 +193,8 @@ def write_monthly_facility_panels_svg(path: Path, frame: pd.DataFrame) -> None:
                 x = px + (j + 0.5) * plot_w / len(frame.index)
                 label = pd.Timestamp(frame.index[j]).strftime("%b %Y")
                 parts.append(f'<text x="{x:.1f}" y="{py+plot_h+20}" text-anchor="middle" font-family="sans-serif" font-size="10">{label}</text>')
-    parts += [f'<text x="{width/2}" y="{height-20}" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">Bars show monthly HOP-metered energy; known telemetry gaps can understate consumption.</text>', '</svg>']
+    parts += [f'<rect x="{width/2-245}" y="{height-39}" width="22" height="13" fill="url(#telemetry-hatch)"/>',
+              f'<text x="{width/2-215}" y="{height-28}" font-family="sans-serif" font-size="12" fill="#555">Confirmed unreliable or unavailable telemetry (not inferred system outage)</text>', '</svg>']
     path.write_text("\n".join(parts), encoding="utf-8")
 
 

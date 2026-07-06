@@ -54,7 +54,8 @@ def main() -> None:
     daily.to_csv(output / "daily_energy_by_facility.csv")
     monthly = daily.resample("MS").sum(min_count=1)
     monthly.to_csv(output / "monthly_energy_by_facility.csv")
-    write_monthly_facility_panels_svg(output / "monthly_energy_six_panel.svg", monthly)
+    telemetry_exclusions = [r for r in read_config("analysis_periods.csv") if r["period_type"] == "telemetry_exclusion"]
+    write_monthly_facility_panels_svg(output / "monthly_energy_six_panel.svg", monthly, telemetry_exclusions)
     cumulative = daily.fillna(0).cumsum(); cumulative.to_csv(output / "cumulative_energy_by_facility.csv")
     write_stacked_svg(output / "fleet_cumulative_energy.svg", cumulative,
                       "Fleet Cumulative FLEX Energy (Provisional Topology)")
