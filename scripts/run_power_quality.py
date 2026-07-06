@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 from drc_power.io import read_powerwatch
 from drc_power.quality import conditional_power_quality
-from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, find_powerwatch, read_config, write_bar_svg
+from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, apply_primary_telemetry_window, find_powerwatch, read_config, write_bar_svg
 
 
 def main() -> None:
@@ -23,6 +23,7 @@ def main() -> None:
         sensor = pair["powerwatch_sensor"]
         preference = canonical.get(sensor, {}).get("preferred_version", "original")
         frame = read_powerwatch(find_powerwatch(args.raw_root, sensor, preference))
+        frame = apply_primary_telemetry_window(frame, pair["facility_code"])
         rows.append({"facility_code": pair["facility_code"], "sensor_id": sensor,
                      "shared_source": pair["shared_source"],
                      "date_start": frame["time"].min().isoformat(),

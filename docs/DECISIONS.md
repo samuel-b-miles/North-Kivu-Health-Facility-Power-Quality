@@ -35,6 +35,16 @@ CSR1 and CSR3 morgue FLEX systems are intervention-funded installed systems but
 are not part of the clinically critical-circuit estimand. Energy outputs report
 core critical-circuit and supplemental morgue consumption separately.
 
+### Use source-specific sensor coverage for telemetry estimands
+
+Paired uptime and PowerWatch power-quality analyses are restricted to periods
+when PowerWatch is known to monitor the intervention circuit. HOP energy totals
+use their own active reporting periods and are not truncated to the later
+PowerWatch source-switch date. Telemetry analyses do not claim to measure the
+full period of system use when connectivity or source assignment is absent.
+Payment and operations records will be analyzed separately as evidence of
+service functionality and facility use.
+
 ## Pending decisions
 
 - Exact intervention and conflict-exclusion dates.

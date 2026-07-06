@@ -1,8 +1,11 @@
 facility_code,period_type,start_date,end_date,status,rationale
-HGR1,post_intervention,2024-04-13,,provisional,Electrification filter documented in prior PQR notebook
-CSR1,post_intervention,2024-04-14,,provisional,Electrification filter documented in prior PQR notebook
-CSR1,conflict_exclusion,2024-12-01,2024-12-31,needs_exact_dates,Conflict-related uninstallation documented for December 2024
+HGR1,powerwatch_post_source_start,2024-04-05,,confirmed,PowerWatch first monitoring intervention source
+CSR3,powerwatch_post_source_start,2024-04-29,,confirmed,PowerWatch first monitoring intervention source
+CH1,powerwatch_post_source_start,2024-04-30,,confirmed,PowerWatch first monitoring intervention source
+CSR4,powerwatch_post_source_start,2024-05-27,,confirmed,PowerWatch first monitoring intervention source
+CSR1,powerwatch_post_source_start,2024-05-27,,confirmed,PowerWatch first monitoring intervention source
+CSR2,powerwatch_post_source_start,2024-08-14,,confirmed,PowerWatch switched to intervention source after several months of system operation
+CSR4,telemetry_exclusion,2024-12-06,2025-10-02,confirmed_dates_end_inclusive,PowerWatch not reliably monitoring FLEX; HOP voltage persisted through 2025-02-28 but energy telemetry conflicts with operations evidence
+CSR1,telemetry_exclusion,2024-12-21,,confirmed_open_ended,PowerWatch connectivity never returned; HOP core ended 2024-12-20 and morgue HOP ended 2024-12-18
 CSR2,pre_intervention,2024-07-04,2024-07-27,provisional,Old-solar comparison window
-CSR4,pre_intervention,2025-01-01,2025-01-31,needs_exact_dates,Unreliable-grid comparison window during conflict
-CSR4,conflict_exclusion,2025-01-01,2025-01-31,needs_exact_dates,Conflict-related uninstallation documented for January 2025
-
+CSR4,pre_intervention,2025-01-01,2025-01-31,invalid_overlaps_exclusion,Prior draft baseline window overlaps the confirmed telemetry exclusion and must be reconsidered

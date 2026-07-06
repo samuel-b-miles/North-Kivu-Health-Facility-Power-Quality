@@ -18,6 +18,29 @@ def read_config(name: str) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def apply_primary_telemetry_window(frame: pd.DataFrame, facility_code: str, time_column: str = "time") -> pd.DataFrame:
+    """Apply confirmed post-monitoring starts and telemetry exclusions."""
+    data = frame.copy()
+    data[time_column] = pd.to_datetime(data[time_column], errors="coerce", utc=True)
+    periods = [row for row in read_config("analysis_periods.csv") if row["facility_code"] == facility_code]
+    starts = [row for row in periods if row["period_type"] == "powerwatch_post_source_start"]
+    if len(starts) != 1:
+        raise ValueError(f"Expected one PowerWatch post-source start for {facility_code}; found {len(starts)}")
+    start = pd.Timestamp(starts[0]["start_date"], tz="UTC")
+    data = data[data[time_column] >= start]
+    for row in periods:
+        if row["period_type"] != "telemetry_exclusion":
+            continue
+        exclusion_start = pd.Timestamp(row["start_date"], tz="UTC")
+        if row["end_date"]:
+            # Dates are inclusive in configuration; advance one day for filtering.
+            exclusion_end = pd.Timestamp(row["end_date"], tz="UTC") + pd.Timedelta(days=1)
+            data = data[~((data[time_column] >= exclusion_start) & (data[time_column] < exclusion_end))]
+        else:
+            data = data[data[time_column] < exclusion_start]
+    return data.sort_values(time_column)
+
+
 def find_powerwatch(raw_root: Path, sensor_id: str, preferred: str = "") -> Path:
     candidates = [p for p in raw_root.rglob(f"{sensor_id}*.csv") if "power_quality" not in p.name and "data_quality" not in p.name]
     if preferred == "updated":

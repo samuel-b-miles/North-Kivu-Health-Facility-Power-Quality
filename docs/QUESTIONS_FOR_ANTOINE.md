@@ -16,9 +16,6 @@ headline outcomes.
    another baseline source?
 4. **CSR3 omitted files:** Why are `CSR3-PW-01` and `CSR3-PW-02` marked
    `omitted`? Should either be used for baseline PQR, reliability, or neither?
-5. **Conflict exclusions:** What are the exact timestamps—not calendar-month
-   approximations—for CSR1’s December 2024 and CSR4’s January 2025
-   uninstallations or invalid operating periods?
 
 ## Important methodological questions
 
@@ -53,3 +50,12 @@ headline outcomes.
 18. The manuscript states that three facilities added morgue-dedicated systems,
     while the released HOP mapping identifies morgue meters at CSR1 and CSR3.
     Which third morgue system is referenced, and is its energy meter in the release?
+
+## Resolved with study-team context
+
+- PowerWatch intervention-source dates are recorded for all six facilities in
+  `config/analysis_periods.csv`.
+- CSR4’s primary telemetry exclusion is 2024-12-06 through 2025-10-02.
+- CSR1’s open-ended connectivity exclusion begins 2024-12-21.
+- HOP coverage during these periods is documented in
+  `docs/TELEMETRY_COVERAGE_AUDIT.md`.
