@@ -8,6 +8,7 @@ import pandas as pd
 
 FACILITY_CODES = ("CH1", "CSR1", "CSR2", "CSR3", "CSR4", "HGR1")
 ALLOWED_CODES = set(FACILITY_CODES) | {"ADMIN"}
+CAPEX_CATEGORIES = {"Installation & deployment", "Additional Requested Upgrade"}
 
 
 def read_payment_ledger(path: Path) -> pd.DataFrame:
@@ -73,11 +74,19 @@ def monthly_cash_flow(data: pd.DataFrame) -> pd.DataFrame:
     for code in FACILITY_CODES:
         if code not in inflows:
             inflows[code] = 0.0
-    outflows = working[working["transaction_direction"] == "outflow"].groupby("month")["amount_paid_usd"].sum()
+    outflow_rows = working[working["transaction_direction"] == "outflow"].copy()
+    outflow_rows["cost_class"] = outflow_rows["transaction_category"].map(
+        lambda value: "CAPEX" if value in CAPEX_CATEGORIES else "OPEX"
+    )
+    outflows = outflow_rows.groupby("month")["amount_paid_usd"].sum()
+    capex = outflow_rows[outflow_rows["cost_class"] == "CAPEX"].groupby("month")["amount_paid_usd"].sum()
+    opex = outflow_rows[outflow_rows["cost_class"] == "OPEX"].groupby("month")["amount_paid_usd"].sum()
     start, end = working["month"].min(), working["month"].max()
     result = inflows.reindex(pd.date_range(start, end, freq="MS"), fill_value=0)[list(FACILITY_CODES)]
     result.index.name = "month"
     result["facility_payments_usd"] = result.sum(axis=1)
+    result["capex_outflows_usd"] = capex.reindex(result.index, fill_value=0)
+    result["opex_outflows_usd"] = opex.reindex(result.index, fill_value=0)
     result["recorded_outflows_usd"] = outflows.reindex(result.index, fill_value=0)
     result["net_cash_flow_usd"] = result["facility_payments_usd"] - result["recorded_outflows_usd"]
     result["cumulative_ledger_balance_usd"] = result["net_cash_flow_usd"].cumsum()

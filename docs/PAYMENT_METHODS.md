@@ -18,7 +18,13 @@ or recurring maintenance.
 - facility and overall payment-timing summaries;
 - monthly payments, outflows, and cumulative ledger balance;
 - outflows by public facility code and category; and
-- a two-panel provisional Figure 6.
+- a three-panel provisional Figure 6 separating monthly cash flow, CAPEX, and
+  OPEX.
+
+For Figure 6, `Installation & deployment` and `Additional Requested Upgrade`
+are treated as CAPEX. All other outflow categories are treated as OPEX. The
+facility-requested additional system therefore appears only in the CAPEX panel,
+not in maintenance or operating expenditure.
 
 On time means `days_late <= 0`. The share paid within 30 or 60 days includes
 on-time remittances. Payment completion against expected facility-months is not

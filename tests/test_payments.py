@@ -1,6 +1,6 @@
 import pandas as pd
 
-from drc_power.payments import facility_payment_summary, overall_payment_summary
+from drc_power.payments import facility_payment_summary, monthly_cash_flow, overall_payment_summary
 
 
 def sample_ledger():
@@ -28,3 +28,10 @@ def test_facility_codes_are_stable():
     ch1 = result[result["facility_code"] == "CH1"].iloc[0]
     assert ch1["remittances_n"] == 2
     assert ch1["delayed_n"] == 1
+
+
+def test_capex_and_opex_cash_flow_are_separate():
+    result = monthly_cash_flow(sample_ledger())
+    assert result["capex_outflows_usd"].sum() == 50
+    assert result["opex_outflows_usd"].sum() == 0
+    assert result["recorded_outflows_usd"].sum() == 50
