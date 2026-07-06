@@ -36,13 +36,15 @@ def main() -> None:
         voltage_den = group["powered_voltage_observations"].sum()
         voltage_num = (group["voltage_quality_pct"] * group["powered_voltage_observations"] / 100).sum()
         freq_den = group["valid_frequency_observations"].sum()
-        freq_num = (group["frequency_quality_5_pct"] * group["valid_frequency_observations"] / 100).sum()
         sites.append({"facility_code": facility, "sensor_count": len(group),
                       "voltage_quality_pct_pooled": voltage_num / voltage_den * 100,
                       "voltage_quality_pct_mean_sensor": group["voltage_quality_pct"].mean(),
-                      "frequency_quality_5_pct_pooled": freq_num / freq_den * 100,
-                      "frequency_quality_5_pct_mean_sensor": group["frequency_quality_5_pct"].mean(),
                       "status": "provisional_pending_exact_intervention_windows"})
+        for tolerance in ("1", "10"):
+            column = f"frequency_quality_{tolerance}_pct"
+            numerator = (group[column] * group["valid_frequency_observations"] / 100).sum()
+            sites[-1][f"{column}_pooled"] = numerator / freq_den * 100
+            sites[-1][f"{column}_mean_sensor"] = group[column].mean()
     site_frame = pd.DataFrame(sites).sort_values("facility_code")
     site_frame.to_csv(output / "post_flex_conditional_quality_by_facility.csv", index=False)
     write_bar_svg(output / "post_flex_voltage_quality.svg", site_frame["facility_code"].tolist(),

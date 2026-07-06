@@ -1,6 +1,6 @@
 import pandas as pd
 
-from drc_power.reliability import paired_reliability, single_sensor_reliability
+from drc_power.reliability import manuscript_at_least_one_sensor_uptime, paired_reliability, single_sensor_reliability
 
 
 def _frame(values):
@@ -29,3 +29,15 @@ def test_paired_outage_requires_both_sensors():
     assert result["discordant_intervals"] == 1
     assert result["unknown_intervals"] == 1
     assert result["availability_among_assessed_concordant_intervals_pct"] == 50.0
+
+
+def test_manuscript_uptime_reports_both_denominators():
+    hop = _frame([230, None, 0, None])
+    pw = _frame([None, 230, 0, None])
+    result = manuscript_at_least_one_sensor_uptime(hop, pw)
+    # The shared valid-data window begins at PW's first valid interval and ends
+    # at the third interval, before trailing missingness.
+    assert result["expected_intervals"] == 2
+    assert result["any_sensor_powered_intervals"] == 1
+    assert result["manuscript_uptime_expected_window_pct"] == 50.0
+    assert result["manuscript_uptime_observed_evidence_pct"] == 50.0
