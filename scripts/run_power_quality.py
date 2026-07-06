@@ -41,7 +41,7 @@ def main() -> None:
                       "voltage_quality_pct_pooled": voltage_num / voltage_den * 100,
                       "voltage_quality_pct_mean_sensor": group["voltage_quality_pct"].mean(),
                       "status": "provisional_pending_exact_intervention_windows"})
-        for tolerance in ("1", "10"):
+        for tolerance in ("1", "5", "10"):
             column = f"frequency_quality_{tolerance}_pct"
             numerator = (group[column] * group["valid_frequency_observations"] / 100).sum()
             sites[-1][f"{column}_pooled"] = numerator / freq_den * 100

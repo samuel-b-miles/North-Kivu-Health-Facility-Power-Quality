@@ -135,3 +135,95 @@ def write_value_bar_svg(path: Path, labels: list[str], values: list[float], titl
                   f'<text x="{x+bar_w/2}" y="{top+plot_h+24}" text-anchor="middle" font-family="sans-serif" font-size="13">{html.escape(label)}</text>']
     parts += [f'<text transform="translate(22 {top+plot_h/2}) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="14">{html.escape(ylabel)}</text>', '</svg>']
     path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def write_monthly_facility_panels_svg(path: Path, frame: pd.DataFrame) -> None:
+    """Write six comparable monthly-consumption panels using anonymized facility codes."""
+    columns = list(frame.columns)
+    width, height = 1500, 850
+    outer_left, outer_top, panel_w, panel_h = 85, 75, 420, 290
+    col_gap, row_gap = 70, 95
+    plot_left, plot_top, plot_w, plot_h = 58, 35, 345, 205
+    maximum = max(float(frame.max().max()), 1.0) * 1.08
+    colors = ["#2b8cbe", "#f28e2b", "#59a14f", "#e78ac3", "#756bb1", "#edc948"]
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+             '<rect width="100%" height="100%" fill="white"/>',
+             f'<text x="{width/2}" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Monthly monitored electricity consumption by facility</text>']
+    for index, column in enumerate(columns):
+        row, col = divmod(index, 3)
+        x0 = outer_left + col * (panel_w + col_gap); y0 = outer_top + row * (panel_h + row_gap)
+        px, py = x0 + plot_left, y0 + plot_top
+        values = frame[column].fillna(0).astype(float).tolist()
+        bar_w = plot_w / max(len(values), 1) * 0.82
+        parts.append(f'<text x="{x0+panel_w/2}" y="{y0+18}" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold">{html.escape(str(column))}</text>')
+        for tick in range(5):
+            value = maximum * tick / 4; y = py + plot_h * (1 - tick / 4)
+            parts += [f'<line x1="{px}" y1="{y}" x2="{px+plot_w}" y2="{y}" stroke="#e5e5e5"/>',
+                      f'<text x="{px-7}" y="{y+4}" text-anchor="end" font-family="sans-serif" font-size="10">{value:.0f}</text>']
+        for j, value in enumerate(values):
+            x = px + j * plot_w / max(len(values), 1) + (plot_w / max(len(values), 1) - bar_w) / 2
+            bar_h = plot_h * value / maximum; y = py + plot_h - bar_h
+            parts.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{bar_w:.2f}" height="{bar_h:.2f}" fill="{colors[index % len(colors)]}"/>')
+        parts += [f'<line x1="{px}" y1="{py+plot_h}" x2="{px+plot_w}" y2="{py+plot_h}" stroke="#444"/>',
+                  f'<text transform="translate({x0+12} {py+plot_h/2}) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="12">kWh</text>']
+        if len(frame.index):
+            tick_positions = sorted(set([0, len(frame.index)//2, len(frame.index)-1]))
+            for j in tick_positions:
+                x = px + (j + 0.5) * plot_w / len(frame.index)
+                label = pd.Timestamp(frame.index[j]).strftime("%b %Y")
+                parts.append(f'<text x="{x:.1f}" y="{py+plot_h+20}" text-anchor="middle" font-family="sans-serif" font-size="10">{label}</text>')
+    parts += [f'<text x="{width/2}" y="{height-20}" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">Bars show monthly HOP-metered energy; known telemetry gaps can understate consumption.</text>', '</svg>']
+    path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]]) -> None:
+    width, height = 1500, 520
+    margin_x, top, plot_h, panel_w, gap = 70, 65, 380, 420, 60
+    metrics = [
+        ("uptime_pre_pct", "uptime_post_pct", "Power uptime"),
+        ("voltage_pre_pct", "voltage_post_pct", "Voltage compliance (±10%)"),
+        ("frequency_5_pre_pct", "frequency_5_post_pct", "Frequency compliance (±5%, 50 Hz)"),
+    ]
+    colors = ["#2b8cbe", "#f28e2b", "#59a14f", "#e78ac3", "#756bb1", "#edc948"]
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+             '<rect width="100%" height="100%" fill="white"/>']
+    for panel, (pre_key, post_key, title) in enumerate(metrics):
+        x0 = margin_x + panel * (panel_w + gap)
+        x_pre, x_post = x0 + 115, x0 + 315
+        parts.append(f'<text x="{x0+panel_w/2}" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="bold">{html.escape(title)}</text>')
+        for tick in range(0, 101, 20):
+            y = top + plot_h * (1 - tick / 100)
+            parts.append(f'<line x1="{x0}" y1="{y}" x2="{x0+panel_w}" y2="{y}" stroke="#e6e6e6"/>')
+            if panel == 0:
+                parts.append(f'<text x="{x0-8}" y="{y+5}" text-anchor="end" font-family="sans-serif" font-size="12">{tick}%</text>')
+        # Cohort distribution boxplots sit behind facility trajectories.
+        for x_position, key in ((x_pre, pre_key), (x_post, post_key)):
+            distribution = pd.Series([float(row[key]) for row in rows])
+            minimum = float(distribution.min()); q1 = float(distribution.quantile(0.25))
+            median = float(distribution.median()); q3 = float(distribution.quantile(0.75)); maximum = float(distribution.max())
+            y_min = top + plot_h * (1 - minimum / 100); y_q1 = top + plot_h * (1 - q1 / 100)
+            y_median = top + plot_h * (1 - median / 100); y_q3 = top + plot_h * (1 - q3 / 100)
+            y_max = top + plot_h * (1 - maximum / 100); box_width = 66
+            parts += [
+                f'<line x1="{x_position}" y1="{y_max}" x2="{x_position}" y2="{y_min}" stroke="#9e9e9e" stroke-width="2"/>',
+                f'<line x1="{x_position-15}" y1="{y_max}" x2="{x_position+15}" y2="{y_max}" stroke="#9e9e9e" stroke-width="2"/>',
+                f'<line x1="{x_position-15}" y1="{y_min}" x2="{x_position+15}" y2="{y_min}" stroke="#9e9e9e" stroke-width="2"/>',
+                f'<rect x="{x_position-box_width/2}" y="{y_q3}" width="{box_width}" height="{max(y_q1-y_q3,1)}" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>',
+                f'<line x1="{x_position-box_width/2}" y1="{y_median}" x2="{x_position+box_width/2}" y2="{y_median}" stroke="#555555" stroke-width="3"/>',
+            ]
+        for index, row in enumerate(rows):
+            pre, post = float(row[pre_key]), float(row[post_key])
+            y_pre = top + plot_h * (1 - pre / 100); y_post = top + plot_h * (1 - post / 100)
+            color = colors[index % len(colors)]
+            parts += [f'<line x1="{x_pre}" y1="{y_pre}" x2="{x_post}" y2="{y_post}" stroke="{color}" stroke-width="3"/>',
+                      f'<circle cx="{x_pre}" cy="{y_pre}" r="5" fill="{color}"/>',
+                      f'<circle cx="{x_post}" cy="{y_post}" r="5" fill="{color}"/>']
+        parts += [f'<text x="{x_pre}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">Pre</text>',
+                  f'<text x="{x_post}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">Post</text>']
+    legend_y = height - 20
+    for index, row in enumerate(rows):
+        x = 120 + index * 205; color = colors[index % len(colors)]
+        parts += [f'<line x1="{x}" y1="{legend_y}" x2="{x+24}" y2="{legend_y}" stroke="{color}" stroke-width="3"/>',
+                  f'<text x="{x+30}" y="{legend_y+5}" font-family="sans-serif" font-size="13">{html.escape(str(row["facility_code"]))}</text>']
+    parts.append('</svg>')
+    path.write_text("\n".join(parts), encoding="utf-8")

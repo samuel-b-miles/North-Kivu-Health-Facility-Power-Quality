@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate fleet cumulative FLEX energy tables and figure."""
+"""Generate facility and fleet HOP-metered energy tables and figures."""
 
 from __future__ import annotations
 import argparse
 from pathlib import Path
 import pandas as pd
 from drc_power.energy import aggregate_daily_energy, parse_energy_wh
-from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, find_hop_energy, read_config, write_stacked_svg, write_value_bar_svg
+from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, find_hop_energy, read_config, write_monthly_facility_panels_svg, write_stacked_svg, write_value_bar_svg
 
 
 def read_active_energy(path: Path) -> pd.DataFrame:
@@ -49,7 +49,12 @@ def main() -> None:
     )
     facility_summary["status"] = "provisional_pending_topology_and_active-window_review"
     facility_summary.to_csv(output / "total_consumption_by_facility.csv", index=False)
-    daily = pd.concat(facility_frames.values(), axis=1).sort_index(); daily.to_csv(output / "daily_energy_by_facility.csv")
+    daily = pd.concat(facility_frames.values(), axis=1).sort_index()
+    daily.index = pd.to_datetime(daily.index, errors="raise", utc=True)
+    daily.to_csv(output / "daily_energy_by_facility.csv")
+    monthly = daily.resample("MS").sum(min_count=1)
+    monthly.to_csv(output / "monthly_energy_by_facility.csv")
+    write_monthly_facility_panels_svg(output / "monthly_energy_six_panel.svg", monthly)
     cumulative = daily.fillna(0).cumsum(); cumulative.to_csv(output / "cumulative_energy_by_facility.csv")
     write_stacked_svg(output / "fleet_cumulative_energy.svg", cumulative,
                       "Fleet Cumulative FLEX Energy (Provisional Topology)")

@@ -75,6 +75,7 @@ Or run analyses separately:
 python scripts/run_power_quality.py
 python scripts/run_reliability.py
 python scripts/run_energy.py
+python scripts/run_figure3_summary.py
 ```
 
 Generated CSVs and SVG figures are written to `outputs/generated/`. These are

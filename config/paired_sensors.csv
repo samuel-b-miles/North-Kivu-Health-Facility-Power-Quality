@@ -1,9 +1,9 @@
-facility_code,hop_sensor,powerwatch_sensor,shared_source,analysis_role
-HGR1,HGR1-HOP-01,HGR1-PW-03,FLEX ICU,post_confirmed_uptime
-CH1,CH1-HOP-01,CH1-PW-01,FLEX F1,post_confirmed_uptime
-CSR1,CSR1-HOP-01,CSR1-PW-03,FLEX operating/admin/maternity,post_confirmed_uptime
-CSR2,CSR2-HOP-01,CSR2-PW-02,FLEX F1,post_confirmed_uptime
-CSR3,CSR3-HOP-01,CSR3-PW-03,Parallel FLEX F1/F2,post_confirmed_uptime
-CSR3,CSR3-HOP-02,CSR3-PW-04,FLEX F3,post_confirmed_uptime
-CSR4,CSR4-HOP-01,CSR4-PW-01,FLEX F1,post_confirmed_uptime
+facility_code,hop_sensor,powerwatch_sensor,shared_source,analysis_role,primary_facility_result
+HGR1,HGR1-HOP-01,HGR1-PW-03,FLEX ICU,post_confirmed_uptime,true
+CH1,CH1-HOP-01,CH1-PW-01,FLEX F1,post_confirmed_uptime,true
+CSR1,CSR1-HOP-01,CSR1-PW-03,FLEX operating/admin/maternity,post_confirmed_uptime,true
+CSR2,CSR2-HOP-01,CSR2-PW-02,FLEX F1,post_confirmed_uptime,true
+CSR3,CSR3-HOP-01,CSR3-PW-03,Parallel FLEX F1/F2,post_confirmed_uptime,true
+CSR3,CSR3-HOP-02,CSR3-PW-04,FLEX F3,post_confirmed_uptime,false
+CSR4,CSR4-HOP-01,CSR4-PW-01,FLEX F1,post_confirmed_uptime,true
 
