@@ -25,16 +25,19 @@ Figure 6 keeps the funding stages distinct:
 
 1. Initial standardized CAPEX comes from the USAID-funded planning budget and
    is not reconstructed by facility from the operating ledger.
-2. Every ledger outflow except `Additional Requested Upgrade` is treated as
-   OPEX for the working-fund analysis. This includes deployment,
-   reinstallation, maintenance, administration, telemetry, labor, and
-   transport during implementation and operation.
-3. `Additional Requested Upgrade` is the only subsequent CAPEX drawn from the
-   accumulated facility-payment working fund.
+2. Facility deployment CAPEX is presented using the reviewable standardized
+   package equivalents and monthly commitments in
+   `config/facility_financial_reference.csv`.
+3. Actual facility revenue and remittance timing come from the public ledger.
 
-The figure therefore presents initial budgeted CAPEX, ledger-recorded OPEX,
-facility revenue and lateness, and the bridge from revenue to the working fund
-that enabled the later capital deployment.
+The later capital upgrade is deliberately omitted from the figure. The text
+reports that facility revenues capitalized subsequent upgrades. Ledger-recorded
+OPEX remains available in the generated tables for reporting maintenance and
+administrative outflows.
+
+Routine maintenance included preventive PV-panel washing and corrective
+overload resets. No system required complete capital replacement during the
+monitoring period.
 
 On time means `days_late <= 0`. The share paid within 30 or 60 days includes
 on-time remittances. Payment completion against expected facility-months is not

@@ -1,0 +1,7 @@
+facility_code,standardized_packages,deployment_capex_usd,monthly_commitment_usd,capex_basis,status
+CH1,1,11949.25,50,standard_package_equivalent,current_study_team_assumption
+CSR1,2,23898.50,100,standard_package_equivalent,current_study_team_assumption
+CSR2,1,11949.25,50,standard_package_equivalent,current_study_team_assumption
+CSR3,3,35847.75,300,standard_package_equivalent,current_study_team_assumption
+CSR4,1,11949.25,50,standard_package_equivalent,current_study_team_assumption
+HGR1,1,11949.25,50,standard_package_equivalent,current_study_team_assumption
