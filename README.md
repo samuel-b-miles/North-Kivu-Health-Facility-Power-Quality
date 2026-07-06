@@ -30,6 +30,7 @@ tests/                  Unit tests for key estimands
 docs/                   Decisions, open questions, and audit trail
 data/raw/               Local-only release assets (Git-ignored)
 data/private/           Local-only identity key (Git-ignored)
+data/public/            Tracked anonymized manuscript datasets
 outputs/generated/      Reproducible generated tables and figures
 ```
 
@@ -76,6 +77,7 @@ python scripts/run_power_quality.py
 python scripts/run_reliability.py
 python scripts/run_energy.py
 python scripts/run_figure3_summary.py
+python scripts/run_payments.py
 ```
 
 Generated CSVs and SVG figures are written to `outputs/generated/`. These are
@@ -90,3 +92,4 @@ exclusions, and parts of the electrical topology remain under study-team review.
 - Analysis primitives implemented and tested.
 - Facility periods and exclusions remain provisional pending study-team review.
 - Provisional power-quality, paired-reliability, and energy regeneration is available.
+- Anonymized payment-ledger analysis and provisional Figure 6 are reproducible.

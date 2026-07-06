@@ -1,0 +1,3 @@
+package_type,equipment_usd,implementation_usd,installed_capex_usd,financing_cost_usd,capital_requirement_usd,status
+standard_flex_chiara_biomedical,7450.00,4499.25,11949.25,3274.625,15223.875,internal_budget_model
+flex_chiara_only,5650.00,3662.25,9312.25,2560.86875,11873.11875,internal_budget_model
