@@ -28,7 +28,9 @@ Figure 6 keeps the funding stages distinct:
 2. Facility deployment CAPEX is presented using the reviewable standardized
    package equivalents and monthly commitments in
    `config/facility_financial_reference.csv`.
-3. Actual facility revenue and remittance timing come from the public ledger.
+3. Monthly facility inflows, OPEX outflows, the later expansion-CAPEX outflow,
+   and the cumulative ledger balance come from the public ledger.
+4. Actual facility revenue and remittance timing come from the public ledger.
 
 The later capital upgrade is deliberately omitted from the figure. The text
 reports that facility revenues capitalized subsequent upgrades. Ledger-recorded
