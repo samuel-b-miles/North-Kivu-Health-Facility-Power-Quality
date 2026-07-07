@@ -7,6 +7,22 @@ This is a clean-room workflow scaffold derived from the documented analytical
 requirements and approved anonymized release assets. Raw sensor data and the
 private facility identity key are intentionally excluded from version control.
 
+## Data locations at a glance
+
+| Domain | Available directly on GitHub | Local authorized inputs (not on GitHub) | Analysis command |
+|---|---|---|---|
+| **HOP and PowerWatch electricity telemetry** | Sensor inclusion maps and analysis windows in `config/energy_meters.csv`, `config/paired_sensors.csv`, `config/canonical_powerwatch.csv`, and `config/analysis_periods.csv` | Authorized ZIP files in `data/raw/downloads/`, extracted under `data/raw/extracted/` | `python scripts/run_energy.py`, `python scripts/run_reliability.py`, and `python scripts/run_power_quality.py` |
+| **Facility payment information** | Anonymized transaction ledger at `data/public/payments/payment_ledger_anonymized.csv` | Original identified financial records are not required by the public pipeline and are not tracked | `python scripts/run_payments.py` |
+| **DHIS2 health data** | Anonymized ward-month and facility-month panels at `data/public/dhis2_ward_month_anonymized.csv` and `data/public/dhis2_facility_month_anonymized.csv` | Authorized raw exports in `data/raw/dhis2/` and the identity crosswalk in `config/private/` | `python scripts/run_health.py` |
+
+The payment ledger and processed DHIS2 panels are included in the public GitHub
+repository. The high-frequency HOP and PowerWatch files are **not** stored in
+GitHub: they are larger authorized release assets, verified using
+`config/data_sources.toml`, and remain local and Git-ignored. See
+[`docs/DATA_GUIDE.md`](docs/DATA_GUIDE.md) for the complete file map and the
+distinction between source data, tracked public data, configuration, and
+generated outputs.
+
 ## Analytical principles
 
 1. **Reliability and power quality are separate outcomes.** Availability asks
