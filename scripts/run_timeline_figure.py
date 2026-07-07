@@ -62,8 +62,8 @@ for panel_top, panel_bottom in [(120, 685), (785, 1085)]:
 parts += ['<text x="90" y="108" class="panel">A  Implementation and service delivery</text>',
           '<text x="1505" y="108" text-anchor="middle" class="meta">n</text><text x="1605" y="108" class="meta">Span</text>']
 rows_a = [
-    (165,"Longitudinal baseline PQR","n=3","≈29 mo","2022-01-01","2024-05-01","implementation"),
-    (225,"Short baseline PQR\n(facility-specific)","n=3","25–28 d each","2024-01-01","2024-08-01","implementation"),
+    (165,"Longitudinal baseline PQR","n=3","≈29 mo","2022-01-01","2024-05-01","data"),
+    (225,"Short baseline PQR\n(facility-specific)","n=3","25–28 d each","2024-01-01","2024-08-01","data"),
     (285,"Pre-installation surveys†","n=15","7-mo window","2023-09-01","2024-04-30","implementation"),
     (345,"Intervention deployment†","n=6","Apr–May 2024","2024-04-01","2024-06-01","implementation"),
     (405,"Biomedical equipment†","n=6","≈1 mo","2024-05-15","2024-06-15","implementation"),
@@ -98,8 +98,8 @@ for axis_y in (650,1080):
 parts.append(f'<text x="{x(date(2024,5,1))+8:.1f}" y="142" class="axis" font-weight="bold">Intervention period begins</text>')
 
 # Legend and footnotes.
-parts += [f'<rect x="90" y="1135" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1149" class="note">Repository-supported observation window</text>',
-          '<rect x="510" y="1135" width="28" height="16" fill="#f1f3f4" stroke="#7d898f"/><text x="548" y="1149" class="note">Implementation record or manuscript-reported window</text>',
+parts += [f'<rect x="90" y="1135" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1149" class="note">Time-series data</text>',
+          '<rect x="390" y="1135" width="28" height="16" fill="#f1f3f4" stroke="#7d898f"/><text x="428" y="1149" class="note">Program documentation</text>',
           f'<rect x="1045" y="1135" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="1083" y="1149" class="note">Contextual disruption; not a universal exclusion</text>',
           '<text x="90" y="1185" class="note">Bars show program-level envelopes. Valid analytical windows varied by facility, sensor pair, and outcome; telemetry and payment exclusions were applied separately.</text>',
           '<text x="90" y="1212" class="note">† Derived from implementation records and requires final source-document sign-off. PQR=power quality and reliability; HOP=HOPmeter.</text>',
