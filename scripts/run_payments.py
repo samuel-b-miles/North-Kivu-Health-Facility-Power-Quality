@@ -21,8 +21,8 @@ from drc_power.payments import (
 from pipeline_common import DEFAULT_OUTPUT_ROOT, PROJECT_ROOT
 
 FACILITY_COLORS = {
-    "CH1": "#756bb1", "CSR1": "#ef6f9e", "CSR2": "#2b8cbe",
-    "CSR3": "#35a98b", "CSR4": "#f28e2b", "HGR1": "#edc948",
+    "CH1": "#2b8cbe", "CSR1": "#f28e2b", "CSR2": "#59a14f",
+    "CSR3": "#e78ac3", "CSR4": "#756bb1", "HGR1": "#edc948",
 }
 
 
@@ -51,7 +51,7 @@ def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
     text(parts, 65, 57, "Panel A — Standard reference package CAPEX", 16, font_weight="bold")
     steps = standard_package_steps(components); maximum = steps[-1][1] * 1.10
     cell = plot_w / len(steps); bar_w = cell * 0.62; running = 0.0
-    step_colors = ["#17365d", "#9c755f", "#f28e2b", "#e15759", "#4e79a7", "#35a98b"]
+    step_colors = ["#334155", "#64748b", "#94a3b8", "#b6a6ca", "#8b6f47", "#0f766e"]
     prior_level = 0.0
     for index, (label, value, kind) in enumerate(steps):
         x = left + (index + 0.5) * cell - bar_w / 2
@@ -93,7 +93,7 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
             parts.append(f'<rect x="{x}" y="{base-height}" width="{bar_w*0.70}" height="{height}" fill="{FACILITY_COLORS[code]}"/>')
             base -= height
         outflow_x = x + bar_w * 0.72; outflow_w = bar_w * 0.28; outflow_base = top + plot_h
-        for column, color in (("opex_outflows_usd", "#8c8c8c"), ("capex_outflows_usd", "#17365d")):
+        for column, color in (("opex_outflows_usd", "#6b7280"), ("capex_outflows_usd", "#9c2f2f")):
             height = plot_h * float(row[column]) / monthly_max
             if height:
                 parts.append(f'<rect x="{outflow_x}" y="{outflow_base-height}" width="{outflow_w}" height="{height}" fill="{color}"/>')
@@ -110,8 +110,8 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
         col, row = index % 3, index // 3; x = 70 + col * 88; y = legend_y + row * 17
         parts.append(f'<rect x="{x}" y="{y}" width="10" height="10" fill="{FACILITY_COLORS[code]}"/>')
         text(parts, x + 15, y + 9, code, 9)
-    parts += [f'<rect x="350" y="{legend_y}" width="10" height="10" fill="#8c8c8c"/>',
-              f'<rect x="350" y="{legend_y+17}" width="10" height="10" fill="#17365d"/>',
+    parts += [f'<rect x="350" y="{legend_y}" width="10" height="10" fill="#6b7280"/>',
+              f'<rect x="350" y="{legend_y+17}" width="10" height="10" fill="#9c2f2f"/>',
               f'<line x1="505" y1="{legend_y+5}" x2="530" y2="{legend_y+5}" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>']
     text(parts, 365, legend_y + 9, "OPEX", 9); text(parts, 365, legend_y + 26, "Expansion CAPEX", 9)
     text(parts, 537, legend_y + 9, "Balance", 9)
