@@ -1,0 +1,7 @@
+pair_id,treatment_code,control_code,facility_type,treatment_beds,control_beds,baseline_electricity_context,matching_rationale
+P1,HGR1,CTL_HGR1,General referral hospital,300,300,Hydro/grid systems,"Similar size, service mix, and referral role"
+P2,CH1,CTL_CH1,Hospital center,102,93,Solar-powered systems,Similar hospital-center profile
+P3,CSR2,CTL_CSR2,Referral health center,78,65,Solar-powered systems,Similar referral-center profile
+P4,CSR4,CTL_CSR4,Referral health center,54,55,Hydro/grid systems,Similar size and geographic context
+P5,CSR3,CTL_CSR3,Referral health center,82,75,Micro-hydro systems,Similar power environment and referral role
+P6,CSR1,CTL_CSR1,Referral health center,67,72,Micro-hydro systems,"Similar size, services, and electricity conditions"

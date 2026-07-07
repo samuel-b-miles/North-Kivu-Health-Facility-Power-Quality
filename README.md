@@ -79,6 +79,7 @@ python scripts/run_energy.py
 python scripts/run_figure3_summary.py
 python scripts/run_payments.py
 python scripts/run_health.py
+python scripts/run_annex.py
 ```
 
 Generated CSVs and SVG figures are written to `outputs/generated/`. These are
@@ -96,6 +97,8 @@ exclusions, and parts of the electrical topology remain under study-team review.
 - Anonymized payment-ledger analysis and provisional Figure 6 are reproducible.
 - Anonymized DHIS2 ward-month and facility-month panels, Table 2, QA reports,
   and an HGR1 health dashboard are reproducible.
+- Annex-ready electricity, energy, facility-selection, health, payment, and
+  capital tables are regenerated from the current outputs by `run_annex.py`.
 
 ## Rebuild the DHIS2 health panels
 
