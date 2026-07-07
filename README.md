@@ -78,6 +78,7 @@ python scripts/run_reliability.py
 python scripts/run_energy.py
 python scripts/run_figure3_summary.py
 python scripts/run_payments.py
+python scripts/run_health.py
 ```
 
 Generated CSVs and SVG figures are written to `outputs/generated/`. These are
@@ -93,3 +94,29 @@ exclusions, and parts of the electrical topology remain under study-team review.
 - Facility periods and exclusions remain provisional pending study-team review.
 - Provisional power-quality, paired-reliability, and energy regeneration is available.
 - Anonymized payment-ledger analysis and provisional Figure 6 are reproducible.
+- Anonymized DHIS2 ward-month and facility-month panels, Table 2, QA reports,
+  and an HGR1 health dashboard are reproducible.
+
+## Rebuild the DHIS2 health panels
+
+The public repository contains anonymized processed panels but not raw DHIS2
+exports or the private facility crosswalk. Authorized analysts should place the
+canonical files at:
+
+```text
+data/raw/dhis2/admissions.csv
+data/raw/dhis2/deaths.csv
+config/private/facility_crosswalk_private.csv
+```
+
+Then run `python scripts/run_health.py`. This regenerates:
+
+- `data/public/dhis2_ward_month_anonymized.csv`;
+- `data/public/dhis2_facility_month_anonymized.csv`;
+- Table 2 and descriptive health tables;
+- mapping, missingness, duplicate-column, and implausible-value QA reports; and
+- the HGR1 descriptive dashboard.
+
+The health analysis is descriptive. It evaluates whether routine reporting is
+sufficiently complete and continuous for future infrastructure-health
+evaluation; it does not estimate a causal treatment effect.

@@ -1,9 +1,12 @@
 data/raw/
 data/private/
+config/private/
 mapping_PRIVATE.csv
 .venv/
 __pycache__/
 .pytest_cache/
 *.pyc
 outputs/generated/
-
+*.DS_Store
+.ipynb_checkpoints/
+.env

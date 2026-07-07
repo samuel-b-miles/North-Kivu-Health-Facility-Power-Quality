@@ -1,0 +1,6 @@
+parameter,value
+observation_start,2023-01
+observation_end,2025-12
+expected_months,36
+ward_min_admissions,5
+intervention_month,2024-06
