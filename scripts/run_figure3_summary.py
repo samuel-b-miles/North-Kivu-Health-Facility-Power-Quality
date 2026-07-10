@@ -33,7 +33,7 @@ def main() -> None:
         "frequency_quality_5_pct_pooled": "frequency_5_post_pct",
         "status": "pre_status",
     })
-    order = {code: i for i, code in enumerate(["CSR2", "CSR4", "CSR3", "CSR1", "CH1", "HGR1"])}
+    order = {code: i for i, code in enumerate(["HGR1", "CH1", "CSR1", "CSR2", "CSR3", "CSR4"])}
     summary["sort"] = summary["facility_code"].map(order)
     summary = summary.sort_values("sort").drop(columns="sort")
     output = args.output_root / "figure3"; output.mkdir(parents=True, exist_ok=True)
@@ -44,4 +44,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
