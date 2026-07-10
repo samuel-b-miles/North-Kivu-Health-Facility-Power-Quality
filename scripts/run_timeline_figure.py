@@ -10,7 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "generated" / "timeline"
 OUT.mkdir(parents=True, exist_ok=True)
 
-W, H = 1600, 1240
+# Canvas intentionally includes generous right/bottom whitespace. Google Slides
+# and Docs sometimes clip SVG edges on import; the extra white area is a
+# deliberate safety margin so no labels, bars, legends, or notes are truncated.
+W, H = 1900, 1400
 X0, X1 = 410, 1375
 START, END = date(2022, 1, 1), date(2026, 6, 1)
 # Publication/export palette. The earlier version read too pale after
