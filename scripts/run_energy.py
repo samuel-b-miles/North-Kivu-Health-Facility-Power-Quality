@@ -53,6 +53,14 @@ def main() -> None:
     daily.index = pd.to_datetime(daily.index, errors="raise", utc=True)
     daily.to_csv(output / "daily_energy_by_facility.csv")
     monthly = daily.resample("MS").sum(min_count=1)
+    # Figure 5 is meant to compare complete calendar months. Drop the final
+    # month when the raw daily export ends before that month is complete, rather
+    # than showing a misleading short bar for a partial final month.
+    final_day = daily.index.max().normalize()
+    final_month_start = final_day.replace(day=1)
+    final_month_end = final_month_start + pd.offsets.MonthEnd(0)
+    if final_day < final_month_end:
+        monthly = monthly[monthly.index < final_month_start]
     monthly.to_csv(output / "monthly_energy_by_facility.csv")
     telemetry_exclusions = [r for r in read_config("analysis_periods.csv") if r["period_type"] == "telemetry_exclusion"]
     write_monthly_facility_panels_svg(output / "monthly_energy_six_panel.svg", monthly, telemetry_exclusions)
