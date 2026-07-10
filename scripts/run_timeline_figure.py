@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "generated" / "timeline"
 OUT.mkdir(parents=True, exist_ok=True)
 
-# Canvas is trimmed for manuscript copy-paste while retaining a small import
-# safety margin around the axis labels, legend, and footnotes.
-W, H = 1565, 1245
+# Keep the wide, slide-safe canvas so the right edge never clips in Word/Slides.
+# Only the vertical canvas is trimmed for manuscript copy-paste.
+W, H = 1900, 1260
 X0, X1 = 410, 1375
 START, END = date(2022, 1, 1), date(2026, 6, 1)
 # Publication/export palette. The earlier version read too pale after
