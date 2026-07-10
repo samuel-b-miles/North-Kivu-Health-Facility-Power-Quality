@@ -13,8 +13,12 @@ OUT.mkdir(parents=True, exist_ok=True)
 W, H = 1800, 1240
 X0, X1 = 410, 1450
 START, END = date(2022, 1, 1), date(2026, 5, 1)
-INK, MUTED, GRID = "#17242d", "#667680", "#d8dee2"
-BLUE, BLUE_LIGHT, CONTEXT = "#376f8a", "#dce9ef", "#b76e5a"
+# Publication/export palette. The earlier version read too pale after
+# Google Slides/Docs import, so these colors are deliberately darker.
+INK, MUTED, GRID = "#101820", "#3f4d56", "#c5cdd2"
+BLUE, BLUE_LIGHT, CONTEXT = "#1f5f7a", "#b7d6e3", "#9a503f"
+DOC_FILL, DOC_STROKE = "#d9dde0", "#5f6c73"
+CONTEXT_FILL = "#ead3ca"
 
 
 def x(day: date) -> float:
@@ -24,11 +28,11 @@ def x(day: date) -> float:
 def bar(parts, y, start, end, kind="data"):
     xs, xe = x(date.fromisoformat(start)), x(date.fromisoformat(end))
     if kind == "data":
-        parts.append(f'<rect x="{xs:.1f}" y="{y-15}" width="{xe-xs:.1f}" height="30" rx="2" fill="{BLUE_LIGHT}" stroke="{BLUE}" stroke-width="1.5"/>')
+        parts.append(f'<rect x="{xs:.1f}" y="{y-15}" width="{xe-xs:.1f}" height="30" rx="2" fill="{BLUE_LIGHT}" stroke="{BLUE}" stroke-width="2.1"/>')
     elif kind == "implementation":
-        parts.append(f'<rect x="{xs:.1f}" y="{y-15}" width="{xe-xs:.1f}" height="30" rx="2" fill="#f1f3f4" stroke="#7d898f" stroke-width="1.5"/>')
+        parts.append(f'<rect x="{xs:.1f}" y="{y-15}" width="{xe-xs:.1f}" height="30" rx="2" fill="{DOC_FILL}" stroke="{DOC_STROKE}" stroke-width="2.1"/>')
     else:
-        parts.append(f'<rect x="{xs:.1f}" y="{y-15}" width="{xe-xs:.1f}" height="30" rx="2" fill="url(#hatch)" stroke="{CONTEXT}" stroke-width="1.5"/>')
+        parts.append(f'<rect x="{xs:.1f}" y="{y-15}" width="{xe-xs:.1f}" height="30" rx="2" fill="url(#hatch)" stroke="{CONTEXT}" stroke-width="2.1"/>')
 
 
 def label(parts, y, text, n, span):
@@ -45,7 +49,7 @@ parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" vi
 .title{{font:700 26px Arial,sans-serif;fill:{INK}}}.panel{{font:700 24px Arial,sans-serif;fill:{INK}}}
 .row{{font:17px Arial,sans-serif;fill:{INK}}}.meta{{font:15px Arial,sans-serif;fill:{MUTED}}}
 .axis{{font:14px Arial,sans-serif;fill:{MUTED}}}.note{{font:14px Arial,sans-serif;fill:{MUTED}}}
-</style><pattern id="hatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)"><rect width="9" height="9" fill="#f7eeeb"/><line x1="0" y1="0" x2="0" y2="9" stroke="{CONTEXT}" stroke-width="2" opacity=".55"/></pattern></defs>
+</style><pattern id="hatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)"><rect width="9" height="9" fill="{CONTEXT_FILL}"/><line x1="0" y1="0" x2="0" y2="9" stroke="{CONTEXT}" stroke-width="2.4" opacity=".9"/></pattern></defs>
 <rect width="100%" height="100%" fill="white"/>
 <text x="90" y="55" class="title">Implementation, monitoring, and analytical windows</text>
 ''']
@@ -57,7 +61,7 @@ for panel_top, panel_bottom in [(120, 685), (785, 1085)]:
             d = date(year, month, 1)
             if d > END: continue
             xx=x(d); parts.append(f'<line x1="{xx:.1f}" y1="{panel_top}" x2="{xx:.1f}" y2="{panel_bottom}" stroke="{GRID}" stroke-width="1"/>')
-    intervention=x(date(2024,5,1)); parts.append(f'<line x1="{intervention:.1f}" y1="{panel_top}" x2="{intervention:.1f}" y2="{panel_bottom}" stroke="{INK}" stroke-width="1.4" stroke-dasharray="5,5" opacity=".65"/>')
+    intervention=x(date(2024,5,1)); parts.append(f'<line x1="{intervention:.1f}" y1="{panel_top}" x2="{intervention:.1f}" y2="{panel_bottom}" stroke="{INK}" stroke-width="1.7" stroke-dasharray="5,5" opacity=".9"/>')
 
 parts += ['<text x="90" y="108" class="panel">A  Implementation and service delivery</text>',
           '<text x="1505" y="108" text-anchor="middle" class="meta">n</text><text x="1605" y="108" class="meta">Span</text>']
@@ -72,7 +76,7 @@ rows_a = [
     (585,"Conflict-related operational\ndisruption†","n=2","≈3 mo","2025-01-01","2025-04-01","context"),
 ]
 for y,t,n,s,a,b,k in rows_a:
-    parts.append(f'<line x1="{X0}" y1="{y}" x2="{X1}" y2="{y}" stroke="#edf0f2"/>'); label(parts,y,t,n,s); bar(parts,y,a,b,k)
+    parts.append(f'<line x1="{X0}" y1="{y}" x2="{X1}" y2="{y}" stroke="#dfe5e8"/>'); label(parts,y,t,n,s); bar(parts,y,a,b,k)
 
 parts += ['<line x1="90" y1="735" x2="1710" y2="735" stroke="#aeb8bd" stroke-width="1"/>',
           '<text x="90" y="775" class="panel">B  Measurement and analytical windows</text>',
@@ -84,7 +88,7 @@ rows_b = [
     (1015,"Payment and maintenance ledger","n=6","25 monthly periods","2024-04-02","2026-04-06","data"),
 ]
 for y,t,n,s,a,b,k in rows_b:
-    parts.append(f'<line x1="{X0}" y1="{y}" x2="{X1}" y2="{y}" stroke="#edf0f2"/>'); label(parts,y,t,n,s); bar(parts,y,a,b,k)
+    parts.append(f'<line x1="{X0}" y1="{y}" x2="{X1}" y2="{y}" stroke="#dfe5e8"/>'); label(parts,y,t,n,s); bar(parts,y,a,b,k)
 
 # Axes and labels.
 for axis_y in (650,1080):
@@ -99,7 +103,7 @@ parts.append(f'<text x="{x(date(2024,5,1))+8:.1f}" y="142" class="axis" font-wei
 
 # Legend and footnotes.
 parts += [f'<rect x="90" y="1135" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1149" class="note">Time-series data</text>',
-          '<rect x="390" y="1135" width="28" height="16" fill="#f1f3f4" stroke="#7d898f"/><text x="428" y="1149" class="note">Program documentation</text>',
+          f'<rect x="390" y="1135" width="28" height="16" fill="{DOC_FILL}" stroke="{DOC_STROKE}"/><text x="428" y="1149" class="note">Program documentation</text>',
           f'<rect x="1045" y="1135" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="1083" y="1149" class="note">Contextual disruption; not a universal exclusion</text>',
           '<text x="90" y="1185" class="note">Bars show program-level envelopes. Valid analytical windows varied by facility, sensor pair, and outcome; telemetry and payment exclusions were applied separately.</text>',
           '<text x="90" y="1212" class="note">† Derived from implementation records and requires final source-document sign-off. PQR=power quality and reliability; HOP=HOPmeter.</text>',
