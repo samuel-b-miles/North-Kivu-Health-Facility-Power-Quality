@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "generated" / "timeline"
 OUT.mkdir(parents=True, exist_ok=True)
 
-W, H = 1800, 1240
-X0, X1 = 410, 1450
-START, END = date(2022, 1, 1), date(2026, 5, 1)
+W, H = 1600, 1240
+X0, X1 = 410, 1375
+START, END = date(2022, 1, 1), date(2026, 6, 1)
 # Publication/export palette. The earlier version read too pale after
 # Google Slides/Docs import, so these colors are deliberately darker.
 INK, MUTED, GRID = "#101820", "#3f4d56", "#c5cdd2"
@@ -40,8 +40,6 @@ def label(parts, y, text, n, span):
     for i, bit in enumerate(bits):
         yy = y - (len(bits)-1)*10 + i*20
         parts.append(f'<text x="375" y="{yy+5}" text-anchor="end" class="row">{escape(bit)}</text>')
-    parts.append(f'<text x="1505" y="{y+5}" text-anchor="middle" class="meta">{escape(n)}</text>')
-    parts.append(f'<text x="1605" y="{y+5}" class="meta">{escape(span)}</text>')
 
 
 parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
@@ -63,8 +61,7 @@ for panel_top, panel_bottom in [(120, 685), (785, 1085)]:
             xx=x(d); parts.append(f'<line x1="{xx:.1f}" y1="{panel_top}" x2="{xx:.1f}" y2="{panel_bottom}" stroke="{GRID}" stroke-width="1"/>')
     intervention=x(date(2024,5,1)); parts.append(f'<line x1="{intervention:.1f}" y1="{panel_top}" x2="{intervention:.1f}" y2="{panel_bottom}" stroke="{INK}" stroke-width="1.7" stroke-dasharray="5,5" opacity=".9"/>')
 
-parts += ['<text x="90" y="108" class="panel">A  Implementation and service delivery</text>',
-          '<text x="1505" y="108" text-anchor="middle" class="meta">n</text><text x="1605" y="108" class="meta">Span</text>']
+parts += ['<text x="90" y="108" class="panel">A  Implementation and service delivery</text>']
 rows_a = [
     (165,"Longitudinal baseline PQR","n=3","≈29 mo","2022-01-01","2024-05-01","data"),
     (225,"Short baseline PQR\n(facility-specific)","n=3","25–28 d each","2024-01-01","2024-08-01","data"),
@@ -78,9 +75,8 @@ rows_a = [
 for y,t,n,s,a,b,k in rows_a:
     parts.append(f'<line x1="{X0}" y1="{y}" x2="{X1}" y2="{y}" stroke="#dfe5e8"/>'); label(parts,y,t,n,s); bar(parts,y,a,b,k)
 
-parts += ['<line x1="90" y1="735" x2="1710" y2="735" stroke="#aeb8bd" stroke-width="1"/>',
-          '<text x="90" y="775" class="panel">B  Measurement and analytical windows</text>',
-          '<text x="1505" y="775" text-anchor="middle" class="meta">n</text><text x="1605" y="775" class="meta">Observations</text>']
+parts += ['<line x1="90" y1="735" x2="1510" y2="735" stroke="#aeb8bd" stroke-width="1"/>',
+          '<text x="90" y="775" class="panel">B  Measurement and analytical windows</text>']
 rows_b = [
     (835,"DHIS2 health outcomes","n=12","36 monthly periods","2023-01-01","2026-01-01","data"),
     (895,"HOP energy telemetry","n=6","up to 20 mo","2024-05-22","2026-01-12","data"),
@@ -103,8 +99,8 @@ parts.append(f'<text x="{x(date(2024,5,1))+8:.1f}" y="142" class="axis" font-wei
 
 # Legend and footnotes.
 parts += [f'<rect x="90" y="1135" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1149" class="note">Time-series data</text>',
-          f'<rect x="390" y="1135" width="28" height="16" fill="{DOC_FILL}" stroke="{DOC_STROKE}"/><text x="428" y="1149" class="note">Program documentation</text>',
-          f'<rect x="1045" y="1135" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="1083" y="1149" class="note">Contextual disruption; not a universal exclusion</text>',
+          f'<rect x="380" y="1135" width="28" height="16" fill="{DOC_FILL}" stroke="{DOC_STROKE}"/><text x="418" y="1149" class="note">Program documentation</text>',
+          f'<rect x="790" y="1135" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="828" y="1149" class="note">Contextual disruption</text>',
           '<text x="90" y="1185" class="note">Bars show program-level envelopes. Valid analytical windows varied by facility, sensor pair, and outcome; telemetry and payment exclusions were applied separately.</text>',
           '<text x="90" y="1212" class="note">† Derived from implementation records and requires final source-document sign-off. PQR=power quality and reliability; HOP=HOPmeter.</text>',
           '</svg>']
