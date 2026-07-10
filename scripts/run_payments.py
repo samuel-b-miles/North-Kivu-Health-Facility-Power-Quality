@@ -76,7 +76,7 @@ def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
 
 def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
     left, top, plot_w, plot_h = 70, 485, 600, 235
-    text(parts, 65, 460, "Panel B — Monthly payments, outflows, and balance", 16, font_weight="bold")
+    text(parts, 65, 460, "Panel D — Monthly payments, outflows, and cumulative balance", 16, font_weight="bold")
     monthly_max = max(float(monthly["facility_payments_usd"].max()), float(monthly["recorded_outflows_usd"].max()), 1) * 1.12
     cumulative_max = max(float(monthly["cumulative_ledger_balance_usd"].max()), 1) * 1.12
     cell = plot_w / len(monthly); bar_w = cell * 0.72
@@ -85,6 +85,10 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
         parts.append(f'<line x1="{left}" y1="{y}" x2="{left+plot_w}" y2="{y}" stroke="#ececec"/>')
         text(parts, left - 8, y + 4, f"${value:,.0f}", 10, text_anchor="end")
         text(parts, left + plot_w + 8, y + 4, f"${cumulative_max*tick/3:,.0f}", 10)
+    text(parts, left - 48, top + plot_h / 2, "Monthly cash flow (USD)", 11,
+         text_anchor="middle", transform=f"rotate(-90 {left - 48} {top + plot_h / 2})")
+    text(parts, left + plot_w + 40, top + plot_h / 2, "Cumulative balance (USD)", 10,
+         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 40} {top + plot_h / 2})")
     points = []
     for index, (_, row) in enumerate(monthly.iterrows()):
         x = left + (index + 0.5) * cell - bar_w / 2; base = top + plot_h
@@ -118,8 +122,8 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
 
 
 def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 770, 80, 585, 235
-    text(parts, 765, 57, "Panel C — Deployment CAPEX and commitment", 16, font_weight="bold")
+    left, top, plot_w, plot_h = 850, 80, 585, 235
+    text(parts, 845, 57, "Panel B — Deployment CAPEX and monthly commitment", 16, font_weight="bold")
     maximum = max(reference["deployment_capex_usd"].max(), 1) * 1.12
     commitment_max = max(reference["monthly_commitment_usd"].max(), 1) * 1.12
     cell = plot_w / len(reference); bar_w = cell * 0.55
@@ -128,6 +132,10 @@ def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
         parts.append(f'<line x1="{left}" y1="{y}" x2="{left+plot_w}" y2="{y}" stroke="#ececec"/>')
         text(parts, left - 8, y + 4, f"${value:,.0f}", 10, text_anchor="end")
         text(parts, left + plot_w + 5, y + 4, f"${commitment_max*tick/3:,.0f}", 9)
+    text(parts, left - 48, top + plot_h / 2, "Deployment CAPEX (USD)", 11,
+         text_anchor="middle", transform=f"rotate(-90 {left - 48} {top + plot_h / 2})")
+    text(parts, left + plot_w + 60, top + plot_h / 2, "Monthly commitment (USD)", 11,
+         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 60} {top + plot_h / 2})")
     for index, row in reference.reset_index(drop=True).iterrows():
         code = row["facility_code"]; x = left + (index + 0.5) * cell
         height = plot_h * row["deployment_capex_usd"] / maximum
@@ -138,18 +146,22 @@ def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
         text(parts, x, y_point - 9, f'${row["monthly_commitment_usd"]:,.0f}/mo', 9, text_anchor="middle")
         text(parts, x, top + plot_h + 18, code, 10, text_anchor="middle")
-    text(parts, 765, 365, "Bars: standardized-package CAPEX. Points: monthly commitment.", 10, fill="#555")
+    text(parts, 845, 365, "Bars: standardized-package CAPEX. Points: monthly commitment.", 10, fill="#555")
 
 
 def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 770, 485, 585, 235
-    text(parts, 765, 460, "Panel D — Actual payment revenue and timing", 16, font_weight="bold")
+    left, top, plot_w, plot_h = 850, 485, 585, 235
+    text(parts, 845, 460, "Panel C — Actual payment revenue and timing", 16, font_weight="bold")
     maximum = max(float(facility["received_usd"].max()), 1) * 1.12; cell = plot_w / len(facility); bar_w = cell * 0.55
     for tick in range(4):
         value = maximum * tick / 3; y = top + plot_h * (1 - tick / 3)
         parts.append(f'<line x1="{left}" y1="{y}" x2="{left+plot_w}" y2="{y}" stroke="#ececec"/>')
         text(parts, left - 8, y + 4, f"${value:,.0f}", 10, text_anchor="end")
         text(parts, left + plot_w + 5, y + 4, f"{100*tick/3:.0f}%", 9)
+    text(parts, left - 48, top + plot_h / 2, "Revenue received (USD)", 11,
+         text_anchor="middle", transform=f"rotate(-90 {left - 48} {top + plot_h / 2})")
+    text(parts, left + plot_w + 60, top + plot_h / 2, "On-time remittances (%)", 11,
+         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 60} {top + plot_h / 2})")
     for index, row in facility.reset_index(drop=True).iterrows():
         code = row["facility_code"]; x = left + (index + 0.5) * cell
         height = plot_h * float(row["received_usd"]) / maximum
@@ -159,12 +171,12 @@ def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
         text(parts, x, y_point - 9, f'{row["on_time_pct"]:.1f}%', 9, text_anchor="middle")
         text(parts, x, top + plot_h + 18, code, 10, text_anchor="middle")
-    text(parts, 765, 765, "Bars: revenue received. Points: share recorded on time.", 10, fill="#555")
+    text(parts, 845, 765, "Bars: revenue received. Points: share recorded on time.", 10, fill="#555")
 
 
 def write_figure(path: Path, components: pd.DataFrame, monthly: pd.DataFrame,
                  reference: pd.DataFrame, facility: pd.DataFrame) -> None:
-    width, height = 1450, 805
+    width, height = 1600, 805
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
              '<rect width="100%" height="100%" fill="white"/>']
     text(parts, width / 2, 31, "Capital investment and facility payment performance", 23,
