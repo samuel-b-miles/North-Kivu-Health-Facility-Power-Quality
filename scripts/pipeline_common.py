@@ -202,11 +202,18 @@ def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]]) -> No
     width, height = 1500, 520
     margin_x, top, plot_h, panel_w, gap = 70, 65, 380, 420, 60
     metrics = [
-        ("uptime_pre_pct", "uptime_post_pct", "Power uptime"),
-        ("voltage_pre_pct", "voltage_post_pct", "Voltage compliance (±10%)"),
+        ("uptime_pre_pct", "uptime_post_pct", "Power uptime (%)"),
+        ("voltage_pre_pct", "voltage_post_pct", "Voltage compliance (±10%, 230 V)"),
         ("frequency_5_pre_pct", "frequency_5_post_pct", "Frequency compliance (±5%, 50 Hz)"),
     ]
-    colors = ["#2b8cbe", "#f28e2b", "#59a14f", "#e78ac3", "#756bb1", "#edc948"]
+    colors = {
+        "CH1": "#2b8cbe",
+        "CSR1": "#f28e2b",
+        "CSR2": "#59a14f",
+        "CSR3": "#e78ac3",
+        "CSR4": "#756bb1",
+        "HGR1": "#edc948",
+    }
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
              '<rect width="100%" height="100%" fill="white"/>']
     for panel, (pre_key, post_key, title) in enumerate(metrics):
@@ -236,7 +243,7 @@ def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]]) -> No
         for index, row in enumerate(rows):
             pre, post = float(row[pre_key]), float(row[post_key])
             y_pre = top + plot_h * (1 - pre / 100); y_post = top + plot_h * (1 - post / 100)
-            color = colors[index % len(colors)]
+            color = colors.get(str(row["facility_code"]), "#666666")
             parts += [f'<line x1="{x_pre}" y1="{y_pre}" x2="{x_post}" y2="{y_post}" stroke="{color}" stroke-width="3"/>',
                       f'<circle cx="{x_pre}" cy="{y_pre}" r="5" fill="{color}"/>',
                       f'<circle cx="{x_post}" cy="{y_post}" r="5" fill="{color}"/>']
@@ -244,7 +251,7 @@ def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]]) -> No
                   f'<text x="{x_post}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">Post</text>']
     legend_y = height - 20
     for index, row in enumerate(rows):
-        x = 120 + index * 205; color = colors[index % len(colors)]
+        x = 120 + index * 205; color = colors.get(str(row["facility_code"]), "#666666")
         parts += [f'<line x1="{x}" y1="{legend_y}" x2="{x+24}" y2="{legend_y}" stroke="{color}" stroke-width="3"/>',
                   f'<text x="{x+30}" y="{legend_y+5}" font-family="sans-serif" font-size="13">{html.escape(str(row["facility_code"]))}</text>']
     parts.append('</svg>')
