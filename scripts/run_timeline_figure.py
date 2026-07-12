@@ -81,8 +81,8 @@ parts += ['<line x1="90" y1="735" x2="1510" y2="735" stroke="#aeb8bd" stroke-wid
           '<text x="90" y="775" class="panel">B  Measurement and analytical windows</text>']
 rows_b = [
     (835,"DHIS2 health outcomes","n=12","36 monthly periods","2023-01-01","2026-01-01","data"),
-    (895,"Energy demand telemetry","n=6","up to 20 mo","2024-05-22","2026-01-12","data"),
-    (955,"Paired Energy Demand\nand Supply telemetry","n=6","facility-specific","2024-05-22","2025-11-25","data"),
+    (895,"Energy demand telemetry\n(HOPmeter)","n=6","up to 20 mo","2024-05-22","2026-01-12","data"),
+    (955,"Paired energy demand\nand supply telemetry\n(HOPmeter and GridWatch)","n=6","facility-specific","2024-05-22","2025-11-25","data"),
     (1015,"Payment and maintenance ledger","n=6","25 monthly periods","2024-04-02","2026-04-06","data"),
 ]
 for y,t,n,s,a,b,k in rows_b:
@@ -100,9 +100,9 @@ for axis_y in (650,1080):
 parts.append(f'<text x="{x(date(2024,5,1))+8:.1f}" y="142" class="axis" font-weight="bold">Intervention period begins</text>')
 
 # Legend and footnotes.
-parts += [f'<rect x="90" y="1135" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1149" class="note">Time-series data</text>',
-          f'<rect x="380" y="1135" width="28" height="16" fill="{DOC_FILL}" stroke="{DOC_STROKE}"/><text x="418" y="1149" class="note">Program documentation</text>',
-          f'<rect x="790" y="1135" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="828" y="1149" class="note">Contextual disruption</text>',
+parts += [f'<rect x="90" y="1150" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1164" class="note">Time-series data</text>',
+          f'<rect x="380" y="1150" width="28" height="16" fill="{DOC_FILL}" stroke="{DOC_STROKE}"/><text x="418" y="1164" class="note">Program documentation</text>',
+          f'<rect x="790" y="1150" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="828" y="1164" class="note">Contextual disruption</text>',
           '<text x="90" y="1185" class="note">Bars show program-level envelopes. Valid analytical windows varied by facility, sensor pair, and outcome; telemetry and payment exclusions were applied separately.</text>',
           '</svg>']
 
