@@ -144,7 +144,8 @@ def write_svg(path: Path, grid: pd.DataFrame, protected: pd.DataFrame) -> None:
     top1, panel_h, gap = 220, 330, 68
     top2 = top1 + panel_h + gap
     green, red = "#4daf4a", "#ff6b6b"
-    grid_color, pv_color = "#333333", "#cc2c8a"
+    # CSR1 facility color, aligned with Figures 3, 5, and 6.
+    grid_color, pv_color = "#333333", "#f28e2b"
 
     grid_points_v = _points(grid, "voltage", left, plot_width, top1, panel_h, -20, 330)
     pv_points_v = _points(protected, "voltage", left, plot_width, top1, panel_h, -20, 330)
