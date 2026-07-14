@@ -141,13 +141,22 @@ def write_monthly_facility_panels_svg(
     path: Path, frame: pd.DataFrame, telemetry_exclusions: list[dict[str, str]] | None = None
 ) -> None:
     """Write six comparable monthly-consumption panels using anonymized facility codes."""
-    columns = list(frame.columns)
+    facility_order = ["HGR1", "CH1", "CSR1", "CSR2", "CSR3", "CSR4"]
+    columns = [code for code in facility_order if code in frame.columns]
+    columns.extend([code for code in frame.columns if code not in columns])
     width, height = 1500, 850
     outer_left, outer_top, panel_w, panel_h = 85, 75, 420, 290
     col_gap, row_gap = 70, 95
     plot_left, plot_top, plot_w, plot_h = 58, 35, 345, 205
     maximum = max(float(frame.max().max()), 1.0) * 1.08
-    colors = ["#2b8cbe", "#f28e2b", "#59a14f", "#e78ac3", "#756bb1", "#edc948"]
+    colors = {
+        "HGR1": "#edc948",
+        "CH1": "#2b8cbe",
+        "CSR1": "#f28e2b",
+        "CSR2": "#59a14f",
+        "CSR3": "#e78ac3",
+        "CSR4": "#756bb1",
+    }
     telemetry_exclusions = telemetry_exclusions or []
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
              '<defs><pattern id="telemetry-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#d9d9d9" fill-opacity="0.72"/><line x1="0" y1="0" x2="0" y2="10" stroke="#888" stroke-width="3"/></pattern></defs>',
@@ -167,7 +176,8 @@ def write_monthly_facility_panels_svg(
         for j, value in enumerate(values):
             x = px + j * plot_w / max(len(values), 1) + (plot_w / max(len(values), 1) - bar_w) / 2
             bar_h = plot_h * value / maximum; y = py + plot_h - bar_h
-            parts.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{bar_w:.2f}" height="{bar_h:.2f}" fill="{colors[index % len(colors)]}"/>')
+            fill = colors.get(str(column), "#777777")
+            parts.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{bar_w:.2f}" height="{bar_h:.2f}" fill="{fill}"/>')
         # Overlay continuous hatched bands for confirmed periods without reliable
         # telemetry. These are missing-measurement periods, not inferred outages.
         for exclusion in [e for e in telemetry_exclusions if e["facility_code"] == column]:
