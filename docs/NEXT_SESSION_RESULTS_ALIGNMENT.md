@@ -1,7 +1,7 @@
 # Next Session: Align the Repository to the Manuscript Results
 
 Start here. The analytical destination is the current manuscript Results
-section, especially “Reliability and System Performance,” Figure 3, and Figure 5.
+section, especially “Reliability and System Performance,” Figure 3, and Figure 4.
 
 ## Manuscript claims to reproduce
 
@@ -12,7 +12,7 @@ section, especially “Reliability and System Performance,” Figure 3, and Figu
    18 months.
 4. Figure 3 compares pre/post uptime and power quality and includes a CSR1
    morgue time-series example.
-5. Figure 5 shows cumulative monitored energy consumption.
+5. Figure 4 shows monthly monitored energy consumption.
 
 ## Estimands that must match the manuscript
 
@@ -34,7 +34,7 @@ section, especially “Reliability and System Performance,” Figure 3, and Figu
 3. Implement the manuscript uptime definition and compare it with conservative
    and concordant-pair sensitivity analyses.
 4. Rebuild Figure 3 from explicit pre/post facility windows.
-5. Rebuild Figure 5 with separate critical-core and supplemental-morgue layers.
+5. Rebuild Figure 4 with separate critical-core and supplemental-morgue layers.
 6. Reconcile the energy headline: excluding the CSR3 sterilizer produces about
    18.21 MWh from currently mapped systems, which rounds to 18.2 rather than the
    manuscript’s 18.3 MWh.
