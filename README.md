@@ -3,9 +3,10 @@
 Reproducible analysis of electricity reliability, conditional power quality,
 and energy use across six anonymized health facilities in North Kivu, DRC.
 
-This is a clean-room workflow scaffold derived from the documented analytical
-requirements and approved anonymized release assets. Raw sensor data and the
-private facility identity key are intentionally excluded from version control.
+This repository contains the public, reproducible analysis scaffold derived
+from documented analytical requirements and approved anonymized release assets.
+Raw telemetry, raw DHIS2 exports, and the private facility identity key are
+intentionally excluded from version control.
 
 ## Data locations at a glance
 
@@ -22,6 +23,27 @@ GitHub: they are larger authorized release assets, verified using
 [`docs/DATA_GUIDE.md`](docs/DATA_GUIDE.md) for the complete file map and the
 distinction between source data, tracked public data, configuration, and
 generated outputs.
+
+## Data availability
+
+The repository is designed to make the public analytical workflow inspectable
+without exposing raw or identified facility data.
+
+- Code, analytical configuration, tests, anonymized DHIS2 panels, and the
+  anonymized payment ledger are public.
+- Raw HOP and PowerWatch ZIP files are not committed to GitHub. Their expected
+  filenames and SHA-256 checksums are listed in `config/data_sources.toml` so
+  authorized users can verify exact source files before rebuilding analyses.
+- Raw DHIS2 exports and the private facility crosswalk are not public because
+  they contain identified facility information. The public DHIS2 panels can be
+  inspected directly, while source-level regeneration requires authorized local
+  files.
+- Generated figures, tables, and QA reports are written to `outputs/generated/`
+  and can be rebuilt locally; they are not tracked in Git.
+
+Reviewers with access to the restricted source-data bundle can follow
+[`docs/REVIEWER_REPRODUCTION.md`](docs/REVIEWER_REPRODUCTION.md) to verify
+checksums, prepare local inputs, and regenerate the manuscript outputs.
 
 ## Analytical principles
 
@@ -77,6 +99,13 @@ python scripts/bootstrap_data.py
 
 Use `--verify-only` to check files without copying or extracting them. The
 resulting local structure is `data/raw/downloads/` plus `data/raw/extracted/`.
+
+For full reviewer reproduction from the restricted companion data bundle,
+including DHIS2 source regeneration, use:
+
+```bash
+python scripts/prepare_restricted_data.py --source /path/to/restricted-data-bundle
+```
 
 ## Reproduce current analyses
 

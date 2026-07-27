@@ -12,6 +12,25 @@ This guide answers two questions for each analytical domain:
 - **Configuration:** tracked, reviewable decisions about sensors, dates, topology, and inclusion.
 - **Generated output:** reproducible tables and figures written under `outputs/generated/`; this directory is not committed because it can be rebuilt.
 
+## Access policy
+
+The public repository is intended to support transparent review of the analysis
+code, configuration, and anonymized analytical datasets. Raw source files remain
+outside GitHub for two reasons: file size and disclosure control. Electricity
+telemetry ZIP files may be shared through an authorized study-data channel when
+the recipient is permitted to access the release assets. Raw DHIS2 exports and
+the private facility crosswalk should remain restricted because they contain or
+can reconstruct identified facility information.
+
+For authorized users, `config/data_sources.toml` records the exact expected ZIP
+filenames and SHA-256 checksums. `scripts/bootstrap_data.py` verifies those
+checksums before extracting data into the Git-ignored `data/raw/` directory.
+For full reviewer reproduction, `config/restricted_data_sources.csv` lists all
+restricted source inputs required by the public scripts, including raw DHIS2
+exports and the private facility crosswalk. `scripts/prepare_restricted_data.py`
+copies those files from an authorized bundle, verifies checksums, and prepares
+the expected local folder structure.
+
 ## HOP and PowerWatch electricity telemetry
 
 ### Local authorized source files
