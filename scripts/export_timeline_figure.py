@@ -54,12 +54,13 @@ def set_png_dpi(path: Path, dpi: int) -> None:
                 tmp.write(size_bytes + kind + data + crc)
         if not inserted:
             raise ValueError(f"PNG has no IDAT chunk: {path}")
+    temporary.chmod(path.stat().st_mode & 0o777)
     temporary.replace(path)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dpi", type=int, default=2400)
+    parser.add_argument("--dpi", type=int, default=3600)
     parser.add_argument("--width-inches", type=float, default=7.5)
     args = parser.parse_args()
     if args.dpi <= 0 or args.width_inches <= 0:
