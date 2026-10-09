@@ -65,8 +65,8 @@ for panel_top, panel_bottom in [(120, 685), (785, 1085)]:
 
 parts += ['<text x="90" y="108" class="panel">A  Implementation and service delivery</text>']
 rows_a = [
-    (165,"Longitudinal baseline PQR","n=3","≈29 mo","2022-01-01","2024-05-01","data"),
-    (225,"Short baseline PQR\n(facility-specific)","n=3","25–28 d each","2024-01-01","2024-08-01","data"),
+    (165,"Electricity supply baseline -\nlongitudinal (n=3)","n=3","≈29 mo","2022-01-01","2024-05-01","data"),
+    (225,"Electricity supply baseline -\nshort (n=3)","n=3","25–28 d each","2024-01-01","2024-08-01","data"),
     (285,"Pre-installation surveys","n=15","7-mo window","2023-09-01","2024-04-30","implementation"),
     (345,"Intervention deployment","n=6","Apr–May 2024","2024-04-01","2024-06-01","implementation"),
     (405,"Biomedical equipment","n=6","≈1 mo","2024-05-15","2024-06-15","implementation"),
@@ -81,8 +81,8 @@ parts += ['<line x1="90" y1="735" x2="1510" y2="735" stroke="#aeb8bd" stroke-wid
           '<text x="90" y="775" class="panel">B  Measurement and analytical windows</text>']
 rows_b = [
     (835,"DHIS2 health outcomes","n=12","36 monthly periods","2023-01-01","2026-01-01","data"),
-    (895,"Energy demand telemetry\n(HOPmeter)","n=6","up to 20 mo","2024-05-22","2026-01-12","data"),
-    (955,"Paired energy demand\nand supply telemetry\n(HOPmeter and GridWatch)","n=6","facility-specific","2024-05-22","2025-11-25","data"),
+    (895,"Energy demand telemetry\n(Prospect)","n=6","up to 20 mo","2024-05-22","2026-01-12","data"),
+    (955,"Paired energy demand\nand supply telemetry\n(Prospect and GridWatch)","n=6","facility-specific","2024-05-22","2025-11-25","data"),
     (1015,"Payment and maintenance ledger","n=6","25 monthly periods","2024-04-02","2026-04-06","data"),
 ]
 for y,t,n,s,a,b,k in rows_b:
@@ -99,11 +99,10 @@ for axis_y in (650,1080):
             parts.append(f'<text x="{xx:.1f}" y="{axis_y+27}" text-anchor="end" transform="rotate(-35 {xx:.1f} {axis_y+27})" class="axis">{label_text}</text>')
 parts.append(f'<text x="{x(date(2024,5,1))+8:.1f}" y="142" class="axis" font-weight="bold">Intervention period begins</text>')
 
-# Legend and footnotes.
+# Legend.
 parts += [f'<rect x="90" y="1150" width="28" height="16" fill="{BLUE_LIGHT}" stroke="{BLUE}"/><text x="128" y="1164" class="note">Time-series data</text>',
           f'<rect x="380" y="1150" width="28" height="16" fill="{DOC_FILL}" stroke="{DOC_STROKE}"/><text x="418" y="1164" class="note">Program documentation</text>',
           f'<rect x="790" y="1150" width="28" height="16" fill="url(#hatch)" stroke="{CONTEXT}"/><text x="828" y="1164" class="note">Contextual disruption</text>',
-          '<text x="90" y="1185" class="note">Bars show program-level envelopes. Valid analytical windows varied by facility, sensor pair, and outcome; telemetry and payment exclusions were applied separately.</text>',
           '</svg>']
 
 (OUT / 'figure_implementation_monitoring_timeline.svg').write_text('\n'.join(parts), encoding='utf-8')
