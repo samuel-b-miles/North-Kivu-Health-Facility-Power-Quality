@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "generated" / "timeline"
 OUT.mkdir(parents=True, exist_ok=True)
 
-# Keep the wide, slide-safe canvas so the right edge never clips in Word/Slides.
-# Only the vertical canvas is trimmed for manuscript copy-paste.
-W, H = 1900, 1260
+# Match the content bounds for a full-width manuscript figure: 90 px on each
+# side of the widest element and a small margin above and below the artwork.
+W, H = 1600, 1200
 X0, X1 = 410, 1375
 START, END = date(2022, 1, 1), date(2026, 6, 1)
 # Publication/export palette. The earlier version read too pale after

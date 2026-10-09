@@ -132,17 +132,18 @@ currently labeled **provisional** because exact intervention windows, conflict
 exclusions, and parts of the electrical topology remain under study-team review.
 
 The implementation and analytical windows figure needs no raw data. Regenerate
-its resolution-independent SVG and optional 2400-DPI PNG with:
+its tightly cropped, resolution-independent SVG and optional 3600-DPI PNG with:
 
 ```bash
 python scripts/run_timeline_figure.py
 pip install -e '.[figures]'  # PNG export also requires the Cairo shared library
-python scripts/export_timeline_figure.py --dpi 2400 --width-inches 7.5
+python scripts/export_timeline_figure.py --dpi 3600 --width-inches 7.5
 ```
 
 Both files are written to `outputs/generated/timeline/`. The SVG is the best
 source for further scaling or journal production; the PNG is rendered directly
-from it at 18,000 pixels wide with 2400-DPI metadata.
+from it at 27,000 pixels wide with 3600-DPI metadata. The canvas has balanced
+side margins so the artwork fills the page width when inserted in a manuscript.
 
 ## Current status
 
