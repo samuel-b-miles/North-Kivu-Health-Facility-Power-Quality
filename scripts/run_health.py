@@ -112,19 +112,26 @@ def main() -> None:
     parser.add_argument("--raw-root", type=Path, default=PROJECT_ROOT / "data" / "raw" / "dhis2")
     parser.add_argument("--public-root", type=Path, default=PROJECT_ROOT / "data" / "public")
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
+    parser.add_argument("--from-public", action="store_true", help="Rebuild analytical outputs from tracked anonymized panels without private inputs")
     args = parser.parse_args()
     output = args.output_root / "health"; qa = output / "qa"; tables = output / "tables"; figures = output / "figures"
     for directory in (args.public_root, qa, tables, figures): directory.mkdir(parents=True, exist_ok=True)
-    ward, audit = build_ward_month(
-        args.raw_root / "admissions.csv", args.raw_root / "deaths.csv",
-        PROJECT_ROOT / "config" / "private" / "facility_crosswalk_private.csv",
-        PROJECT_ROOT / "config" / "dhis2_wards.csv", PROJECT_ROOT / "config" / "dhis2_analysis.csv",
-    )
-    facility = build_facility_month(ward)
+    audit = None
+    if args.from_public:
+        ward = pd.read_csv(args.public_root / "dhis2_ward_month_anonymized.csv")
+        facility = build_facility_month(ward)
+    else:
+        ward, audit = build_ward_month(
+            args.raw_root / "admissions.csv", args.raw_root / "deaths.csv",
+            PROJECT_ROOT / "config" / "private" / "facility_crosswalk_private.csv",
+            PROJECT_ROOT / "config" / "dhis2_wards.csv", PROJECT_ROOT / "config" / "dhis2_analysis.csv",
+        )
+        facility = build_facility_month(ward)
     table2 = table2_metrics(ward, facility)
     implausible = implausible_values(ward)
-    ward.to_csv(args.public_root / "dhis2_ward_month_anonymized.csv", index=False)
-    facility.to_csv(args.public_root / "dhis2_facility_month_anonymized.csv", index=False)
+    if not args.from_public:
+        ward.to_csv(args.public_root / "dhis2_ward_month_anonymized.csv", index=False)
+        facility.to_csv(args.public_root / "dhis2_facility_month_anonymized.csv", index=False)
     table2.to_csv(tables / "table2_health_data_quality.csv", index=False)
     parameters = pd.read_csv(PROJECT_ROOT / "config" / "dhis2_analysis.csv").set_index("parameter")["value"].astype(str)
     descriptive_prepost(facility, parameters["intervention_month"]).to_csv(tables / "table_health_descriptive_prepost.csv", index=False)
@@ -136,10 +143,11 @@ def main() -> None:
     )
     completeness.to_csv(tables / "annex_health_data_completeness.csv", index=False)
     missing_months(facility).to_csv(qa / "missing_months_by_facility.csv", index=False)
-    audit["duplicate_columns"].to_csv(qa / "duplicate_columns_audit.csv", index=False)
-    implausible.to_csv(qa / "implausible_values.csv", index=False)
-    audit["crosswalk"][["raw_facility_name", "facility_id_anonymized", "include_study"]].to_csv(qa / "facility_mapping_audit.csv", index=False)
-    write_quality_report(qa / "dhis2_quality_report.md", ward, facility, audit, table2, implausible)
+    if audit is not None:
+        audit["duplicate_columns"].to_csv(qa / "duplicate_columns_audit.csv", index=False)
+        implausible.to_csv(qa / "implausible_values.csv", index=False)
+        audit["crosswalk"][["raw_facility_name", "facility_id_anonymized", "include_study"]].to_csv(qa / "facility_mapping_audit.csv", index=False)
+        write_quality_report(qa / "dhis2_quality_report.md", ward, facility, audit, table2, implausible)
     write_dashboard_svg(figures / "hgr1_health_dashboard.svg", facility, "HGR1")
     print(table2.round(2).to_string(index=False))
     print(f"health: {len(ward)} ward-months, {len(facility)} facility-months, 12 facilities")

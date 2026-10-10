@@ -136,11 +136,11 @@ The audit includes frequency compliance at ±1%, ±5%, and ±10%.
    denominator sensitivity figure is supplied alongside it. Neither policy
    changes missingness into confirmed outage evidence.
 4. Figure metadata and footnotes distinguish single PowerWatch comparisons,
-   paired follow-up, and the three still-inherited longitudinal baselines.
+   paired follow-up, and reconstructed two-PowerWatch longitudinal baselines.
 5. The summary retains its original ±5% frequency threshold. The top trace band
    is corrected from unlabelled ±2% to labelled ±1%. Supplementary tables expose
-   all three requested thresholds; missing longitudinal baseline ±1%/±10% values
-   remain blank and must not be filled by relabelling ±5% values.
+   all three requested thresholds for all six comparisons from source observations;
+   no threshold is inferred by relabelling another percentage.
 
 Suggested caption wording: “Existing-source
 comparisons at CH1, CSR2, and CSR4 use a single PowerWatch sensor during the
@@ -150,6 +150,6 @@ Sensor configurations and observation periods differ; these comparisons are
 descriptive and are not matched pre-installation/post-installation estimates.”
 
 `manuscript_pre_results.csv` is retained as a historical reference. The Figure 3
-script replaces its CH1/CSR2/CSR4 inputs using the regenerated audit, and fails if
-those inputs are absent rather than silently reverting to manuscript numbers.
-This audit does not certify the other three facilities' longitudinal baselines.
+script replaces all six inputs using regenerated audits and fails if selected
+source results are absent. See `FIGURE3_DELIVERY.md` for longitudinal window
+choices and `DRC1_BASELINE_SUPPLEMENT.md` for the recovered CSR1 sensor.

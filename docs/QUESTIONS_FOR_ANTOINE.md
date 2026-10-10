@@ -3,7 +3,7 @@
 These are ordered by how directly they block defensible regeneration of the
 headline outcomes.
 
-## Blocking questions
+## Source-history questions (current figure uses documented replacements)
 
 1. **Confirmed-outage implementation:** Can you share
    `combined_uptime_analysis_v2.py`, or describe the exact two-minute alignment,
@@ -13,9 +13,13 @@ headline outcomes.
    for every facility—not only CSR2 and CSR4?
 3. **Missing CSR1 grid sensor:** Was the public file corresponding to
    `CSR1-PW-01` intentionally withheld, accidentally omitted, or replaced by
-   another baseline source?
+   another baseline source? A verified DRC1 workbook now supplies this series;
+   see `DRC1_BASELINE_SUPPLEMENT.md`. The remaining question concerns why it
+   was absent from the pilot release and the original 44% calculation.
 4. **CSR3 omitted files:** Why are `CSR3-PW-01` and `CSR3-PW-02` marked
-   `omitted`? Should either be used for baseline PQR, reliability, or neither?
+   `omitted`? Both are now used only in their verified pre-source shared window,
+   with the dropout sensitivity exported; the original exclusion rationale
+   would complete the historical record.
 
 ## Important methodological questions
 

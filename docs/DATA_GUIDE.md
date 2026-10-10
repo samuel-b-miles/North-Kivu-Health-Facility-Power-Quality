@@ -12,6 +12,9 @@ This guide answers two questions for each analytical domain:
 - **Configuration:** tracked, reviewable decisions about sensors, dates, topology, and inclusion.
 - **Generated output:** reproducible tables and figures written under `outputs/generated/`; this directory is not committed because it can be rebuilt.
 
+See [the submission handoff](DATA_SHARING_HANDOFF.md) for the public-release
+inventory and corresponding-author request process.
+
 ## Access policy
 
 The public repository is intended to support transparent review of the analysis
@@ -63,7 +66,7 @@ config/energy_meters.csv           HOP meters included in energy accounting
 config/paired_sensors.csv          matched HOP–PowerWatch pairs
 config/canonical_powerwatch.csv    canonical PowerWatch source selection
 config/analysis_periods.csv        source starts and telemetry exclusions
-config/manuscript_pre_results.csv  manuscript-reported baseline values awaiting reproduction
+config/manuscript_pre_results.csv  historical baseline transcriptions superseded by the six-facility source audit
 ```
 
 ### Generated results
@@ -153,6 +156,8 @@ outputs/generated/health/
 Rebuild with:
 
 ```bash
+python scripts/run_health.py --from-public
+# Rebuild source cleaning with authorised private files:
 python scripts/run_health.py
 ```
 

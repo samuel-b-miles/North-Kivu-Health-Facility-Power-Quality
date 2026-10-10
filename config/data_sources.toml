@@ -13,3 +13,7 @@ sha256 = "3fc36b60380af20cf59374902b36ecab2fe21e1192e34f06510c6745f89d6c6d"
 filename = "PowerWatch_voltage_frequency_2min.zip"
 sha256 = "470eab92d91847d72c723ff92c52fc90ea4235e0d4dafda09d059aa798e9893b"
 
+
+[[release.assets]]
+filename = "DRC1_baseline_supplement.zip"
+sha256 = "1c35e187adccfc0d7ee240da0c48faf358341616418fb7b6d0d8d51806c1eb8e"

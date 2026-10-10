@@ -1,0 +1,4 @@
+facility_code,sensor_basis,selection_rationale
+HGR1,two_sensor_sensitivity,Shared pre-source overlap; near-complete coverage
+CSR1,two_sensor_union_window,Study-team-selected full available pre record; variable two-sensor coverage
+CSR3,two_sensor_sensitivity,Shared pre-source overlap; full record has severe telemetry loss; union sensitivity retained

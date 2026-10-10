@@ -280,7 +280,7 @@ def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]], *, so
     if source_comparison:
         policy = str(rows[0].get("pqr_denominator_policy", "joint"))
         note = "PQR: jointly valid voltage/frequency readings." if policy == "joint" else "PQR: separate voltage and frequency denominators (sensitivity)."
-        parts += [f'<text x="70" y="538" font-family="sans-serif" font-size="12">* Reconstructed single-PowerWatch source comparisons; † inherited baseline values awaiting reconstruction.</text>',
+        parts += [f'<text x="70" y="538" font-family="sans-serif" font-size="12">* Single-PowerWatch existing-source comparisons; † two-PowerWatch pre-source baselines, with variable coverage.</text>',
                   f'<text x="70" y="558" font-family="sans-serif" font-size="12">Follow-up uptime: paired HOP/PowerWatch, expected-window denominator. {note}</text>']
     parts.append('</svg>')
     path.write_text("\n".join(parts), encoding="utf-8")

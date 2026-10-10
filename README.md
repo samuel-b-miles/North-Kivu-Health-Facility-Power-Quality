@@ -85,7 +85,7 @@ pytest
 
 ## Add the raw data locally
 
-Download the three authorized release ZIPs to your computer. They are verified
+Download the four authorized release ZIPs (including the DRC1 baseline supplement) to your computer. They are verified
 against the checksums in `config/data_sources.toml` and remain excluded from Git.
 
 ```bash
@@ -143,8 +143,9 @@ python scripts/run_baseline_audit.py
 This writes input checksums, daily sensor coverage, single-sensor source
 comparisons, and paired-versus-single follow-up estimates to
 `outputs/generated/baseline_audit/`. Figure 3 now uses these reconstructed
-CH1/CSR2/CSR4 comparisons and explicitly retains the other three inherited
-baselines. See [`docs/BASELINE_RECONSTRUCTION.md`](docs/BASELINE_RECONSTRUCTION.md)
+CH1/CSR2/CSR4 comparisons. Run `python scripts/run_longitudinal_pre_audit.py`
+to reconstruct HGR1/CSR1/CSR3 from the available baseline sensors, including
+the DRC1 supplement. All six submission values use audited source results. See [`docs/BASELINE_RECONSTRUCTION.md`](docs/BASELINE_RECONSTRUCTION.md)
 for reproduced values and source-history limitations.
 
 ### Figure 3 delivery

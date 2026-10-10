@@ -11,3 +11,5 @@ publication/figure3/*_preview.png
 *.DS_Store
 .ipynb_checkpoints/
 .env
+
+outputs/release_candidate/

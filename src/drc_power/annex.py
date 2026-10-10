@@ -20,6 +20,11 @@ def build_power_quality_table(summary: pd.DataFrame, reliability: pd.DataFrame) 
         "facility_code", "uptime_pre_pct", "uptime_post_pct", "voltage_pre_pct",
         "voltage_post_pct", "frequency_5_pre_pct", "frequency_5_post_pct", "pre_status",
     ]
+    provenance = ["baseline_sensor_basis", "baseline_comparison_type", "baseline_window_start",
+                  "baseline_window_end", "baseline_window_basis", "baseline_selection_rationale",
+                  "baseline_observed_uptime_pct", "baseline_coverage_pct", "baseline_two_sensor_coverage_pct",
+                  "post_observed_uptime_pct", "post_coverage_pct", "post_two_sensor_coverage_pct"]
+    columns += [c for c in provenance if c in summary.columns]
     windows = reliability[reliability["primary_facility_result"]].copy()
     windows = windows[["facility_code", "shared_window_start", "shared_window_end"]]
     result = summary[columns].merge(windows, on="facility_code", how="left")
