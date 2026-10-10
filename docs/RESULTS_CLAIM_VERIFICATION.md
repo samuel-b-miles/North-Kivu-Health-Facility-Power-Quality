@@ -9,10 +9,10 @@ estimand, reviewed inclusion windows, and documented exclusions.
 | Protected critical circuits improved uptime after intervention | Seven paired circuits regenerate using confirmed PowerWatch source dates and telemetry exclusions under two uptime denominators | Not yet verified | Comparable pre-intervention windows and denominator decision |
 | Voltage compliance improved after intervention | Post-FLEX conditional voltage quality regenerates for seven paired sensors | Not yet verified | Rebuild comparable pre-intervention facility windows |
 | Frequency compliance improved after intervention | Post-FLEX ±1% and ±10% metrics regenerate | Not yet verified | Rebuild pre-intervention metrics using identical rules |
-| Most systems achieved near-continuous service | Observed-evidence uptime is approximately 96–100%; expected-window uptime ranges from 58–99% when both sensors are missing | Definition-sensitive | Confirm whether dual-sensor missing intervals are excluded or treated as downtime |
+| Most systems achieved near-continuous service | Current primary-facility expected-window uptime ranges from about 95.5–99.8%; observed-evidence uptime and missingness are reported separately | Definition-sensitive | Expected-window uptime is a conservative monitoring measure; do not equate both-missing intervals with confirmed outages |
 | Intervention systems delivered 18.2 MWh | Current non-duplicative installed-system reconstruction is 18.21 MWh; core critical circuits are 17.36 MWh and supplemental morgues 0.85 MWh | Reproduced from included HOP meters | Continue to label known telemetry gaps when plotting consumption over time |
-| Figure 3 top: CSR1 morgue pre/post time series | Relevant sensor mapping exists | Not started | Exact pre/post source and transition dates; reproduce voltage/frequency panel |
-| Figure 3 bottom: facility pre/post uptime and quality distributions | Provisional three-panel figure regenerates with corrected post windows and manuscript-reported pre values | Partially reproduced | Independently reproduce pre metrics and finalize aggregation/caption |
+| Figure 3 top: CSR1 source comparison time series | Existing-grid and protected-circuit traces regenerate; frequency band explicitly ±1% | Reproduced from mapped sensors | Confirm commissioning annotation and clinical-load description; source map identifies the protected core circuit rather than a morgue-only circuit |
+| Figure 3 bottom: facility source comparison distributions | CH1/CSR2/CSR4 source comparisons reconstructed; paired follow-up regenerated; joint-valid PQR and independent sensitivity supplied | Partially reproduced | Independently reconstruct HGR1/CSR1/CSR3 baselines; align manuscript terminology and frequency tolerances with selected figure |
 | Figure 4: monthly monitored energy consumption | Regenerated from nine non-duplicative HOP system meters with core/morgue separation; panels ordered HGR1, CH1, CSR1, CSR2, CSR3, CSR4 | Provisional | Confirm topology and manuscript inclusion scope |
 
 ## Generated evidence locations
@@ -25,3 +25,6 @@ estimand, reviewed inclusion windows, and documented exclusions.
 - `outputs/generated/energy/fleet_cumulative_energy.svg`
 - `outputs/generated/figure3/pre_post_summary.csv`
 - `outputs/generated/figure3/pre_post_summary.svg`
+- `outputs/generated/baseline_audit/single_sensor_comparisons.csv`
+- `outputs/generated/baseline_audit/post_sensor_comparison.csv`
+- `publication/figure3/`

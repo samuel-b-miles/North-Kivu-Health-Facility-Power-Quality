@@ -41,6 +41,14 @@ def apply_primary_telemetry_window(frame: pd.DataFrame, facility_code: str, time
     return data.sort_values(time_column)
 
 
+def telemetry_exclusions(facility_code: str) -> list[tuple[pd.Timestamp, pd.Timestamp | None]]:
+    """Return exclusion intervals with an exclusive upper bound for bin counting."""
+    return [(pd.Timestamp(row["start_date"], tz="UTC"),
+             pd.Timestamp(row["end_date"], tz="UTC") + pd.Timedelta(days=1) if row["end_date"] else None)
+            for row in read_config("analysis_periods.csv")
+            if row["facility_code"] == facility_code and row["period_type"] == "telemetry_exclusion"]
+
+
 def find_powerwatch(raw_root: Path, sensor_id: str, preferred: str = "") -> Path:
     candidates = [p for p in raw_root.rglob(f"{sensor_id}*.csv") if "power_quality" not in p.name and "data_quality" not in p.name]
     if preferred == "updated":
@@ -208,8 +216,8 @@ def write_monthly_facility_panels_svg(
     path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]]) -> None:
-    width, height = 1500, 520
+def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]], *, source_comparison: bool = False) -> None:
+    width, height = 1500, 580 if source_comparison else 520
     margin_x, top, plot_h, panel_w, gap = 70, 65, 380, 420, 60
     metrics = [
         ("uptime_pre_pct", "uptime_post_pct", "Power uptime (%)"),
@@ -257,12 +265,22 @@ def write_pre_post_triptych_svg(path: Path, rows: list[dict[str, object]]) -> No
             parts += [f'<line x1="{x_pre}" y1="{y_pre}" x2="{x_post}" y2="{y_post}" stroke="{color}" stroke-width="3"/>',
                       f'<circle cx="{x_pre}" cy="{y_pre}" r="5" fill="{color}"/>',
                       f'<circle cx="{x_post}" cy="{y_post}" r="5" fill="{color}"/>']
-        parts += [f'<text x="{x_pre}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">Pre</text>',
-                  f'<text x="{x_post}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">Post</text>']
-    legend_y = height - 20
+        left_label = "Existing supply" if source_comparison else "Pre"
+        right_label = "Protected circuit" if source_comparison else "Post"
+        parts += [f'<text x="{x_pre}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">{left_label}</text>',
+                  f'<text x="{x_post}" y="{top+plot_h+28}" text-anchor="middle" font-family="sans-serif" font-size="14">{right_label}</text>']
+    legend_y = height - 80 if source_comparison else height - 20
     for index, row in enumerate(rows):
         x = 120 + index * 205; color = colors.get(str(row["facility_code"]), "#666666")
+        label = str(row["facility_code"])
+        if source_comparison:
+            label += " *" if row.get("baseline_sensor_basis") == "single_powerwatch" else " †"
         parts += [f'<line x1="{x}" y1="{legend_y}" x2="{x+24}" y2="{legend_y}" stroke="{color}" stroke-width="3"/>',
-                  f'<text x="{x+30}" y="{legend_y+5}" font-family="sans-serif" font-size="13">{html.escape(str(row["facility_code"]))}</text>']
+                  f'<text x="{x+30}" y="{legend_y+5}" font-family="sans-serif" font-size="13">{html.escape(label)}</text>']
+    if source_comparison:
+        policy = str(rows[0].get("pqr_denominator_policy", "joint"))
+        note = "PQR: jointly valid voltage/frequency readings." if policy == "joint" else "PQR: separate voltage and frequency denominators (sensitivity)."
+        parts += [f'<text x="70" y="538" font-family="sans-serif" font-size="12">* Reconstructed single-PowerWatch source comparisons; † inherited baseline values awaiting reconstruction.</text>',
+                  f'<text x="70" y="558" font-family="sans-serif" font-size="12">Follow-up uptime: paired HOP/PowerWatch, expected-window denominator. {note}</text>']
     parts.append('</svg>')
     path.write_text("\n".join(parts), encoding="utf-8")

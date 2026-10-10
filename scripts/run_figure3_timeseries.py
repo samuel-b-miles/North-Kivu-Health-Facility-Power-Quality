@@ -98,6 +98,7 @@ def _axis_panel(
     width: float,
     height: float,
 ) -> None:
+    parts.append(f'<defs><clipPath id="{panel_id}-data-clip"><rect x="{left}" y="{top}" width="{width}" height="{height}"/></clipPath></defs>')
     parts.append(f'<g id="{panel_id}">')
     parts.append(f'<rect x="{left}" y="{top}" width="{width}" height="{height}" fill="white"/>')
     for tick in y_ticks:
@@ -163,19 +164,22 @@ def write_svg(path: Path, grid: pd.DataFrame, protected: pd.DataFrame) -> None:
     _band(parts, left, top1, plot_width, panel_h, -20, 330, -10, 40, red)
     x_int = _x_scale(INTERVENTION_DATE, left, plot_width)
     parts.append(f'<line x1="{x_int:.2f}" y1="{top1}" x2="{x_int:.2f}" y2="{top1 + panel_h}" stroke="#111" stroke-width="3" stroke-dasharray="9 6"/>')
+    parts.append('<g clip-path="url(#voltage-data-clip)">')
     parts.extend(_circle_parts(grid_points_v, grid_color, 2.4, 0.72))
     parts.append(_polyline(pv_points_v, pv_color, 3.0, 0.65))
     parts.extend(_circle_parts(pv_points_v, pv_color, 4.0, 0.90))
-    parts.append("</g>")
+    parts.append("</g></g>")
 
     _axis_panel(parts, "frequency", "Frequency (Hz)", 37, 63, [40, 45, 50, 55, 60], left, top2, plot_width, panel_h)
-    _band(parts, left, top2, plot_width, panel_h, 37, 63, 49, 51, green)
+    _band(parts, left, top2, plot_width, panel_h, 37, 63, 49.5, 50.5, green)
     _band(parts, left, top2, plot_width, panel_h, 37, 63, 40, 41, red)
     parts.append(f'<line x1="{x_int:.2f}" y1="{top2}" x2="{x_int:.2f}" y2="{top2 + panel_h}" stroke="#111" stroke-width="3" stroke-dasharray="9 6"/>')
+    parts.append(f'<text x="{left + plot_width - 12}" y="{top2 - 12}" text-anchor="end" font-size="16" fill="#367437">Compliance band: ±1% (49.5–50.5 Hz)</text>')
+    parts.append('<g clip-path="url(#frequency-data-clip)">')
     parts.extend(_circle_parts(grid_points_f, grid_color, 2.3, 0.66))
     parts.append(_polyline(pv_points_f, pv_color, 3.0, 0.65))
     parts.extend(_circle_parts(pv_points_f, pv_color, 4.0, 0.90))
-    parts.append("</g>")
+    parts.append("</g></g>")
 
     # Top annotations and arrows.
     pre_x1, pre_x2 = _x_scale(FIGURE_START, left, plot_width), _x_scale(pd.Timestamp("2024-05-15T12:00:00Z"), left, plot_width)

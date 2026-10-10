@@ -41,3 +41,15 @@ def test_manuscript_uptime_reports_both_denominators():
     assert result["any_sensor_powered_intervals"] == 1
     assert result["manuscript_uptime_expected_window_pct"] == 50.0
     assert result["manuscript_uptime_observed_evidence_pct"] == 50.0
+
+
+def test_excluded_period_is_not_reinserted_as_missing_by_resampling():
+    hop = _frame([230, None, None, 230])
+    pw = _frame([230, None, None, 230])
+    exclusions = [(hop.time.iloc[1], hop.time.iloc[3])]
+    result = manuscript_at_least_one_sensor_uptime(hop, pw, exclusions=exclusions)
+    assert result["expected_intervals"] == 2
+    assert result["both_sensors_missing_intervals"] == 0
+    assert result["manuscript_uptime_expected_window_pct"] == 100
+    diagnostic = paired_reliability(hop, pw, exclusions=exclusions)
+    assert diagnostic["aligned_intervals"] == 2

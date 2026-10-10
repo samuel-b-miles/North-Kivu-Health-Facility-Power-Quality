@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="580" viewBox="0 0 1500 580">
+<rect width="100%" height="100%" fill="white"/>
+<text x="280.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="bold">Power uptime (%)</text>
+<line x1="70" y1="445.0" x2="490" y2="445.0" stroke="#e6e6e6"/>
+<text x="62" y="450.0" text-anchor="end" font-family="sans-serif" font-size="12">0%</text>
+<line x1="70" y1="369.0" x2="490" y2="369.0" stroke="#e6e6e6"/>
+<text x="62" y="374.0" text-anchor="end" font-family="sans-serif" font-size="12">20%</text>
+<line x1="70" y1="293.0" x2="490" y2="293.0" stroke="#e6e6e6"/>
+<text x="62" y="298.0" text-anchor="end" font-family="sans-serif" font-size="12">40%</text>
+<line x1="70" y1="217.0" x2="490" y2="217.0" stroke="#e6e6e6"/>
+<text x="62" y="222.0" text-anchor="end" font-family="sans-serif" font-size="12">60%</text>
+<line x1="70" y1="141.0" x2="490" y2="141.0" stroke="#e6e6e6"/>
+<text x="62" y="146.0" text-anchor="end" font-family="sans-serif" font-size="12">80%</text>
+<line x1="70" y1="65.0" x2="490" y2="65.0" stroke="#e6e6e6"/>
+<text x="62" y="70.0" text-anchor="end" font-family="sans-serif" font-size="12">100%</text>
+<line x1="185" y1="72.97999999999996" x2="185" y2="390.51347542716223" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="170" y1="72.97999999999996" x2="200" y2="72.97999999999996" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="170" y1="390.51347542716223" x2="200" y2="390.51347542716223" stroke="#9e9e9e" stroke-width="2"/>
+<rect x="152.0" y="105.06352678823464" width="66" height="148.84043481787023" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>
+<line x1="152.0" y1="175.23497678867898" x2="218.0" y2="175.23497678867898" stroke="#555555" stroke-width="3"/>
+<line x1="385" y1="65.77283175084541" x2="385" y2="82.21925321972603" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="370" y1="65.77283175084541" x2="400" y2="65.77283175084541" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="370" y1="82.21925321972603" x2="400" y2="82.21925321972603" stroke="#9e9e9e" stroke-width="2"/>
+<rect x="352.0" y="67.96332539088915" width="66" height="7.043535516428918" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>
+<line x1="352.0" y1="68.88526235303863" x2="418.0" y2="68.88526235303863" stroke="#555555" stroke-width="3"/>
+<line x1="185" y1="72.97999999999996" x2="385" y2="82.21925321972603" stroke="#edc948" stroke-width="3"/>
+<circle cx="185" cy="72.97999999999996" r="5" fill="#edc948"/>
+<circle cx="385" cy="82.21925321972603" r="5" fill="#edc948"/>
+<line x1="185" y1="182.2158464244195" x2="385" y2="68.45628346929581" stroke="#2b8cbe" stroke-width="3"/>
+<circle cx="185" cy="182.2158464244195" r="5" fill="#2b8cbe"/>
+<circle cx="385" cy="68.45628346929581" r="5" fill="#2b8cbe"/>
+<line x1="185" y1="277.8" x2="385" y2="69.31424123678136" stroke="#f28e2b" stroke-width="3"/>
+<circle cx="185" cy="277.8" r="5" fill="#f28e2b"/>
+<circle cx="385" cy="69.31424123678136" r="5" fill="#f28e2b"/>
+<line x1="185" y1="390.51347542716223" x2="385" y2="67.79900603142025" stroke="#59a14f" stroke-width="3"/>
+<circle cx="185" cy="390.51347542716223" r="5" fill="#59a14f"/>
+<circle cx="385" cy="67.79900603142025" r="5" fill="#59a14f"/>
+<line x1="185" y1="84.00000000000001" x2="385" y2="76.90440079749702" stroke="#e78ac3" stroke-width="3"/>
+<circle cx="185" cy="84.00000000000001" r="5" fill="#e78ac3"/>
+<circle cx="385" cy="76.90440079749702" r="5" fill="#e78ac3"/>
+<line x1="185" y1="168.2541071529385" x2="385" y2="65.77283175084541" stroke="#756bb1" stroke-width="3"/>
+<circle cx="185" cy="168.2541071529385" r="5" fill="#756bb1"/>
+<circle cx="385" cy="65.77283175084541" r="5" fill="#756bb1"/>
+<text x="185" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">Existing supply</text>
+<text x="385" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">Protected circuit</text>
+<text x="760.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="bold">Voltage compliance (±10%, 230 V)</text>
+<line x1="550" y1="445.0" x2="970" y2="445.0" stroke="#e6e6e6"/>
+<line x1="550" y1="369.0" x2="970" y2="369.0" stroke="#e6e6e6"/>
+<line x1="550" y1="293.0" x2="970" y2="293.0" stroke="#e6e6e6"/>
+<line x1="550" y1="217.0" x2="970" y2="217.0" stroke="#e6e6e6"/>
+<line x1="550" y1="141.0" x2="970" y2="141.0" stroke="#e6e6e6"/>
+<line x1="550" y1="65.0" x2="970" y2="65.0" stroke="#e6e6e6"/>
+<line x1="665" y1="68.42" x2="665" y2="440.0225133033156" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="650" y1="68.42" x2="680" y2="68.42" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="650" y1="440.0225133033156" x2="680" y2="440.0225133033156" stroke="#9e9e9e" stroke-width="2"/>
+<rect x="632.0" y="273.7736317933159" width="66" height="145.57636820668415" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>
+<line x1="632.0" y1="377.2941555413675" x2="698.0" y2="377.2941555413675" stroke="#555555" stroke-width="3"/>
+<line x1="865" y1="65.0180844120526" x2="865" y2="66.40005044335759" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="850" y1="65.0180844120526" x2="880" y2="65.0180844120526" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="850" y1="66.40005044335759" x2="880" y2="66.40005044335759" stroke="#9e9e9e" stroke-width="2"/>
+<rect x="832.0" y="65.03802962569672" width="66" height="1" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>
+<line x1="832.0" y1="65.10187740378015" x2="898.0" y2="65.10187740378015" stroke="#555555" stroke-width="3"/>
+<line x1="665" y1="68.42" x2="865" y2="66.40005044335759" stroke="#edc948" stroke-width="3"/>
+<circle cx="665" cy="68.42" r="5" fill="#edc948"/>
+<circle cx="865" cy="66.40005044335759" r="5" fill="#edc948"/>
+<line x1="665" y1="355.1883110827349" x2="865" y2="65.10807374443743" stroke="#2b8cbe" stroke-width="3"/>
+<circle cx="665" cy="355.1883110827349" r="5" fill="#2b8cbe"/>
+<circle cx="865" cy="65.10807374443743" r="5" fill="#2b8cbe"/>
+<line x1="665" y1="399.4" x2="865" y2="65.09568106312287" stroke="#f28e2b" stroke-width="3"/>
+<circle cx="665" cy="399.4" r="5" fill="#f28e2b"/>
+<circle cx="865" cy="65.09568106312287" r="5" fill="#f28e2b"/>
+<line x1="665" y1="440.0225133033156" x2="865" y2="65.01881247988801" stroke="#59a14f" stroke-width="3"/>
+<circle cx="665" cy="440.0225133033156" r="5" fill="#59a14f"/>
+<circle cx="865" cy="65.01881247988801" r="5" fill="#59a14f"/>
+<line x1="665" y1="426.0" x2="865" y2="65.23079592781106" stroke="#e78ac3" stroke-width="3"/>
+<circle cx="665" cy="426.0" r="5" fill="#e78ac3"/>
+<circle cx="865" cy="65.23079592781106" r="5" fill="#e78ac3"/>
+<line x1="665" y1="246.63540536350953" x2="865" y2="65.0180844120526" stroke="#756bb1" stroke-width="3"/>
+<circle cx="665" cy="246.63540536350953" r="5" fill="#756bb1"/>
+<circle cx="865" cy="65.0180844120526" r="5" fill="#756bb1"/>
+<text x="665" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">Existing supply</text>
+<text x="865" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">Protected circuit</text>
+<text x="1240.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="bold">Frequency compliance (±5%, 50 Hz)</text>
+<line x1="1030" y1="445.0" x2="1450" y2="445.0" stroke="#e6e6e6"/>
+<line x1="1030" y1="369.0" x2="1450" y2="369.0" stroke="#e6e6e6"/>
+<line x1="1030" y1="293.0" x2="1450" y2="293.0" stroke="#e6e6e6"/>
+<line x1="1030" y1="217.0" x2="1450" y2="217.0" stroke="#e6e6e6"/>
+<line x1="1030" y1="141.0" x2="1450" y2="141.0" stroke="#e6e6e6"/>
+<line x1="1030" y1="65.0" x2="1450" y2="65.0" stroke="#e6e6e6"/>
+<line x1="1145" y1="82.86000000000001" x2="1145" y2="445.0" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1130" y1="82.86000000000001" x2="1160" y2="82.86000000000001" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1130" y1="445.0" x2="1160" y2="445.0" stroke="#9e9e9e" stroke-width="2"/>
+<rect x="1112.0" y="199.9" width="66" height="240.45893866688917" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>
+<line x1="1112.0" y1="413.4434782608696" x2="1178.0" y2="413.4434782608696" stroke="#555555" stroke-width="3"/>
+<line x1="1345" y1="65.0" x2="1345" y2="71.82106091602321" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1330" y1="65.0" x2="1360" y2="65.0" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1330" y1="71.82106091602321" x2="1360" y2="71.82106091602321" stroke="#9e9e9e" stroke-width="2"/>
+<rect x="1312.0" y="65.00196293158669" width="66" height="1" fill="#d9d9d9" fill-opacity="0.65" stroke="#9e9e9e"/>
+<line x1="1312.0" y1="65.01684532055611" x2="1378.0" y2="65.01684532055611" stroke="#555555" stroke-width="3"/>
+<line x1="1145" y1="82.86000000000001" x2="1345" y2="71.82106091602321" stroke="#edc948" stroke-width="3"/>
+<circle cx="1145" cy="82.86000000000001" r="5" fill="#edc948"/>
+<circle cx="1345" cy="71.82106091602321" r="5" fill="#edc948"/>
+<line x1="1145" y1="444.64959938193914" x2="1345" y2="65.0" stroke="#2b8cbe" stroke-width="3"/>
+<circle cx="1145" cy="444.64959938193914" r="5" fill="#2b8cbe"/>
+<circle cx="1345" cy="65.0" r="5" fill="#2b8cbe"/>
+<line x1="1145" y1="399.4" x2="1345" y2="65.0" stroke="#f28e2b" stroke-width="3"/>
+<circle cx="1145" cy="399.4" r="5" fill="#f28e2b"/>
+<circle cx="1345" cy="65.0" r="5" fill="#f28e2b"/>
+<line x1="1145" y1="445.0" x2="1345" y2="65.15252630764466" stroke="#59a14f" stroke-width="3"/>
+<circle cx="1145" cy="445.0" r="5" fill="#59a14f"/>
+<circle cx="1345" cy="65.15252630764466" r="5" fill="#59a14f"/>
+<line x1="1145" y1="133.40000000000003" x2="1345" y2="65.00785172634669" stroke="#e78ac3" stroke-width="3"/>
+<circle cx="1145" cy="133.40000000000003" r="5" fill="#e78ac3"/>
+<circle cx="1345" cy="65.00785172634669" r="5" fill="#e78ac3"/>
+<line x1="1145" y1="427.48695652173916" x2="1345" y2="65.02583891476559" stroke="#756bb1" stroke-width="3"/>
+<circle cx="1145" cy="427.48695652173916" r="5" fill="#756bb1"/>
+<circle cx="1345" cy="65.02583891476559" r="5" fill="#756bb1"/>
+<text x="1145" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">Existing supply</text>
+<text x="1345" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">Protected circuit</text>
+<line x1="120" y1="500" x2="144" y2="500" stroke="#edc948" stroke-width="3"/>
+<text x="150" y="505" font-family="sans-serif" font-size="13">HGR1 †</text>
+<line x1="325" y1="500" x2="349" y2="500" stroke="#2b8cbe" stroke-width="3"/>
+<text x="355" y="505" font-family="sans-serif" font-size="13">CH1 *</text>
+<line x1="530" y1="500" x2="554" y2="500" stroke="#f28e2b" stroke-width="3"/>
+<text x="560" y="505" font-family="sans-serif" font-size="13">CSR1 †</text>
+<line x1="735" y1="500" x2="759" y2="500" stroke="#59a14f" stroke-width="3"/>
+<text x="765" y="505" font-family="sans-serif" font-size="13">CSR2 *</text>
+<line x1="940" y1="500" x2="964" y2="500" stroke="#e78ac3" stroke-width="3"/>
+<text x="970" y="505" font-family="sans-serif" font-size="13">CSR3 †</text>
+<line x1="1145" y1="500" x2="1169" y2="500" stroke="#756bb1" stroke-width="3"/>
+<text x="1175" y="505" font-family="sans-serif" font-size="13">CSR4 *</text>
+<text x="70" y="538" font-family="sans-serif" font-size="12">* Reconstructed single-PowerWatch source comparisons; † inherited baseline values awaiting reconstruction.</text>
+<text x="70" y="558" font-family="sans-serif" font-size="12">Follow-up uptime: paired HOP/PowerWatch, expected-window denominator. PQR: separate voltage and frequency denominators (sensitivity).</text>
+</svg>

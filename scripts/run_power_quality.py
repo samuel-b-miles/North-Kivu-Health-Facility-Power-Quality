@@ -6,7 +6,7 @@ import argparse
 from pathlib import Path
 import pandas as pd
 from drc_power.io import read_powerwatch
-from drc_power.quality import conditional_power_quality
+from drc_power.quality import conditional_power_quality, joint_valid_power_quality
 from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, apply_primary_telemetry_window, find_powerwatch, read_config, write_bar_svg
 
 
@@ -29,6 +29,7 @@ def main() -> None:
                      "date_start": frame["time"].min().isoformat(),
                      "date_end": frame["time"].max().isoformat(),
                      **conditional_power_quality(frame),
+                     **{f"{k}_joint": v for k, v in joint_valid_power_quality(frame).items()},
                      "status": "provisional_full_available_post_sensor_series"})
     sensors = pd.DataFrame(rows).sort_values(["facility_code", "sensor_id"])
     sensors.to_csv(output / "post_flex_conditional_quality_by_sensor.csv", index=False)
@@ -46,6 +47,12 @@ def main() -> None:
             numerator = (group[column] * group["valid_frequency_observations"] / 100).sum()
             sites[-1][f"{column}_pooled"] = numerator / freq_den * 100
             sites[-1][f"{column}_mean_sensor"] = group[column].mean()
+        joint_den = group["joint_valid_observations_joint"].sum()
+        sites[-1]["joint_valid_observations"] = int(joint_den)
+        for column in ["voltage_quality_pct", "frequency_quality_1_pct",
+                       "frequency_quality_5_pct", "frequency_quality_10_pct"]:
+            numerator = (group[f"{column}_joint"] * group["joint_valid_observations_joint"] / 100).sum()
+            sites[-1][f"{column}_joint_pooled"] = numerator / joint_den * 100 if joint_den else float("nan")
     site_frame = pd.DataFrame(sites).sort_values("facility_code")
     site_frame.to_csv(output / "post_flex_conditional_quality_by_facility.csv", index=False)
     write_bar_svg(output / "post_flex_voltage_quality.svg", site_frame["facility_code"].tolist(),

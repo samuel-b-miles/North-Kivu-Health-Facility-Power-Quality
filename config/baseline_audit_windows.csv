@@ -1,0 +1,14 @@
+window_id,facility_code,sensor_id,platform,start_inclusive,end_exclusive,interpretation,source_status
+ch1_early_hop,CH1,CH1-HOP-01,HOP,2024-01-01,2024-04-01,early HOP observations before broad deployment period,source_unconfirmed
+ch1_before_pw_switch,CH1,CH1-PW-02,PowerWatch,2024-04-03,2024-04-30,alternative solar before configured intervention-source monitoring start,commissioning_date_unconfirmed
+ch1_intervention_sensor_before_switch,CH1,CH1-PW-01,PowerWatch,2024-04-02,2024-04-30,other PowerWatch sensor before configured intervention-source monitoring start,early_source_unconfirmed_do_not_pair
+ch1_hop_before_pw_switch,CH1,CH1-HOP-01,HOP,2024-04-03,2024-04-30,no-data check during early PowerWatch comparison,source_unconfirmed
+ch1_inherited_source,CH1,CH1-PW-02,PowerWatch,2024-04-03,2025-01-09,study-team-confirmed artisanal-solar comparison spanning deployment,study_team_confirmed_existing_source_2026_10_10
+csr2_before_monitoring,CSR2,CSR2-HOP-01,HOP,2024-01-01,2024-05-22,no-data check before first substantial HOP monitoring,not_a_commissioning_date
+csr2_pw_before_first_reading,CSR2,CSR2-PW-01,PowerWatch,2024-01-01,2024-05-28,no-data check before first PowerWatch reading,not_a_commissioning_date
+csr2_inherited_source,CSR2,CSR2-PW-01,PowerWatch,2024-07-04,2024-07-28,study-team-confirmed July old-solar comparison after broad deployment,study_team_confirmed_existing_source_2026_10_10
+csr2_hop_same_dates,CSR2,CSR2-HOP-01,HOP,2024-07-04,2024-07-28,HOP intervention circuit during July source comparison,different_source_do_not_pair
+csr4_early_hop,CSR4,CSR4-HOP-01,HOP,2024-03-19,2024-03-26,early HOP observations before broad deployment period,source_unconfirmed
+csr4_pw_before_first_reading,CSR4,CSR4-PW-02,PowerWatch,2024-01-01,2024-05-27,no-data check before first PowerWatch reading,not_a_commissioning_date
+csr4_inherited_source,CSR4,CSR4-PW-02,PowerWatch,2025-01-01,2025-02-01,study-team-confirmed January grid or old-supply comparison during FLEX telemetry exclusion,study_team_confirmed_existing_source_2026_10_10
+csr4_hop_same_dates,CSR4,CSR4-HOP-01,HOP,2025-01-01,2025-02-01,HOP intervention circuit during January source comparison,different_source_do_not_pair

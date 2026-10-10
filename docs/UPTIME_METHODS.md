@@ -15,9 +15,20 @@ the combined-sensor table footnote:
 6. Divide powered bins by all expected two-minute bins in the shared window.
 
 This means a bin with no powered reading—including when both sensors are
-offline—counts against uptime. This is conservative and matches the statement
-that an outage occurs when both matched sensors concurrently meet outage
-conditions (`voltage <= 23 V` or offline).
+offline—counts against expected-window uptime. This is a conservative monitoring
+measure, not proof of an electrical outage. A double-confirmed electrical outage
+requires both sensors to report `voltage <= 23 V`; one low reading with the other
+missing is single-sensor low-voltage evidence, and both missing is unknown.
+
+`run_baseline_audit.py` separates these evidence states, removes configured
+exclusion bins from the denominator, and reports the proportion of the paired
+window actually observed by both sensors. Two installed sensors do not imply
+two-sensor evidence in every interval.
+
+The primary `run_reliability.py` workflow uses this same implementation. Excluded
+calendar bins are explicitly removed after alignment as well as removing source
+readings before calculation; an excluded interval cannot reappear as missing
+telemetry during resampling. The audit covers all seven mapped follow-up pairs.
 
 ## Required sensitivity analyses
 
@@ -40,5 +51,8 @@ F1/F2, CSR1, and HGR1. Two draft values require correction:
   is estimated only in the valid pre-exclusion paired window and is approximately
   99.8%.
 
-All pre-intervention values currently used in the summary figure are explicitly
-marked manuscript-reported and pending independent reproduction.
+CH1, CSR2, and CSR4 comparison uptime is now independently reconstructed from
+single PowerWatch sensors over source-specific windows. These are labelled
+existing-source comparisons, not uniformly pre-installation observations.
+HGR1, CSR1, and CSR3 baseline values remain inherited and explicitly marked as
+awaiting independent reconstruction. See `BASELINE_RECONSTRUCTION.md`.
