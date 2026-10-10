@@ -151,7 +151,7 @@ for reproduced values and source-history limitations.
 ### Figure 3 delivery
 
 The inspected delivery snapshot is in [`publication/figure3/`](publication/figure3/),
-including SVG, 600-DPI PNG, vector PDF, plotted values, caption, and provenance.
+including SVG, 3600-DPI PNG, vector PDF, plotted values, caption, and provenance.
 The summary uses existing-supply versus protected-circuit labels because the
 short source windows are not uniformly pre-installation observations. Its ±5%
 frequency panel retains the original figure's threshold; the time-series band
@@ -177,7 +177,7 @@ missing or invalid. This choice is visible in output metadata and captions;
 the default reusable PQR library continues to use independent denominators.
 
 The implementation and analytical windows figure needs no raw data. Regenerate
-its tightly cropped, resolution-independent SVG and optional 3600-DPI PNG with:
+its tightly cropped, resolution-independent SVG and optional 33600-DPI PNG with:
 
 ```bash
 python scripts/run_timeline_figure.py
@@ -187,7 +187,7 @@ python scripts/export_timeline_figure.py --dpi 3600 --width-inches 7.5
 
 Both files are written to `outputs/generated/timeline/`. The SVG is the best
 source for further scaling or journal production; the PNG is rendered directly
-from it at 27,000 pixels wide with 3600-DPI metadata. The canvas has balanced
+from it at 27,000 pixels wide with 33600-DPI metadata. The canvas has balanced
 side margins so the artwork fills the page width when inserted in a manuscript.
 
 ## Current status
@@ -227,3 +227,5 @@ Then run `python scripts/run_health.py`. This regenerates:
 The health analysis is descriptive. It evaluates whether routine reporting is
 sufficiently complete and continuous for future infrastructure-health
 evaluation; it does not estimate a causal treatment effect.
+
+Download high-resolution Figure 3 exports from GitHub **Actions → Figure 3 publication exports → latest successful run → figure3-publication-3600dpi**. The workflow renders the committed audited SVG masters at 27,000 pixels wide (7.5 inches, 3600 DPI), includes vector PDFs and supporting tables, and does not require restricted raw data. Re-run the analytical pipeline when changing the underlying results.

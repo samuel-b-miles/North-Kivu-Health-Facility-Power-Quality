@@ -21,7 +21,7 @@ The longitudinal cutoffs use configured intervention-source monitoring starts, n
 
 ## Files and reproduction
 
-Run `python scripts/run_all.py --from-public` with the four checksum-verified telemetry archives imported. The DRC1 supplement supplies the second CSR1 baseline device. Run `python scripts/export_figure3.py` with the publication extra installed to update SVG, vector PDF and 600-DPI PNG files at 7.5 inches wide.
+Run `python scripts/run_all.py --from-public` with the four checksum-verified telemetry archives imported. The DRC1 supplement supplies the second CSR1 baseline device. Run `python scripts/export_figure3.py` with the publication extra installed to update SVG, vector PDF and 3600-DPI PNG files at 7.5 inches wide.
 
 - `figure3.svg/.pdf/.png`: combined submission figure.
 - `figure3_summary.svg/.pdf/.png`: summary panels.
