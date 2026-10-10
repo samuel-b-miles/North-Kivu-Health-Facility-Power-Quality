@@ -54,3 +54,15 @@ def conditional_power_quality(
         )
     return result
 
+
+def joint_valid_power_quality(frame: pd.DataFrame) -> dict[str, float | int]:
+    """Reproduce the inherited complete-case voltage/frequency estimand.
+
+    Unlike the default independent denominators, voltage is assessed only where
+    frequency is also physically valid. Keep both policies available explicitly.
+    """
+    voltage = pd.to_numeric(frame["voltage"], errors="coerce")
+    frequency = pd.to_numeric(frame["frequency"], errors="coerce")
+    retained = frame[voltage.between(23, 400) & frequency.between(30, 70)]
+    return {**conditional_power_quality(retained), "input_observations": len(frame),
+            "joint_valid_observations": len(retained)}

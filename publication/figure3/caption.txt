@@ -1,0 +1,17 @@
+Figure 3. Electricity performance of existing supplies and protected intervention circuits.
+Top: CSR1 existing micro-hydro and protected-circuit voltage/frequency traces.
+Bottom: Facility trajectories for uptime, voltage compliance (207–253 V), and
+frequency compliance (47.5–52.5 Hz; ±5%). CH1, CSR2, and CSR4 existing-source
+comparisons are reconstructed from a single PowerWatch sensor over the documented
+source windows, which are not uniformly pre-installation periods. HGR1, CSR1,
+and CSR3 baseline values remain inherited and await independent reconstruction.
+Protected-circuit uptime uses matched HOP and PowerWatch sensors and counts a
+two-minute bin as powered when either reports >23 V. Missing bins count against
+expected-window uptime but do not establish electrical outages; observed-evidence
+uptime and sensor coverage are supplied separately. PQR in the main summary uses
+jointly valid voltage/frequency observations in both reconstructed comparison and
+follow-up periods, matching the inherited complete-case definition. Separate
+voltage/frequency denominators are supplied as a sensitivity figure. Time windows,
+sensor basis, and source-history limitations are documented in BASELINE_RECONSTRUCTION.md.
+The time-series frequency band is ±1%, matching its annotation; the summary
+frequency panel retains ±5%. These tolerances must be distinguished in the manuscript.

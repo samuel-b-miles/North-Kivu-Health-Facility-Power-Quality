@@ -7,5 +7,6 @@ CSR1,powerwatch_post_source_start,2024-05-27,,confirmed,PowerWatch first monitor
 CSR2,powerwatch_post_source_start,2024-08-14,,confirmed,PowerWatch switched to intervention source after several months of system operation
 CSR4,telemetry_exclusion,2024-12-06,2025-10-02,confirmed_dates_end_inclusive,PowerWatch not reliably monitoring FLEX; HOP voltage persisted through 2025-02-28 but energy telemetry conflicts with operations evidence
 CSR1,telemetry_exclusion,2024-12-21,,confirmed_open_ended,PowerWatch connectivity never returned; HOP core ended 2024-12-20 and morgue HOP ended 2024-12-18
-CSR2,pre_intervention,2024-07-04,2024-07-27,provisional,Old-solar comparison window
-CSR4,pre_intervention,2025-01-01,2025-01-31,invalid_overlaps_exclusion,Prior draft baseline window overlaps the confirmed telemetry exclusion and must be reconsidered
+CSR2,existing_source_comparison,2024-07-04,2024-07-27,study_team_confirmed_source_2026_10_10,Single PowerWatch old-solar comparison after deployment; not a pre-installation window
+CSR4,existing_source_comparison,2025-01-01,2025-01-31,study_team_confirmed_source_2026_10_10,Single PowerWatch grid or old-supply comparison; FLEX-specific exclusion does not invalidate this separate source comparison
+CH1,existing_source_comparison,2024-04-03,2025-01-08,study_team_confirmed_source_2026_10_10,Single PowerWatch artisanal-solar comparison spanning deployment; not a strict pre-installation window

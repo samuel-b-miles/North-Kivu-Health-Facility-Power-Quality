@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 from drc_power.io import read_hop_voltage, read_powerwatch
 from drc_power.reliability import manuscript_at_least_one_sensor_uptime, paired_reliability
-from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, apply_primary_telemetry_window, find_hop_voltage, find_powerwatch, read_config, write_bar_svg
+from pipeline_common import DEFAULT_OUTPUT_ROOT, DEFAULT_RAW_ROOT, apply_primary_telemetry_window, find_hop_voltage, find_powerwatch, read_config, telemetry_exclusions, write_bar_svg
 
 
 def main() -> None:
@@ -21,8 +21,10 @@ def main() -> None:
         pw = read_powerwatch(find_powerwatch(args.raw_root, pw_sensor, preferred))
         hop = apply_primary_telemetry_window(hop, pair["facility_code"])
         pw = apply_primary_telemetry_window(pw, pair["facility_code"])
-        rows.append({**pair, **manuscript_at_least_one_sensor_uptime(hop, pw), **paired_reliability(hop, pw),
-                     "status": "provisional_pending_alignment_and_exclusion_review"})
+        exclusions = telemetry_exclusions(pair["facility_code"])
+        rows.append({**pair, **paired_reliability(hop, pw, exclusions=exclusions),
+                     **manuscript_at_least_one_sensor_uptime(hop, pw, exclusions=exclusions),
+                     "status": "reproduced_configured_source_windows_and_exclusions"})
     results = pd.DataFrame(rows).sort_values(["facility_code", "hop_sensor"])
     results.to_csv(output / "paired_confirmed_reliability.csv", index=False)
     results.to_csv(output / "manuscript_uptime_sensitivity.csv", index=False)

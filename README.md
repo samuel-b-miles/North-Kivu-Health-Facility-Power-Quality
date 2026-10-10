@@ -51,10 +51,12 @@ checksums, prepare local inputs, and regenerate the manuscript outputs.
    whether usable power is present. Conditional power quality asks whether
    voltage/frequency are compliant while power is present.
 2. **Missing telemetry is not automatically an outage.** Missing intervals are
-   reported as unknown unless a named conservative sensitivity analysis says otherwise.
-3. **Post-intervention confirmed outages use paired sensors.** A confirmed
-   outage requires simultaneous outage evidence from co-located HOP and
-   PowerWatch sensors.
+   unknown electrical states. Expected-window uptime counts them against the
+   percentage; observed-evidence uptime excludes them and reports coverage.
+3. **Paired uptime and confirmed outages are distinguished.** A powered bin
+   requires either co-source sensor to report >23 V. A double-confirmed outage
+   requires both sensors to report low voltage; missing or discordant evidence
+   is reported separately.
 4. **Every inclusion and time window is configured, not buried in notebook cells.**
 5. **Private identities never enter public artifacts.** Public codes remain the
    stable analysis identifiers.
@@ -130,6 +132,48 @@ python scripts/run_annex.py
 Generated CSVs and SVG figures are written to `outputs/generated/`. These are
 currently labeled **provisional** because exact intervention windows, conflict
 exclusions, and parts of the electrical topology remain under study-team review.
+
+To audit the short existing-source comparisons for CH1, CSR2, and CSR4 and
+distinguish single-sensor uptime from paired follow-up uptime, run:
+
+```bash
+python scripts/run_baseline_audit.py
+```
+
+This writes input checksums, daily sensor coverage, single-sensor source
+comparisons, and paired-versus-single follow-up estimates to
+`outputs/generated/baseline_audit/`. Figure 3 now uses these reconstructed
+CH1/CSR2/CSR4 comparisons and explicitly retains the other three inherited
+baselines. See [`docs/BASELINE_RECONSTRUCTION.md`](docs/BASELINE_RECONSTRUCTION.md)
+for reproduced values and source-history limitations.
+
+### Figure 3 delivery
+
+The inspected delivery snapshot is in [`publication/figure3/`](publication/figure3/),
+including SVG, 600-DPI PNG, vector PDF, plotted values, caption, and provenance.
+The summary uses existing-supply versus protected-circuit labels because the
+short source windows are not uniformly pre-installation observations. Its ±5%
+frequency panel retains the original figure's threshold; the time-series band
+is explicitly ±1%, and supplementary CSVs expose ±1%, ±5%, and ±10% estimates.
+See [`docs/FIGURE3_DELIVERY.md`](docs/FIGURE3_DELIVERY.md) before substituting the
+figure into the manuscript.
+
+```bash
+python scripts/run_power_quality.py
+python scripts/run_reliability.py
+python scripts/run_baseline_audit.py
+python scripts/run_figure3_summary.py
+python scripts/run_figure3_summary.py --pqr-policy independent
+python scripts/run_figure3_timeseries.py
+pip install -e '.[publication]'
+python scripts/export_figure3.py
+```
+
+The comparable main summary uses jointly valid voltage/frequency observations
+in both reconstructed comparison and follow-up periods. The independent-
+denominator sensitivity keeps voltage observations even when frequency is
+missing or invalid. This choice is visible in output metadata and captions;
+the default reusable PQR library continues to use independent denominators.
 
 The implementation and analytical windows figure needs no raw data. Regenerate
 its tightly cropped, resolution-independent SVG and optional 3600-DPI PNG with:
