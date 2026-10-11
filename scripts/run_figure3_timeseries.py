@@ -106,7 +106,7 @@ def _axis_panel(
         parts.append(f'<line x1="{left}" y1="{y:.2f}" x2="{left + width}" y2="{y:.2f}" stroke="#e7e7e7" stroke-width="1"/>')
         parts.append(
             f'<text x="{left - 16}" y="{y + 5:.2f}" text-anchor="end" '
-            'font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#333">'
+            'font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#333">'
             f'{tick:g}</text>'
         )
     tick_dates = [
@@ -126,7 +126,7 @@ def _axis_panel(
     parts.append(f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + height}" stroke="#333" stroke-width="2"/>')
     parts.append(
         f'<text transform="translate({left - 70:.1f} {top + height / 2:.1f}) rotate(-90)" '
-        'text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#333">'
+        'text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="31" fill="#333">'
         f'{html.escape(y_label)}</text>'
     )
 
@@ -140,7 +140,7 @@ def _band(parts: list[str], left: float, top: float, width: float, height: float
 
 
 def write_svg(path: Path, grid: pd.DataFrame, protected: pd.DataFrame) -> None:
-    width, height = 1650, 1130
+    width, height = 1650, 1170
     left, plot_width = 130, 1430
     top1, panel_h, gap = 220, 330, 68
     top2 = top1 + panel_h + gap
@@ -174,7 +174,7 @@ def write_svg(path: Path, grid: pd.DataFrame, protected: pd.DataFrame) -> None:
     _band(parts, left, top2, plot_width, panel_h, 37, 63, 49.5, 50.5, green)
     _band(parts, left, top2, plot_width, panel_h, 37, 63, 40, 41, red)
     parts.append(f'<line x1="{x_int:.2f}" y1="{top2}" x2="{x_int:.2f}" y2="{top2 + panel_h}" stroke="#111" stroke-width="3" stroke-dasharray="9 6"/>')
-    parts.append(f'<text x="{left + plot_width - 12}" y="{top2 - 12}" text-anchor="end" font-size="16" fill="#367437">Compliance band: ±1% (49.5–50.5 Hz)</text>')
+    parts.append(f'<text x="{left + plot_width - 12}" y="{top2 - 14}" text-anchor="end" font-size="23" fill="#367437">Compliance band: ±1% (49.5–50.5 Hz)</text>')
     parts.append('<g clip-path="url(#frequency-data-clip)">')
     parts.extend(_circle_parts(grid_points_f, grid_color, 2.3, 0.66))
     parts.append(_polyline(pv_points_f, pv_color, 3.0, 0.65))
@@ -185,17 +185,17 @@ def write_svg(path: Path, grid: pd.DataFrame, protected: pd.DataFrame) -> None:
     pre_x1, pre_x2 = _x_scale(FIGURE_START, left, plot_width), _x_scale(pd.Timestamp("2024-05-15T12:00:00Z"), left, plot_width)
     post_x1, post_x2 = _x_scale(pd.Timestamp("2024-05-27T00:00:00Z"), left, plot_width), _x_scale(FIGURE_END, left, plot_width)
     arrow_y = 150
-    parts.append(f'<text x="{(pre_x1 + pre_x2) / 2 - 45:.1f}" y="58" text-anchor="middle" font-size="22" font-weight="700" fill="#454545">Pre-intervention:</text>')
-    parts.append(f'<text x="{(pre_x1 + pre_x2) / 2 - 45:.1f}" y="88" text-anchor="middle" font-size="22" font-weight="700" fill="#454545">micro-hydro grid only</text>')
-    parts.append(f'<text x="{(pre_x1 + pre_x2) / 2 - 45:.1f}" y="124" text-anchor="middle" font-size="19" font-style="italic" fill="#777">Monitoring of existing micro-hydro system</text>')
+    parts.append(f'<text x="{(pre_x1 + pre_x2) / 2 - 45:.1f}" y="58" text-anchor="middle" font-size="29" font-weight="700" fill="#454545">Pre-intervention:</text>')
+    parts.append(f'<text x="{(pre_x1 + pre_x2) / 2 - 45:.1f}" y="94" text-anchor="middle" font-size="29" font-weight="700" fill="#454545">micro-hydro grid only</text>')
+    parts.append(f'<text x="{(pre_x1 + pre_x2) / 2 - 45:.1f}" y="130" text-anchor="middle" font-size="24" font-style="italic" fill="#555">Existing micro-hydro monitoring</text>')
     parts.append(f'<line x1="{pre_x1}" y1="{arrow_y}" x2="{pre_x2}" y2="{arrow_y}" stroke="#777" stroke-width="3"/>')
     parts.append(f'<polygon points="{pre_x1},{arrow_y} {pre_x1 + 11},{arrow_y - 7} {pre_x1 + 11},{arrow_y + 7}" fill="#777"/>')
     parts.append(f'<polygon points="{pre_x2},{arrow_y} {pre_x2 - 11},{arrow_y - 7} {pre_x2 - 11},{arrow_y + 7}" fill="#777"/>')
-    parts.append(f'<text x="{x_int:.1f}" y="32" text-anchor="middle" font-size="23" font-weight="700" fill="#222">Intervention date</text>')
-    parts.append(f'<text x="{x_int:.1f}" y="62" text-anchor="middle" font-size="23" font-weight="700" fill="#222">(May 16, 2024)</text>')
-    parts.append(f'<text x="{(post_x1 + post_x2) / 2:.1f}" y="75" text-anchor="middle" font-size="23" font-weight="700" fill="{pv_color}">Post-intervention: stacked system</text>')
-    parts.append(f'<text x="{(post_x1 + post_x2) / 2:.1f}" y="105" text-anchor="middle" font-size="18" font-style="italic" font-weight="700" fill="{pv_color}">Protected PV circuit in use for critical loads;</text>')
-    parts.append(f'<text x="{(post_x1 + post_x2) / 2:.1f}" y="128" text-anchor="middle" font-size="18" font-style="italic" font-weight="700" fill="{pv_color}">micro-hydro remains available for other uses</text>')
+    parts.append(f'<text x="{x_int:.1f}" y="35" text-anchor="middle" font-size="29" font-weight="700" fill="#222">Intervention date</text>')
+    parts.append(f'<text x="{x_int:.1f}" y="70" text-anchor="middle" font-size="29" font-weight="700" fill="#222">(May 16, 2024)</text>')
+    parts.append(f'<text x="{(post_x1 + post_x2) / 2:.1f}" y="69" text-anchor="middle" font-size="29" font-weight="700" fill="{pv_color}">Post-intervention: stacked system</text>')
+    parts.append(f'<text x="{(post_x1 + post_x2) / 2:.1f}" y="103" text-anchor="middle" font-size="24" font-style="italic" font-weight="700" fill="{pv_color}">Protected PV circuit for critical loads;</text>')
+    parts.append(f'<text x="{(post_x1 + post_x2) / 2:.1f}" y="132" text-anchor="middle" font-size="24" font-style="italic" font-weight="700" fill="{pv_color}">micro-hydro available for other uses</text>')
     parts.append(f'<line x1="{post_x1}" y1="{arrow_y}" x2="{post_x2}" y2="{arrow_y}" stroke="{pv_color}" stroke-width="3"/>')
     parts.append(f'<polygon points="{post_x1},{arrow_y} {post_x1 + 11},{arrow_y - 7} {post_x1 + 11},{arrow_y + 7}" fill="{pv_color}"/>')
     parts.append(f'<polygon points="{post_x2},{arrow_y} {post_x2 - 11},{arrow_y - 7} {post_x2 - 11},{arrow_y + 7}" fill="{pv_color}"/>')
@@ -216,18 +216,19 @@ def write_svg(path: Path, grid: pd.DataFrame, protected: pd.DataFrame) -> None:
         x = _x_scale(date, left, plot_width)
         label = f"{date.month}/{date.day}"
         parts.append(f'<line x1="{x:.2f}" y1="{axis_y}" x2="{x:.2f}" y2="{axis_y + 9}" stroke="#333" stroke-width="1.6"/>')
-        parts.append(f'<text x="{x:.2f}" y="{axis_y + 35}" text-anchor="middle" font-size="19" fill="#333">{label}</text>')
-    parts.append(f'<text x="{left + plot_width / 2:.1f}" y="{axis_y + 70}" text-anchor="middle" font-size="24" fill="#333">Date</text>')
+        parts.append(f'<text x="{x:.2f}" y="{axis_y + 36}" text-anchor="middle" font-size="25" fill="#333">{label}</text>')
+    parts.append(f'<text x="{left + plot_width / 2:.1f}" y="{axis_y + 76}" text-anchor="middle" font-size="31" fill="#333">Date</text>')
 
     # Legend.
-    legend_y = height - 52
-    legend_x = 270
+    legend_y = height - 106
+    legend_x = 200
     parts.append(f'<circle cx="{legend_x}" cy="{legend_y}" r="5" fill="{grid_color}" fill-opacity="0.85"/>')
-    parts.append(f'<text x="{legend_x + 35}" y="{legend_y + 7}" font-size="19" fill="#333">Existing micro-hydro grid (pre- and post-intervention)</text>')
-    legend_x2 = 800
-    parts.append(f'<line x1="{legend_x2}" y1="{legend_y}" x2="{legend_x2 + 35}" y2="{legend_y}" stroke="{pv_color}" stroke-width="3"/>')
-    parts.append(f'<circle cx="{legend_x2 + 18}" cy="{legend_y}" r="5" fill="{pv_color}"/>')
-    parts.append(f'<text x="{legend_x2 + 50}" y="{legend_y + 7}" font-size="19" fill="#333">Protected PV circuit (post-intervention, CSR1)</text>')
+    parts.append(f'<text x="{legend_x + 35}" y="{legend_y + 8}" font-size="25" fill="#333">Existing micro-hydro grid (pre- and post-intervention)</text>')
+    legend_x2 = 200
+    legend_y2 = height - 55
+    parts.append(f'<line x1="{legend_x2}" y1="{legend_y2}" x2="{legend_x2 + 35}" y2="{legend_y2}" stroke="{pv_color}" stroke-width="3"/>')
+    parts.append(f'<circle cx="{legend_x2 + 18}" cy="{legend_y2}" r="5" fill="{pv_color}"/>')
+    parts.append(f'<text x="{legend_x2 + 50}" y="{legend_y2 + 8}" font-size="25" fill="#333">Protected PV circuit (post-intervention, CSR1)</text>')
 
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")

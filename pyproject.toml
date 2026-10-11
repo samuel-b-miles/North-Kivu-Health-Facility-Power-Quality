@@ -16,7 +16,7 @@ dependencies = [
 dev = ["pytest>=8,<9"]
 data-import = ["openpyxl>=3.1,<4"]
 figures = ["CairoSVG>=2.7,<3"]
-publication = ["resvg-py>=0.5,<0.6", "svglib>=2.3,<3", "reportlab>=4.4,<6", "Pillow>=11,<13"]
+publication = ["resvg-py>=0.5,<0.6", "svglib>=2.3,<3", "reportlab>=4.4,<6", "Pillow>=11,<13", "pypdf>=6,<7"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -176,6 +176,31 @@ denominator sensitivity keeps voltage observations even when frequency is
 missing or invalid. This choice is visible in output metadata and captions;
 the default reusable PQR library continues to use independent denominators.
 
+### One-command large-format figure book
+
+With the checksum-verified telemetry installed locally, run:
+
+```bash
+pip install -e '.[publication]'
+python scripts/build_figure_book.py
+```
+
+The command reruns the analyses using the public DHIS2 panels, rebuilds Figure 1
+from the [tracked full-resolution photographs](publication/figure1/README.md),
+then assembles only manuscript Figures 1-5 into the large PDF at
+`outputs/generated/figure_book/all_code_generated_figures_large.pdf`. The two
+Figure 3 panels occupy separate pages, so the default book has six pages.
+Each page is 17 inches wide with 16 inches available for its figure. Charts
+keep vector text and shapes; Figure 1 embeds the high-resolution photographs.
+
+Use `--include-drafts` to append additional generated analysis figures,
+`--skip-analysis` to repackage existing SVGs, `--width-inches` to change the
+print size, or `--output` to choose a path.
+The builder uses LibreOffice when available, or the `publication` Python extra
+to convert SVGs to PDF. The raw telemetry required for regeneration remains
+local and is not stored in GitHub. The builder leaves the reviewed
+`publication/figure3/` files unchanged.
+
 The implementation and analytical windows figure needs no raw data. Regenerate
 its tightly cropped, resolution-independent SVG and optional 33600-DPI PNG with:
 
