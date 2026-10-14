@@ -65,8 +65,8 @@ for panel_top, panel_bottom in [(120, 685), (785, 1025)]:
 
 parts += ['<text x="90" y="108" class="panel">A  Implementation and service delivery</text>']
 rows_a = [
-    (165,"Electricity supply baseline -\nlongitudinal (n=3)","n=3","≈29 mo","2022-01-01","2024-05-01","data"),
-    (225,"Electricity supply baseline -\nshort (n=3)","n=3","25–28 d each","2024-01-01","2024-08-01","data"),
+    (165,"Existing supply,\nlongitudinal (n=3)","n=3","facility-specific","2022-06-22","2024-05-14","data"),
+    (225,"Existing supply,\nshort monitoring (n=3)*","n=3","facility-specific","2024-04-03","2025-01-28","data"),
     (285,"Pre-installation surveys (n=6)","n=6","7-mo window","2023-09-01","2024-04-30","implementation"),
     (345,"Intervention deployment (n=6)","n=6","Apr–May 2024","2024-04-01","2024-06-01","implementation"),
     (405,"Biomedical equipment","n=6","≈1 mo","2024-05-15","2024-06-15","implementation"),

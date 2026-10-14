@@ -4,7 +4,12 @@
 publication export (7.5 inches wide). The revised labels and MM/YYYY axes were
 approved on 2026-10-14, with `(n = 6)` added to the payment and maintenance ledger.
 The standalone Prospect energy-demand row is removed; paired Prospect and
-GridWatch telemetry remains. All retained bar time boundaries are unchanged.
+GridWatch telemetry remains. The two grouped existing-supply bars now show the selected overall calendar-date
+envelopes: longitudinal (n=3), 2022-06-22–2024-05-14; short monitoring
+(n=3)*, 2024-04-03–2025-01-28. These combine differing facility windows.
+Only the short-monitoring label carries an asterisk; its explanation is left
+for the manuscript caption. All other row definitions are unchanged.
+This alignment was approved on 2026-10-14.
 
 Regenerate the SVG with:
 
