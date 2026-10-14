@@ -7,7 +7,11 @@ analyses cover six facilities; the DHIS2 panels cover twelve facilities.
 **Terminology:** HOP (the hardware name used in the data files) and Prospect
 (the platform developer named in the manuscript) refer to the same monitoring
 stream in this project. Hardware and platform are distinct; filenames and sensor
-IDs retain `HOP`. PowerWatch supplies the separate voltage/frequency stream.
+IDs retain `HOP`. GridWatch supplies the separate voltage/frequency stream.
+
+GridWatch is the reader-facing name for this monitoring stream. Historical
+`PowerWatch` names in filenames, configuration, code identifiers and source
+schemas are retained so reproduction commands continue to work.
 
 ## Current version
 

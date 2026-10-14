@@ -43,7 +43,7 @@ section, especially “Reliability and System Performance,” Figure 3, and Figu
 
 ## Decisions already made
 
-- Updated PowerWatch exports are exact supersets of original exports.
+- Updated GridWatch exports are exact supersets of original exports.
 - CSR3 sterilizer energy is excluded to prevent double counting.
 - CSR1 and CSR3 morgue systems are reported separately from core critical circuits.
 - Actual facility names and hardware identifiers remain outside tracked files.

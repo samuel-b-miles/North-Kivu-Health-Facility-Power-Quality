@@ -51,8 +51,8 @@ PNGs are 600 DPI at 7.5 inches wide. SVGs and PDFs are vector sources.
 “We compared existing-supply observations with protected intervention-circuit
 observations. Existing-supply monitoring was not uniformly conducted before
 installation: the short source-specific comparisons at CH1, CSR2, and CSR4 used
-single PowerWatch sensors during the documented comparison windows. Protected-
-circuit uptime used matched HOP and PowerWatch sensors, with two-minute bins
+single GridWatch sensors during the documented comparison windows. Protected-
+circuit uptime used matched HOP and GridWatch sensors, with two-minute bins
 classified as powered when either recorded voltage >23 V. We report powered bins
 as a proportion of all expected bins in the shared valid monitoring window, and
 provide an observed-evidence denominator and sensor coverage as sensitivity

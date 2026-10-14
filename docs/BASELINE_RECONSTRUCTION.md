@@ -38,7 +38,7 @@ Uptime below uses median voltage in UTC-aligned two-minute bins and a powered
 threshold strictly greater than 23 V. The monitoring denominator begins at the
 first valid bin and ends at the last valid bin within the configured comparison.
 
-| Facility | PowerWatch source window, actual valid endpoints (UTC) | Expected-window uptime | Uptime among observed bins | Observed-bin coverage |
+| Facility | GridWatch source window, actual valid endpoints (UTC) | Expected-window uptime | Uptime among observed bins | Observed-bin coverage |
 |---|---|---:|---:|---:|
 | CH1 | 3 Apr 2024 14:45:23 to 8 Jan 2025 04:06:04 | 69.154% | 75.145% | 92.027% |
 | CSR2 | 4 Jul 2024 08:19:02 to 27 Jul 2024 23:58:04 | 14.339% | 30.148% | 47.560% |
@@ -49,7 +49,7 @@ CH1 and CSR4 closely approximate the inherited 69.2% and 72.8%. CSR2's inherited
 new endpoints simply to recover that value. The original uptime script/window
 would be needed to resolve the difference.
 
-These are SINGLE PowerWatch sensor calculations. Missing bins count against the
+These are SINGLE GridWatch sensor calculations. Missing bins count against the
 expected-window estimate, but remain unknown electrical states. The observed-bin
 estimate excludes missing bins; it can overestimate service availability if
 telemetry loss preferentially accompanies power loss.
@@ -69,18 +69,18 @@ legacy variant establishes a paired baseline.
   (18 January, 14 March, 25 March); substantial reporting begins 26 May. Those
   isolated records cannot support a credible pre-installation uptime estimate.
   There are no valid HOP readings during 3–29 April.
-- CSR2 HOP first reports on 22 May 2024; PowerWatch first reports on 28 May.
+- CSR2 HOP first reports on 22 May 2024; GridWatch first reports on 28 May.
   No earlier observations are present in these supplied sensor files. The July
   old-solar window occurs after the documented broad deployment period.
 - CSR4 HOP has 6,860 valid minute records from 19–25 March 2024. They are all
   above 23 V; two-minute observed-bin coverage is 83.026% between endpoints.
   The sensor is mapped to FLEX in the release, so its March power source must
   be established before using it as a baseline. There is no corresponding
-  PowerWatch series before 27 May. This is roughly six days, not 25–28 days.
+  GridWatch series before 27 May. This is roughly six days, not 25–28 days.
 
 HOP is present during CSR2's July and CSR4's January source comparisons, but
 the mapping associates it with the intervention circuit. Combining it with a
-PowerWatch sensor described as old solar/grid would confuse different supplies
+GridWatch sensor described as old solar/grid would confuse different supplies
 with redundant sensors on the same supply. No paired baseline is calculated.
 
 ## Paired follow-up and single-sensor sensitivity
@@ -89,7 +89,7 @@ These are co-source pairs from `config/paired_sensors.csv`, after applying
 configured source starts and exclusions. Each single-sensor sensitivity uses
 the SAME shared paired window, not its own longer observation span.
 
-| Facility | Paired expected-window uptime | Paired observed uptime | HOP alone, expected-window | PowerWatch alone, expected-window | Both sensors observed |
+| Facility | Paired expected-window uptime | Paired observed uptime | HOP alone, expected-window | GridWatch alone, expected-window | Both sensors observed |
 |---|---:|---:|---:|---:|---:|
 | CH1 | 99.091% | 99.842% | 96.821% | 74.251% | 74.623% |
 | CSR2 | 99.263% | 99.574% | 96.358% | 82.949% | 84.939% |
@@ -103,7 +103,7 @@ both-missing, both-low, and single-observed-low intervals.
 
 No HOP voltage at or below 23 V occurs in these three supplied files, and no
 both-low paired bins are observed. This is not evidence of zero real outages:
-HOP missingness may accompany loss of power. Bins with a low PowerWatch reading
+HOP missingness may accompany loss of power. Bins with a low GridWatch reading
 and missing HOP remain single-sensor low-voltage evidence. Do not label them
 double-confirmed outages; likewise do not label both-missing bins confirmed
 electrical outages.
@@ -135,7 +135,7 @@ The audit includes frequency compliance at ±1%, ±5%, and ±10%.
    policy consistently for reconstructed comparisons AND follow-up. An independent-
    denominator sensitivity figure is supplied alongside it. Neither policy
    changes missingness into confirmed outage evidence.
-4. Figure metadata and footnotes distinguish single PowerWatch comparisons,
+4. Figure metadata and footnotes distinguish single GridWatch comparisons,
    paired follow-up, and the three still-inherited longitudinal baselines.
 5. The summary retains its original ±5% frequency threshold. The top trace band
    is corrected from unlabelled ±2% to labelled ±1%. Supplementary tables expose
@@ -143,9 +143,9 @@ The audit includes frequency compliance at ±1%, ±5%, and ±10%.
    remain blank and must not be filled by relabelling ±5% values.
 
 Suggested caption wording: “Existing-source
-comparisons at CH1, CSR2, and CSR4 use a single PowerWatch sensor during the
+comparisons at CH1, CSR2, and CSR4 use a single GridWatch sensor during the
 specified source-specific windows. Intervention-circuit follow-up uses matched
-HOP and PowerWatch sensors, with power recorded when either reports >23 V.
+HOP and GridWatch sensors, with power recorded when either reports >23 V.
 Sensor configurations and observation periods differ; these comparisons are
 descriptive and are not matched pre-installation/post-installation estimates.”
 

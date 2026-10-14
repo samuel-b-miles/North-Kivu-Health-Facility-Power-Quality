@@ -13,7 +13,7 @@ Primary reliability estimates do not convert missing sensor records into
 outages. A separately named conservative sensitivity estimate may count unknown
 intervals against availability.
 
-### Use updated PowerWatch exports for seven overlapping sensors
+### Use updated GridWatch exports for seven overlapping sensors
 
 Record-level comparison found that every updated file is an exact superset of
 its original: 2,999,567 overlapping timestamps with zero voltage or frequency
@@ -37,10 +37,10 @@ core critical-circuit and supplemental morgue consumption separately.
 
 ### Use source-specific sensor coverage for telemetry estimands
 
-Paired uptime and PowerWatch power-quality analyses are restricted to periods
-when PowerWatch is known to monitor the intervention circuit. HOP energy totals
+Paired uptime and GridWatch power-quality analyses are restricted to periods
+when GridWatch is known to monitor the intervention circuit. HOP energy totals
 use their own active reporting periods and are not truncated to the later
-PowerWatch source-switch date. Telemetry analyses do not claim to measure the
+GridWatch source-switch date. Telemetry analyses do not claim to measure the
 full period of system use when connectivity or source assignment is absent.
 Payment and operations records will be analyzed separately as evidence of
 service functionality and facility use.
@@ -49,6 +49,6 @@ service functionality and facility use.
 
 - Exact intervention and conflict-exclusion dates.
 - Include/exclude rationale for the CSR3 grid files marked `omitted`.
-- Source or disposition of the missing CSR1 radiography PowerWatch file.
+- Source or disposition of the missing CSR1 radiography GridWatch file.
 - Inclusion and anonymized identifier for the CH1 sterilizer HOP meter.
 - Electrical topology required to avoid double-counting facility energy.

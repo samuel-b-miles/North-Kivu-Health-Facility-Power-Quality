@@ -53,7 +53,7 @@ headline outcomes.
 
 ## Resolved with study-team context
 
-- PowerWatch intervention-source dates are recorded for all six facilities in
+- GridWatch intervention-source dates are recorded for all six facilities in
   `config/analysis_periods.csv`.
 - CSR4’s primary telemetry exclusion is 2024-12-06 through 2025-10-02.
 - CSR1’s open-ended connectivity exclusion begins 2024-12-21.

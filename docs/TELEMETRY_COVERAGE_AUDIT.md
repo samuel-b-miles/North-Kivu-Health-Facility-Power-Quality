@@ -18,7 +18,7 @@ will be audited when payment data are incorporated.
 - There is no HOP voltage after 2025-02-28 and no positive HOP daily energy
   after 2025-03-01.
 
-### PowerWatch evidence
+### GridWatch evidence
 
 `CSR4-PW-01` has only four isolated reporting dates during the exclusion:
 
@@ -27,7 +27,7 @@ will be audited when payment data are incorporated.
 - 2025-03-01: one low-voltage reading.
 - 2025-10-02: 321 readings, all above 23 V.
 
-Continuous PowerWatch reporting resumes on 2025-10-03. `CSR4-PW-02` continues
+Continuous GridWatch reporting resumes on 2025-10-03. `CSR4-PW-02` continues
 intermittently only through 2025-01-28 and does not resolve the FLEX source
 identity during the exclusion.
 
