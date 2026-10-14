@@ -2,11 +2,11 @@
 
 ## Electricity source readings
 
-Coded sensor IDs in filenames link to `config/paired_sensors.csv`, `energy_meters.csv` and `canonical_powerwatch.csv`. IDs encode facility and platform, not original hardware IDs. Original and updated PowerWatch exports overlap; use canonical selection. Files labelled omitted remain excluded unless a separately documented decision changes this.
+Coded sensor IDs in filenames link to `config/paired_sensors.csv`, `energy_meters.csv` and `canonical_powerwatch.csv`. IDs encode facility and platform, not original hardware IDs. Original and updated GridWatch exports overlap; use canonical selection. Files labelled omitted remain excluded unless a separately documented decision changes this.
 
 | File class | Fields and interpretation |
 |---|---|
-| PowerWatch | `time`: source timestamp, generally UTC-explicit; `voltage`: volts; `frequency`: hertz. Retain anomalies and blanks; cleaning is done by code. |
+| GridWatch | `time`: source timestamp, generally UTC-explicit; `voltage`: volts; `frequency`: hertz. Retain anomalies and blanks; cleaning is done by code. |
 | HOP voltage | `time`: source timestamp; `total`, `phase_1`, `phase_2`, `phase_3`: source voltage fields, including unit suffixes where present. Use loader rules; blank means unreported, not zero. |
 | HOP daily energy | `Time`: source day timestamp; `Energy per Day`: daily energy retaining Wh/kWh/MWh text. Initial zero records before the first positive reading are treated as inactive by the energy runner. |
 

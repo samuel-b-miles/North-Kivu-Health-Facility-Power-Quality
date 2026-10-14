@@ -8,7 +8,7 @@ python scripts/build_public_telemetry_release.py --output-dir outputs/release_ca
 
 The output directory must be new. Incomplete builds remain local and must not be published. Successful builds contain `manifest.json`, four ZIPs, an import configuration and a README. The generated manifest independently verifies output rows and every retained source value. Archive entries have fixed timestamps and no source path/comment metadata.
 
-Retain complete coded measurement files, not illustrative snippets. PowerWatch outputs contain time, voltage and frequency only. HOP voltage files retain time, total and phase fields; daily-energy files retain Time and Energy per Day. Values, timestamp strings, row order, duplicates, blanks, and original/updated version distinctions remain unchanged. Include omitted files for transparency while preserving their exclusion status. Do not concatenate overlapping export versions.
+Retain complete coded measurement files, not illustrative snippets. GridWatch outputs contain time, voltage and frequency only. HOP voltage files retain time, total and phase fields; daily-energy files retain Time and Energy per Day. Values, timestamp strings, row order, duplicates, blanks, and original/updated version distinctions remain unchanged. Include omitted files for transparency while preserving their exclusion status. Do not concatenate overlapping export versions.
 
 Remove respondent/site strings, summary/location notes and derived time differences. Exclude the energy export lacking a safe coded sensor filename. No identified DHIS2 files or identity crosswalks enter this package. Public health/payment panels remain separate; approval of this electricity candidate does not approve expanded health disclosure.
 

@@ -34,7 +34,7 @@ exports and the private facility crosswalk. `scripts/prepare_restricted_data.py`
 copies those files from an authorized bundle, verifies checksums, and prepares
 the expected local folder structure.
 
-## HOP and PowerWatch electricity telemetry
+## HOP and GridWatch electricity telemetry
 
 ### Local authorized source files
 
@@ -53,7 +53,7 @@ data/raw/extracted/PowerWatch_voltage_frequency_2min/
 ```
 
 The HOP files provide daily energy and one-minute voltage/power measurements;
-the PowerWatch files provide two-minute voltage/frequency measurements. Thus,
+the GridWatch files provide two-minute voltage/frequency measurements. Thus,
 energy consumption is calculated from HOP, while paired reliability and power
 quality use both platforms. These source files are
 not committed to GitHub. Their expected filenames and SHA-256 checksums are
@@ -63,8 +63,8 @@ recorded in `config/data_sources.toml`.
 
 ```text
 config/energy_meters.csv           HOP meters included in energy accounting
-config/paired_sensors.csv          matched HOP–PowerWatch pairs
-config/canonical_powerwatch.csv    canonical PowerWatch source selection
+config/paired_sensors.csv          matched HOP–GridWatch pairs
+config/canonical_powerwatch.csv    canonical GridWatch source selection
 config/analysis_periods.csv        source starts and telemetry exclusions
 config/manuscript_pre_results.csv  historical baseline transcriptions superseded by the six-facility source audit
 ```

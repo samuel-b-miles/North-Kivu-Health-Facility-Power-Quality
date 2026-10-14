@@ -13,7 +13,7 @@ valid readings across the configured source sensors, weighted by valid counts.
 A local raw-input rerun on 2026-10-14 produced the following percentages.
 Existing-source values are from the saved selected longitudinal baselines and
 single-sensor inherited-source comparisons. Protected values were recomputed
-from the canonical PowerWatch CSVs with configured starts and exclusions.
+from the canonical GridWatch CSVs with configured starts and exclusions.
 
 | Facility | Existing ±0.1/1/5/10 (%) | Protected ±0.1/1/5/10 (%) | Protected valid readings |
 |---|---|---|---:|

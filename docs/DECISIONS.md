@@ -13,7 +13,7 @@ Electrical evidence does not convert missing records into confirmed outages.
 The manuscript primary is the conservative powered-bin fraction of expected
 intervals; observed-evidence uptime and unknown bins are reported separately.
 
-### Use updated PowerWatch exports for seven overlapping sensors
+### Use updated GridWatch exports for seven overlapping sensors
 
 Record-level comparison found that every updated file is an exact superset of
 its original: 2,999,567 overlapping timestamps with zero voltage or frequency
@@ -37,10 +37,10 @@ core critical-circuit and supplemental morgue consumption separately.
 
 ### Use source-specific sensor coverage for telemetry estimands
 
-Paired uptime and PowerWatch power-quality analyses are restricted to periods
-when PowerWatch is known to monitor the intervention circuit. HOP energy totals
+Paired uptime and GridWatch power-quality analyses are restricted to periods
+when GridWatch is known to monitor the intervention circuit. HOP energy totals
 use their own active reporting periods and are not truncated to the later
-PowerWatch source-switch date. Telemetry analyses do not claim to measure the
+GridWatch source-switch date. Telemetry analyses do not claim to measure the
 full period of system use when connectivity or source assignment is absent.
 Payment and operations records will be analyzed separately as evidence of
 service functionality and facility use.
@@ -58,4 +58,4 @@ service functionality and facility use.
 
 ## Six-facility baseline revision
 
-All six historical Figure 3 baselines are replaced by source reconstructions. HGR1/CSR3 use shared pre-source overlap; CSR1 uses the full available pre record with variable two-sensor coverage. CH1/CSR2/CSR4 remain single-PowerWatch existing-source comparisons. ±5% remains primary and ±1%/±10% tables are complete. Historical values are retained solely for the audit trail. See FIGURE3_DELIVERY.md for exact windows, rationale and manuscript methods.
+All six historical Figure 3 baselines are replaced by source reconstructions. HGR1/CSR3 use shared pre-source overlap; CSR1 uses the full available pre record with variable two-sensor coverage. CH1/CSR2/CSR4 remain single-GridWatch existing-source comparisons. ±5% remains primary and ±1%/±10% tables are complete. Historical values are retained solely for the audit trail. See FIGURE3_DELIVERY.md for exact windows, rationale and manuscript methods.

@@ -30,7 +30,7 @@ Full source-level reproduction also requires restricted local inputs:
 
 - HOP daily energy ZIP
 - HOP one-minute voltage/power ZIP
-- PowerWatch two-minute voltage/frequency ZIP
+- GridWatch two-minute voltage/frequency ZIP
 - DRC1 baseline supplement ZIP (recovered second CSR1 sensor)
 - raw DHIS2 admissions export
 - raw DHIS2 deaths export

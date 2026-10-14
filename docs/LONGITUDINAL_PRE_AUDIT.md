@@ -1,6 +1,6 @@
 # Longitudinal pre-intervention audit
 
-HGR1, CSR1 and CSR3 now have reconstructed two-PowerWatch baselines. These
+HGR1, CSR1 and CSR3 now have reconstructed two-GridWatch baselines. These
 replace historical transcriptions in the submission figure; the alternatives
 below explain window selection and sensor coverage. See `FIGURE3_DELIVERY.md`
 for the selected six-facility results. Original unpublished extraction rules

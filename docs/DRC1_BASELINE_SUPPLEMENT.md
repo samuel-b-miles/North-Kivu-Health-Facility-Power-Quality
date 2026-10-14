@@ -1,6 +1,6 @@
 # DRC1 baseline supplement for pilot CSR1
 
-Two baseline PowerWatch devices are confirmed in the source deployment records.
+Two baseline GridWatch devices are confirmed in the source deployment records.
 The DRC1 and pilot facility codes use different namespaces. The verified
 name/device crosswalk remains private; public files use pilot sensor codes.
 

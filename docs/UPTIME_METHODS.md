@@ -5,10 +5,10 @@
 The primary post-intervention uptime metric follows the manuscript language and
 the combined-sensor table footnote:
 
-1. Restrict to dates when PowerWatch is confirmed to monitor the intervention
+1. Restrict to dates when GridWatch is confirmed to monitor the intervention
    source.
 2. Remove confirmed telemetry-exclusion periods.
-3. Resample HOP and PowerWatch voltage to common two-minute bins using the median.
+3. Resample HOP and GridWatch voltage to common two-minute bins using the median.
 4. Restrict to the shared valid-data window: the later first valid observation
    through the earlier last valid observation.
 5. Mark a bin powered when **either** sensor reports voltage above 23 V.
@@ -43,7 +43,7 @@ telemetry during resampling. The audit covers all seven mapped follow-up pairs.
 The primary method closely reproduces draft values for CSR2, CSR3 parallel
 F1/F2, CSR1, and HGR1. Two draft values require correction:
 
-- **CH1:** the 94.6% draft result comes from including PowerWatch observations
+- **CH1:** the 94.6% draft result comes from including GridWatch observations
   before the confirmed intervention-source date. Restricting to post-source data
   and the shared valid window yields approximately 99.1%.
 - **CSR4:** the 78.9% draft result used an obsolete, shorter conflict exclusion.
@@ -52,9 +52,9 @@ F1/F2, CSR1, and HGR1. Two draft values require correction:
   99.8%.
 
 CH1, CSR2, and CSR4 comparison uptime is now independently reconstructed from
-single PowerWatch sensors over source-specific windows. These are labelled
+single GridWatch sensors over source-specific windows. These are labelled
 existing-source comparisons, not uniformly pre-installation observations.
-HGR1, CSR1 and CSR3 baselines are now reconstructed from two PowerWatch files.
+HGR1, CSR1 and CSR3 baselines are now reconstructed from two GridWatch files.
 HGR1/CSR3 use shared pre-source windows; CSR1 uses the full available pre record
 with variable sensor coverage. Alternative windows and coverage are exported.
 See `FIGURE3_DELIVERY.md` and `DRC1_BASELINE_SUPPLEMENT.md`.

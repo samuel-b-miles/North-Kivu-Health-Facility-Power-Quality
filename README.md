@@ -8,16 +8,20 @@ from documented analytical requirements and approved anonymized release assets.
 Raw telemetry, raw DHIS2 exports, and the private facility identity key are
 intentionally excluded from version control.
 
+GridWatch is the reader-facing name for this monitoring stream. Historical
+`PowerWatch` names in filenames, configuration, code identifiers and source
+schemas are retained so reproduction commands continue to work.
+
 ## Data locations at a glance
 
 | Domain | Available directly on GitHub | Local authorized inputs (not on GitHub) | Analysis command |
 |---|---|---|---|
-| **HOP and PowerWatch electricity telemetry** | Sensor inclusion maps and analysis windows in `config/energy_meters.csv`, `config/paired_sensors.csv`, `config/canonical_powerwatch.csv`, and `config/analysis_periods.csv` | Authorized ZIP files in `data/raw/downloads/`, extracted under `data/raw/extracted/` | `python scripts/run_energy.py`, `python scripts/run_reliability.py`, and `python scripts/run_power_quality.py` |
+| **HOP and GridWatch electricity telemetry** | Sensor inclusion maps and analysis windows in `config/energy_meters.csv`, `config/paired_sensors.csv`, `config/canonical_powerwatch.csv`, and `config/analysis_periods.csv` | Authorized ZIP files in `data/raw/downloads/`, extracted under `data/raw/extracted/` | `python scripts/run_energy.py`, `python scripts/run_reliability.py`, and `python scripts/run_power_quality.py` |
 | **Facility payment information** | Anonymized transaction ledger at `data/public/payments/payment_ledger_anonymized.csv` | Original identified financial records are not required by the public pipeline and are not tracked | `python scripts/run_payments.py` |
 | **DHIS2 health data** | Anonymized ward-month and facility-month panels at `data/public/dhis2_ward_month_anonymized.csv` and `data/public/dhis2_facility_month_anonymized.csv` | Authorized raw exports in `data/raw/dhis2/` and the identity crosswalk in `config/private/` | `python scripts/run_health.py` |
 
 The payment ledger and processed DHIS2 panels are included in the public GitHub
-repository. The high-frequency HOP and PowerWatch files are **not** stored in
+repository. The high-frequency HOP and GridWatch files are **not** stored in
 GitHub: they are larger authorized release assets, verified using
 `config/data_sources.toml`, and remain local and Git-ignored. See
 [`docs/DATA_GUIDE.md`](docs/DATA_GUIDE.md) for the complete file map and the
@@ -31,7 +35,7 @@ without exposing raw or identified facility data.
 
 - Code, analytical configuration, tests, anonymized DHIS2 panels, and the
   anonymized payment ledger are public.
-- Raw HOP and PowerWatch ZIP files are not committed to GitHub. Their expected
+- Raw HOP and GridWatch ZIP files are not committed to GitHub. Their expected
   filenames and SHA-256 checksums are listed in `config/data_sources.toml` so
   authorized users can verify exact source files before rebuilding analyses.
 - Raw DHIS2 exports and the private facility crosswalk are not public because
@@ -218,7 +222,7 @@ side margins so the artwork fills the page width when inserted in a manuscript.
 ## Current status
 
 - Raw-asset inventory complete.
-- Seven PowerWatch original/updated pairs audited; each updated file is an
+- Seven GridWatch original/updated pairs audited; each updated file is an
   exact superset of its original.
 - Analysis primitives implemented and tested.
 - Facility periods and exclusions remain provisional pending study-team review.
