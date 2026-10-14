@@ -14,7 +14,6 @@ import struct
 import tempfile
 import zlib
 
-import cairosvg
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,6 +58,7 @@ def set_png_dpi(path: Path, dpi: int) -> None:
 
 
 def main() -> None:
+    import cairosvg
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dpi", type=int, default=3600)
     parser.add_argument("--width-inches", type=float, default=7.5)

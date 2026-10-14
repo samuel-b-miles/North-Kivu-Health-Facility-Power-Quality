@@ -1,0 +1,7 @@
+facility_code,sensor_id,preferred_version,end_exclusive,window_basis
+HGR1,HGR1-PW-01,updated,2024-04-05,before_configured_intervention_source_start
+HGR1,HGR1-PW-02,updated,2024-04-05,before_configured_intervention_source_start
+CSR1,CSR1-PW-02,original,2024-05-27,before_configured_intervention_source_start
+CSR1,CSR1-PW-01,original,2024-05-27,before_configured_intervention_source_start
+CSR3,CSR3-PW-01,omitted,2024-04-29,before_configured_intervention_source_start
+CSR3,CSR3-PW-02,omitted,2024-04-29,before_configured_intervention_source_start

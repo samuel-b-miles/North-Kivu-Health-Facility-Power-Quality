@@ -23,14 +23,20 @@ def main() -> None:
     for column in ("uptime_pct", "voltage_quality_pct", "frequency_quality_5_pct"):
         pre[column] = pd.to_numeric(pre[column])
     audit = pd.read_csv(args.output_root / "baseline_audit" / "single_sensor_comparisons.csv")
-    pre = reconstructed_comparisons(pre, audit, args.pqr_policy)
+    longitudinal = pd.read_csv(args.output_root / "baseline_audit" / "selected_longitudinal_baselines.csv")
+    pre = reconstructed_comparisons(pre, audit, args.pqr_policy, longitudinal)
+    if pre.status.str.contains("pending|inherited").any():
+        raise ValueError("Submission Figure 3 requires reconstructed values for all six facilities")
     quality_suffix = "joint_pooled" if args.pqr_policy == "joint" else "pooled"
     quality = quality.rename(columns={
         f"voltage_quality_pct_{quality_suffix}": "figure_voltage_pct",
         f"frequency_quality_5_pct_{quality_suffix}": "figure_frequency_5_pct",
     })
     summary = pre.merge(
-        reliability[["facility_code", "manuscript_uptime_expected_window_pct"]], on="facility_code"
+        reliability[["facility_code", "manuscript_uptime_expected_window_pct", "observed_uptime_pct",
+                     "coverage_pct", "two_sensor_coverage_pct", "window_start", "window_end_inclusive"]]
+            .rename(columns={c: "post_" + c for c in ["observed_uptime_pct", "coverage_pct",
+                "two_sensor_coverage_pct", "window_start", "window_end_inclusive"]}), on="facility_code"
     ).merge(
         quality[["facility_code", "figure_voltage_pct", "figure_frequency_5_pct"]],
         on="facility_code",
@@ -51,15 +57,23 @@ def main() -> None:
     output = args.output_root / "figure3"; output.mkdir(parents=True, exist_ok=True)
     stem = "pre_post_summary" if args.pqr_policy == "joint" else "source_comparison_independent_pqr"
     summary.to_csv(output / f"{stem}.csv", index=False)
+    if args.pqr_policy == "joint":
+        inherited = pd.DataFrame(read_config("manuscript_pre_results.csv"))
+        inherited = inherited.rename(columns={"uptime_pct": "inherited_uptime_pct",
+            "voltage_quality_pct": "inherited_voltage_pct", "frequency_quality_5_pct": "inherited_frequency_5_pct"})
+        comparison = summary.merge(inherited[["facility_code", "inherited_uptime_pct",
+            "inherited_voltage_pct", "inherited_frequency_5_pct"]], on="facility_code")
+        for metric in ("uptime", "voltage", "frequency_5"):
+            comparison[f"{metric}_change_percentage_points"] = comparison[f"{metric}_pre_pct"] - pd.to_numeric(comparison[f"inherited_{metric}_pct"])
+        comparison.to_csv(output / "baseline_value_audit.csv", index=False)
     write_pre_post_triptych_svg(output / f"{stem}.svg", summary.to_dict("records"),
                                source_comparison=True)
-    # ±1% and ±10% are computed only for the three reconstructed comparisons;
-    # inherited ±5% numbers must never be relabelled as another tolerance.
+    # All six comparisons now have independently calculated ±0.1/1/5/10% results.
     thresholds = []
     for row in summary.to_dict("records"):
-        for tolerance in ("1", "5", "10"):
+        for tolerance in ("0_1", "1", "5", "10"):
             post = quality[quality.facility_code == row["facility_code"]].iloc[0]
-            thresholds.append({"facility_code": row["facility_code"], "frequency_tolerance_pct": int(tolerance),
+            thresholds.append({"facility_code": row["facility_code"], "frequency_tolerance_pct": {"0_1": 0.1, "1": 1, "5": 5, "10": 10}[tolerance],
                                "existing_source_frequency_pct": row.get(f"frequency_quality_{tolerance}_pct", float("nan"))
                                    if tolerance != "5" else row["frequency_5_pre_pct"],
                                "protected_circuit_frequency_pct": post[
@@ -67,6 +81,20 @@ def main() -> None:
                                    f"frequency_quality_{tolerance}_pct_{quality_suffix}"],
                                "baseline_status": row["pre_status"], "pqr_denominator_policy": args.pqr_policy})
     pd.DataFrame(thresholds).to_csv(output / f"frequency_thresholds_{args.pqr_policy}.csv", index=False)
+    if args.pqr_policy == "joint":
+        sensors = pd.read_csv(args.output_root / "power_quality" / "post_flex_conditional_quality_by_sensor.csv")
+        provenance = sensors.groupby("facility_code").agg(
+            sensor_count=("facility_code", "size"),
+            first_retained_record=("date_start", "min"), last_retained_record=("date_end", "max"),
+            valid_frequency_observations=("valid_frequency_observations", "sum"),
+            joint_valid_observations=("joint_valid_observations_joint", "sum")).reset_index()
+        frequency_columns = {"figure_frequency_5_pct": "frequency_quality_5_pct_joint_pooled"}
+        provenance = provenance.merge(quality[["facility_code", "figure_frequency_5_pct"] +
+            [f"frequency_quality_{label}_pct_joint_pooled" for label in ("0_1", "1", "10")]],
+            on="facility_code").rename(columns=frequency_columns)
+        provenance["frequency_aggregation"] = "pooled_valid_readings"
+        provenance["window_policy"] = "configured_source_start_and_inclusive_telemetry_exclusions;each_sensor_available_records"
+        provenance.to_csv(output / "protected_frequency_provenance.csv", index=False)
     print(f"figure 3 summary: {len(summary)} facilities")
 
 

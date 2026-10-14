@@ -54,5 +54,7 @@ F1/F2, CSR1, and HGR1. Two draft values require correction:
 CH1, CSR2, and CSR4 comparison uptime is now independently reconstructed from
 single PowerWatch sensors over source-specific windows. These are labelled
 existing-source comparisons, not uniformly pre-installation observations.
-HGR1, CSR1, and CSR3 baseline values remain inherited and explicitly marked as
-awaiting independent reconstruction. See `BASELINE_RECONSTRUCTION.md`.
+HGR1, CSR1 and CSR3 baselines are now reconstructed from two PowerWatch files.
+HGR1/CSR3 use shared pre-source windows; CSR1 uses the full available pre record
+with variable sensor coverage. Alternative windows and coverage are exported.
+See `FIGURE3_DELIVERY.md` and `DRC1_BASELINE_SUPPLEMENT.md`.

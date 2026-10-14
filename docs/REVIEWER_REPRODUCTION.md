@@ -10,6 +10,20 @@ anonymized DHIS2 analytical panels, and anonymized payment ledger. These files
 are enough to inspect the workflow, run unit tests, and reproduce analyses that
 depend only on public processed data.
 
+## Public-only reproduction
+
+After installing the environment, run:
+
+```bash
+python scripts/run_health.py --from-public
+python scripts/run_payments.py
+python scripts/run_timeline_figure.py
+```
+
+These commands require no private crosswalk or raw exports. Electricity source
+recalculation still requires restricted telemetry. See
+[the release inventory and access process](DATA_SHARING_HANDOFF.md).
+
 ## What requires restricted data
 
 Full source-level reproduction also requires restricted local inputs:
@@ -17,6 +31,7 @@ Full source-level reproduction also requires restricted local inputs:
 - HOP daily energy ZIP
 - HOP one-minute voltage/power ZIP
 - PowerWatch two-minute voltage/frequency ZIP
+- DRC1 baseline supplement ZIP (recovered second CSR1 sensor)
 - raw DHIS2 admissions export
 - raw DHIS2 deaths export
 - private facility crosswalk
@@ -71,6 +86,7 @@ or a folder containing uniquely named source files. The canonical layout is:
 data/restricted/electricity/v2.0/HOP_daily_energy.zip
 data/restricted/electricity/v2.0/HOP_voltage_power_1min.zip
 data/restricted/electricity/v2.0/PowerWatch_voltage_frequency_2min.zip
+data/restricted/electricity/v2.0/DRC1_baseline_supplement.zip
 data/restricted/dhis2/v1.0/admissions.csv
 data/restricted/dhis2/v1.0/deaths.csv
 data/private/facility_crosswalk_private.csv

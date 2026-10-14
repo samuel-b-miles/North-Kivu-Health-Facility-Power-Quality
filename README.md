@@ -85,7 +85,7 @@ pytest
 
 ## Add the raw data locally
 
-Download the three authorized release ZIPs to your computer. They are verified
+Download the four authorized release ZIPs (including the DRC1 baseline supplement) to your computer. They are verified
 against the checksums in `config/data_sources.toml` and remain excluded from Git.
 
 ```bash
@@ -143,14 +143,15 @@ python scripts/run_baseline_audit.py
 This writes input checksums, daily sensor coverage, single-sensor source
 comparisons, and paired-versus-single follow-up estimates to
 `outputs/generated/baseline_audit/`. Figure 3 now uses these reconstructed
-CH1/CSR2/CSR4 comparisons and explicitly retains the other three inherited
-baselines. See [`docs/BASELINE_RECONSTRUCTION.md`](docs/BASELINE_RECONSTRUCTION.md)
+CH1/CSR2/CSR4 comparisons. Run `python scripts/run_longitudinal_pre_audit.py`
+to reconstruct HGR1/CSR1/CSR3 from the available baseline sensors, including
+the DRC1 supplement. All six submission values use audited source results. See [`docs/BASELINE_RECONSTRUCTION.md`](docs/BASELINE_RECONSTRUCTION.md)
 for reproduced values and source-history limitations.
 
 ### Figure 3 delivery
 
 The inspected delivery snapshot is in [`publication/figure3/`](publication/figure3/),
-including SVG, 600-DPI PNG, vector PDF, plotted values, caption, and provenance.
+including SVG, 3600-DPI PNG, vector PDF, plotted values, caption, and provenance.
 The summary uses existing-supply versus protected-circuit labels because the
 short source windows are not uniformly pre-installation observations. Its ±5%
 frequency panel retains the original figure's threshold; the time-series band
@@ -175,8 +176,33 @@ denominator sensitivity keeps voltage observations even when frequency is
 missing or invalid. This choice is visible in output metadata and captions;
 the default reusable PQR library continues to use independent denominators.
 
+### One-command large-format figure book
+
+With the checksum-verified telemetry installed locally, run:
+
+```bash
+pip install -e '.[publication]'
+python scripts/build_figure_book.py
+```
+
+The command reruns the analyses using the public DHIS2 panels, rebuilds Figure 1
+from the [tracked full-resolution photographs](publication/figure1/README.md),
+then assembles only manuscript Figures 1-5 into the large PDF at
+`outputs/generated/figure_book/all_code_generated_figures_large.pdf`. The two
+Figure 3 panels occupy separate pages, so the default book has six pages.
+Each page is 17 inches wide with 16 inches available for its figure. Charts
+keep vector text and shapes; Figure 1 embeds the high-resolution photographs.
+
+Use `--include-drafts` to append additional generated analysis figures,
+`--skip-analysis` to repackage existing SVGs, `--width-inches` to change the
+print size, or `--output` to choose a path.
+The builder uses LibreOffice when available, or the `publication` Python extra
+to convert SVGs to PDF. The raw telemetry required for regeneration remains
+local and is not stored in GitHub. The builder leaves the reviewed
+`publication/figure3/` files unchanged.
+
 The implementation and analytical windows figure needs no raw data. Regenerate
-its tightly cropped, resolution-independent SVG and optional 3600-DPI PNG with:
+its tightly cropped, resolution-independent SVG and optional 33600-DPI PNG with:
 
 ```bash
 python scripts/run_timeline_figure.py
@@ -186,7 +212,7 @@ python scripts/export_timeline_figure.py --dpi 3600 --width-inches 7.5
 
 Both files are written to `outputs/generated/timeline/`. The SVG is the best
 source for further scaling or journal production; the PNG is rendered directly
-from it at 27,000 pixels wide with 3600-DPI metadata. The canvas has balanced
+from it at 27,000 pixels wide with 33600-DPI metadata. The canvas has balanced
 side margins so the artwork fills the page width when inserted in a manuscript.
 
 ## Current status
@@ -226,3 +252,5 @@ Then run `python scripts/run_health.py`. This regenerates:
 The health analysis is descriptive. It evaluates whether routine reporting is
 sufficiently complete and continuous for future infrastructure-health
 evaluation; it does not estimate a causal treatment effect.
+
+Download high-resolution Figure 3 exports from GitHub **Actions → Figure 3 publication exports → latest successful run → figure3-publication-3600dpi**. The workflow renders the committed audited SVG masters at 27,000 pixels wide (7.5 inches, 3600 DPI), includes vector PDFs and supporting tables, and does not require restricted raw data. Re-run the analytical pipeline when changing the underlying results.

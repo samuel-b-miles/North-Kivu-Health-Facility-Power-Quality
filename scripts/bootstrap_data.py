@@ -51,7 +51,7 @@ def main() -> None:
         "--source-dir",
         type=Path,
         default=Path(os.environ.get("DRC_DATA_DOWNLOADS", Path.home() / "Downloads")),
-        help="Directory containing the three release ZIPs (or set DRC_DATA_DOWNLOADS).",
+        help="Directory containing the four release ZIPs (or set DRC_DATA_DOWNLOADS).",
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--raw-dir", type=Path, default=PROJECT_ROOT / "data" / "raw")

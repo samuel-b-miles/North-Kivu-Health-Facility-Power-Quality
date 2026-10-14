@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 from pathlib import Path
+import shutil
 
 import pandas as pd
 
@@ -26,9 +27,9 @@ FACILITY_COLORS = {
 }
 
 
-def text(parts: list[str], x: float, y: float, value: str, size: int = 12, **attrs: str) -> None:
+def text(parts: list[str], x: float, y: float, value: str, size: int = 18, **attrs: str) -> None:
     options = " ".join(f'{key.replace("_", "-")}="{html.escape(str(val))}"' for key, val in attrs.items())
-    parts.append(f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="{size}" {options}>{html.escape(value)}</text>')
+    parts.append(f'<text x="{x}" y="{y}" font-family="Arial" font-size="{size}" {options}>{html.escape(value)}</text>')
 
 
 def standard_package_steps(components: pd.DataFrame) -> list[tuple[str, float, str]]:
@@ -48,7 +49,7 @@ def standard_package_steps(components: pd.DataFrame) -> list[tuple[str, float, s
 
 def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
     left, top, plot_w, plot_h = 70, 80, 600, 235
-    text(parts, 65, 57, "Panel A — Standard reference package CAPEX", 16, font_weight="bold")
+    text(parts, 65, 58, "Panel A — Standard reference package CAPEX", 23, font_weight="bold")
     steps = standard_package_steps(components); maximum = steps[-1][1] * 1.10
     cell = plot_w / len(steps); bar_w = cell * 0.62; running = 0.0
     step_colors = ["#334155", "#64748b", "#94a3b8", "#b6a6ca", "#8b6f47", "#0f766e"]
@@ -63,32 +64,32 @@ def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
                 running = value
         y_top = top + plot_h * (1 - top_value / maximum); y_base = top + plot_h * (1 - base / maximum)
         parts.append(f'<rect x="{x}" y="{y_top}" width="{bar_w}" height="{y_base-y_top}" fill="{step_colors[index]}"/>')
-        text(parts, x + bar_w / 2, y_top - 7, f"${value:,.0f}", 9, text_anchor="middle", font_weight="bold")
+        text(parts, x + bar_w / 2, y_top - 9, f"${value:,.0f}", 17, text_anchor="middle", font_weight="bold")
         for line_number, line in enumerate(label.split("\n")):
-            text(parts, x + bar_w / 2, top + plot_h + 16 + 12 * line_number, line, 9, text_anchor="middle")
+            text(parts, x + bar_w / 2, top + plot_h + 22 + 19 * line_number, line, 16, text_anchor="middle")
         if index and kind == "step":
             y = top + plot_h * (1 - prior_level / maximum)
             previous_x = left + (index - 0.5) * cell + bar_w / 2
             parts.append(f'<line x1="{previous_x}" y1="{y}" x2="{x}" y2="{y}" stroke="#888" stroke-dasharray="4,3"/>')
         prior_level = top_value
-    text(parts, 65, 365, "USAID-funded budget reference; one standardized package.", 10, fill="#555")
+    text(parts, 65, 390, "USAID-funded budget reference; one standardized package.", 17, fill="#444")
 
 
 def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 70, 485, 600, 235
-    text(parts, 65, 460, "Panel D — Monthly payments, outflows, and cumulative balance", 16, font_weight="bold")
+    left, top, plot_w, plot_h = 130, 485, 535, 235
+    text(parts, 65, 460, "Panel D — Monthly payments, outflows, and cumulative balance", 22, font_weight="bold")
     monthly_max = max(float(monthly["facility_payments_usd"].max()), float(monthly["recorded_outflows_usd"].max()), 1) * 1.12
     cumulative_max = max(float(monthly["cumulative_ledger_balance_usd"].max()), 1) * 1.12
     cell = plot_w / len(monthly); bar_w = cell * 0.72
     for tick in range(4):
         value = monthly_max * tick / 3; y = top + plot_h * (1 - tick / 3)
         parts.append(f'<line x1="{left}" y1="{y}" x2="{left+plot_w}" y2="{y}" stroke="#ececec"/>')
-        text(parts, left - 8, y + 4, f"${value:,.0f}", 10, text_anchor="end")
-        text(parts, left + plot_w + 8, y + 4, f"${cumulative_max*tick/3:,.0f}", 10)
-    text(parts, left - 48, top + plot_h / 2, "Monthly cash flow (USD)", 11,
-         text_anchor="middle", transform=f"rotate(-90 {left - 48} {top + plot_h / 2})")
-    text(parts, left + plot_w + 40, top + plot_h / 2, "Cumulative balance (USD)", 10,
-         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 40} {top + plot_h / 2})")
+        text(parts, left - 9, y + 6, f"${value:,.0f}", 18, text_anchor="end")
+        text(parts, left + plot_w + 8, y + 6, f"${cumulative_max*tick/3:,.0f}", 17)
+    text(parts, left - 105, top + plot_h / 2, "Monthly cash flow (USD)", 20,
+         text_anchor="middle", transform=f"rotate(-90 {left - 105} {top + plot_h / 2})")
+    text(parts, left + plot_w + 95, top + plot_h / 2, "Cumulative balance (USD)", 18,
+         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 95} {top + plot_h / 2})")
     points = []
     for index, (_, row) in enumerate(monthly.iterrows()):
         x = left + (index + 0.5) * cell - bar_w / 2; base = top + plot_h
@@ -108,78 +109,78 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
     parts.append(f'<polyline points="{" ".join(points)}" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>')
     for index in sorted(set([0, len(monthly)//2, len(monthly)-1])):
         x = left + (index + 0.5) * cell
-        text(parts, x, top + plot_h + 20, pd.Timestamp(monthly.index[index]).strftime("%b %Y"), 10, text_anchor="middle")
-    legend_y = top + plot_h + 42
+        text(parts, x, top + plot_h + 25, pd.Timestamp(monthly.index[index]).strftime("%b %Y"), 18, text_anchor="middle")
+    legend_y = top + plot_h + 54
     for index, code in enumerate(FACILITY_CODES):
-        col, row = index % 3, index // 3; x = 70 + col * 88; y = legend_y + row * 17
-        parts.append(f'<rect x="{x}" y="{y}" width="10" height="10" fill="{FACILITY_COLORS[code]}"/>')
-        text(parts, x + 15, y + 9, code, 9)
-    parts += [f'<rect x="350" y="{legend_y}" width="10" height="10" fill="#6b7280"/>',
-              f'<rect x="350" y="{legend_y+17}" width="10" height="10" fill="#9c2f2f"/>',
-              f'<line x1="505" y1="{legend_y+5}" x2="530" y2="{legend_y+5}" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>']
-    text(parts, 365, legend_y + 9, "OPEX", 9); text(parts, 365, legend_y + 26, "Expansion CAPEX", 9)
-    text(parts, 537, legend_y + 9, "Balance", 9)
+        col, row = index % 3, index // 3; x = 70 + col * 110; y = legend_y + row * 24
+        parts.append(f'<rect x="{x}" y="{y}" width="16" height="16" fill="{FACILITY_COLORS[code]}"/>')
+        text(parts, x + 22, y + 15, code, 18)
+    parts += [f'<rect x="415" y="{legend_y}" width="16" height="16" fill="#6b7280"/>',
+              f'<rect x="415" y="{legend_y+24}" width="16" height="16" fill="#9c2f2f"/>',
+              f'<line x1="565" y1="{legend_y+8}" x2="590" y2="{legend_y+8}" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>']
+    text(parts, 437, legend_y + 15, "OPEX", 17); text(parts, 437, legend_y + 39, "Expansion CAPEX", 17)
+    text(parts, 600, legend_y + 15, "Balance", 17)
 
 
 def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
     left, top, plot_w, plot_h = 850, 80, 585, 235
-    text(parts, 845, 57, "Panel B — Deployment CAPEX and monthly commitment", 16, font_weight="bold")
+    text(parts, 845, 58, "Panel B — Deployment CAPEX and monthly commitment", 23, font_weight="bold")
     maximum = max(reference["deployment_capex_usd"].max(), 1) * 1.12
     commitment_max = max(reference["monthly_commitment_usd"].max(), 1) * 1.12
     cell = plot_w / len(reference); bar_w = cell * 0.55
     for tick in range(4):
         value = maximum * tick / 3; y = top + plot_h * (1 - tick / 3)
         parts.append(f'<line x1="{left}" y1="{y}" x2="{left+plot_w}" y2="{y}" stroke="#ececec"/>')
-        text(parts, left - 8, y + 4, f"${value:,.0f}", 10, text_anchor="end")
-        text(parts, left + plot_w + 5, y + 4, f"${commitment_max*tick/3:,.0f}", 9)
-    text(parts, left - 48, top + plot_h / 2, "Deployment CAPEX (USD)", 11,
-         text_anchor="middle", transform=f"rotate(-90 {left - 48} {top + plot_h / 2})")
-    text(parts, left + plot_w + 60, top + plot_h / 2, "Monthly commitment (USD)", 11,
-         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 60} {top + plot_h / 2})")
+        text(parts, left - 8, y + 6, f"${value:,.0f}", 18, text_anchor="end")
+        text(parts, left + plot_w + 5, y + 6, f"${commitment_max*tick/3:,.0f}", 17)
+    text(parts, left - 105, top + plot_h / 2, "Deployment CAPEX (USD)", 20,
+         text_anchor="middle", transform=f"rotate(-90 {left - 105} {top + plot_h / 2})")
+    text(parts, left + plot_w + 95, top + plot_h / 2, "Monthly commitment (USD)", 20,
+         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 95} {top + plot_h / 2})")
     for index, row in reference.reset_index(drop=True).iterrows():
         code = row["facility_code"]; x = left + (index + 0.5) * cell
         height = plot_h * row["deployment_capex_usd"] / maximum
         parts.append(f'<rect x="{x-bar_w/2}" y="{top+plot_h-height}" width="{bar_w}" height="{height}" fill="{FACILITY_COLORS[code]}"/>')
-        text(parts, x, top + plot_h - height + 14, f'${row["deployment_capex_usd"]:,.0f}', 9,
+        text(parts, x, top + plot_h - 15, f'${row["deployment_capex_usd"]:,.0f}', 15,
              text_anchor="middle", fill="#ffffff", font_weight="bold")
         y_point = top + plot_h * (1 - row["monthly_commitment_usd"] / commitment_max)
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
-        text(parts, x, y_point - 9, f'${row["monthly_commitment_usd"]:,.0f}/mo', 9, text_anchor="middle")
-        text(parts, x, top + plot_h + 18, code, 10, text_anchor="middle")
-    text(parts, 845, 365, "Bars: standardized-package CAPEX. Points: monthly commitment.", 10, fill="#555")
+        text(parts, x, y_point - 16, f'${row["monthly_commitment_usd"]:,.0f}/mo', 16, text_anchor="middle")
+        text(parts, x, top + plot_h + 24, code, 19, text_anchor="middle")
+    text(parts, 845, 390, "Bars: standardized-package CAPEX. Points: monthly commitment.", 17, fill="#444")
 
 
 def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 850, 485, 585, 235
-    text(parts, 845, 460, "Panel C — Actual payment revenue and timing", 16, font_weight="bold")
+    left, top, plot_w, plot_h = 920, 485, 515, 235
+    text(parts, 845, 460, "Panel C — Actual payment revenue and timing", 23, font_weight="bold")
     maximum = max(float(facility["received_usd"].max()), 1) * 1.12; cell = plot_w / len(facility); bar_w = cell * 0.55
     for tick in range(4):
         value = maximum * tick / 3; y = top + plot_h * (1 - tick / 3)
         parts.append(f'<line x1="{left}" y1="{y}" x2="{left+plot_w}" y2="{y}" stroke="#ececec"/>')
-        text(parts, left - 8, y + 4, f"${value:,.0f}", 10, text_anchor="end")
-        text(parts, left + plot_w + 5, y + 4, f"{100*tick/3:.0f}%", 9)
-    text(parts, left - 48, top + plot_h / 2, "Revenue received (USD)", 11,
-         text_anchor="middle", transform=f"rotate(-90 {left - 48} {top + plot_h / 2})")
-    text(parts, left + plot_w + 60, top + plot_h / 2, "On-time remittances (%)", 11,
-         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 60} {top + plot_h / 2})")
+        text(parts, left - 8, y + 6, f"${value:,.0f}", 18, text_anchor="end")
+        text(parts, left + plot_w + 5, y + 6, f"{100*tick/3:.0f}%", 17)
+    text(parts, left - 100, top + plot_h / 2, "Revenue received (USD)", 20,
+         text_anchor="middle", transform=f"rotate(-90 {left - 100} {top + plot_h / 2})")
+    text(parts, left + plot_w + 95, top + plot_h / 2, "On-time remittances (%)", 20,
+         text_anchor="middle", transform=f"rotate(90 {left + plot_w + 95} {top + plot_h / 2})")
     for index, row in facility.reset_index(drop=True).iterrows():
         code = row["facility_code"]; x = left + (index + 0.5) * cell
         height = plot_h * float(row["received_usd"]) / maximum
         parts.append(f'<rect x="{x-bar_w/2}" y="{top+plot_h-height}" width="{bar_w}" height="{height}" fill="{FACILITY_COLORS[code]}"/>')
-        text(parts, x, top + plot_h - height - 7, f'${row["received_usd"]:,.0f}', 9, text_anchor="middle")
+        text(parts, x, top + plot_h - height - 9, f'${row["received_usd"]:,.0f}', 16, text_anchor="middle")
         y_point = top + plot_h * (1 - float(row["on_time_pct"]) / 100)
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
-        text(parts, x, y_point - 9, f'{row["on_time_pct"]:.1f}%', 9, text_anchor="middle")
-        text(parts, x, top + plot_h + 18, code, 10, text_anchor="middle")
-    text(parts, 845, 765, "Bars: revenue received. Points: share recorded on time.", 10, fill="#555")
+        text(parts, x, y_point - 10, f'{row["on_time_pct"]:.1f}%', 16, text_anchor="middle")
+        text(parts, x, top + plot_h + 24, code, 19, text_anchor="middle")
+    text(parts, 845, 780, "Bars: revenue received. Points: share recorded on time.", 17, fill="#444")
 
 
 def write_figure(path: Path, components: pd.DataFrame, monthly: pd.DataFrame,
                  reference: pd.DataFrame, facility: pd.DataFrame) -> None:
-    width, height = 1600, 805
+    width, height = 1600, 830
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
              '<rect width="100%" height="100%" fill="white"/>']
-    text(parts, width / 2, 31, "Capital investment and facility payment performance", 23,
+    text(parts, width / 2, 34, "Capital investment and facility payment performance", 31,
          text_anchor="middle", font_weight="bold")
     draw_package_waterfall(parts, components)
     draw_monthly_cash_flow(parts, monthly)
@@ -205,7 +206,10 @@ def main() -> None:
     reference.to_csv(output / "facility_capex_and_commitment.csv", index=False)
     subsequent_capex = outflows[[column for column in outflows.columns if column in SUBSEQUENT_CAPEX_CATEGORIES]]
     subsequent_capex.to_csv(output / "subsequent_capex_by_facility.csv")
-    write_figure(output / "figure6_capex_and_payments.svg", components, monthly, reference, facility)
+    figure5 = output / "figure5_capex_and_payments.svg"
+    write_figure(figure5, components, monthly, reference, facility)
+    # Preserve the historical filename for downstream users of this repository.
+    shutil.copyfile(figure5, output / "figure6_capex_and_payments.svg")
     print(f"payments: {len(data)} ledger rows, ${facility['received_usd'].sum():,.0f} received")
 
 

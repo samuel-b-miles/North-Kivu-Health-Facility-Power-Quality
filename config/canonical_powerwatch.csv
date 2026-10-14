@@ -6,7 +6,7 @@ CSR4-PW-01,updated,verified_exact_superset,96084 original timestamps preserved p
 HGR1-PW-01,updated,verified_exact_superset,874791 original timestamps preserved plus 61102 new timestamps
 HGR1-PW-02,updated,verified_exact_superset,871581 original timestamps preserved plus 61113 new timestamps
 HGR1-PW-03,updated,verified_exact_superset,353948 original timestamps preserved plus 61079 new timestamps
-CSR3-PW-01,omitted,review_required,Only release file is explicitly marked omitted
-CSR3-PW-02,omitted,review_required,Only release file is explicitly marked omitted
-CSR1-PW-01,missing,blocked,Documented sensor is absent from release assets
+CSR3-PW-01,omitted,baseline_only,Verified existing-grid sensor; use configured pre window; retain dropout sensitivity
+CSR3-PW-02,omitted,baseline_only,Verified existing-grid sensor; use configured pre window; ends July 2023
+CSR1-PW-01,original,verified_drc1_supplement,Recovered coded DRC1 radiography series; source and projection hashes verified
 

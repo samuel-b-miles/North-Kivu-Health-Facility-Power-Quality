@@ -9,9 +9,9 @@ observed. Outages and missing telemetry are reported separately.
 
 ### Preserve missing telemetry as unknown
 
-Primary reliability estimates do not convert missing sensor records into
-outages. A separately named conservative sensitivity estimate may count unknown
-intervals against availability.
+Electrical evidence does not convert missing records into confirmed outages.
+The manuscript primary is the conservative powered-bin fraction of expected
+intervals; observed-evidence uptime and unknown bins are reported separately.
 
 ### Use updated PowerWatch exports for seven overlapping sensors
 
@@ -48,7 +48,14 @@ service functionality and facility use.
 ## Pending decisions
 
 - Exact intervention and conflict-exclusion dates.
-- Include/exclude rationale for the CSR3 grid files marked `omitted`.
-- Source or disposition of the missing CSR1 radiography PowerWatch file.
+- Original export rationale for the CSR3 `omitted` filename label; verified
+  baseline-only use is now configured and dropout sensitivities are supplied.
+- The original legacy 44% extraction/formula, if historical reconciliation is
+  needed. The missing radiography series is recovered and the selected baseline
+  is reconstructed from two contributing sensors.
 - Inclusion and anonymized identifier for the CH1 sterilizer HOP meter.
 - Electrical topology required to avoid double-counting facility energy.
+
+## Six-facility baseline revision
+
+All six historical Figure 3 baselines are replaced by source reconstructions. HGR1/CSR3 use shared pre-source overlap; CSR1 uses the full available pre record with variable two-sensor coverage. CH1/CSR2/CSR4 remain single-PowerWatch existing-source comparisons. ±5% remains primary and ±1%/±10% tables are complete. Historical values are retained solely for the audit trail. See FIGURE3_DELIVERY.md for exact windows, rationale and manuscript methods.
