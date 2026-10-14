@@ -68,12 +68,12 @@ def main() -> None:
         comparison.to_csv(output / "baseline_value_audit.csv", index=False)
     write_pre_post_triptych_svg(output / f"{stem}.svg", summary.to_dict("records"),
                                source_comparison=True)
-    # All six comparisons now have independently calculated ±1/5/10% results.
+    # All six comparisons now have independently calculated ±0.1/1/5/10% results.
     thresholds = []
     for row in summary.to_dict("records"):
-        for tolerance in ("1", "5", "10"):
+        for tolerance in ("0_1", "1", "5", "10"):
             post = quality[quality.facility_code == row["facility_code"]].iloc[0]
-            thresholds.append({"facility_code": row["facility_code"], "frequency_tolerance_pct": int(tolerance),
+            thresholds.append({"facility_code": row["facility_code"], "frequency_tolerance_pct": {"0_1": 0.1, "1": 1, "5": 5, "10": 10}[tolerance],
                                "existing_source_frequency_pct": row.get(f"frequency_quality_{tolerance}_pct", float("nan"))
                                    if tolerance != "5" else row["frequency_5_pre_pct"],
                                "protected_circuit_frequency_pct": post[
@@ -81,6 +81,20 @@ def main() -> None:
                                    f"frequency_quality_{tolerance}_pct_{quality_suffix}"],
                                "baseline_status": row["pre_status"], "pqr_denominator_policy": args.pqr_policy})
     pd.DataFrame(thresholds).to_csv(output / f"frequency_thresholds_{args.pqr_policy}.csv", index=False)
+    if args.pqr_policy == "joint":
+        sensors = pd.read_csv(args.output_root / "power_quality" / "post_flex_conditional_quality_by_sensor.csv")
+        provenance = sensors.groupby("facility_code").agg(
+            sensor_count=("facility_code", "size"),
+            first_retained_record=("date_start", "min"), last_retained_record=("date_end", "max"),
+            valid_frequency_observations=("valid_frequency_observations", "sum"),
+            joint_valid_observations=("joint_valid_observations_joint", "sum")).reset_index()
+        frequency_columns = {"figure_frequency_5_pct": "frequency_quality_5_pct_joint_pooled"}
+        provenance = provenance.merge(quality[["facility_code", "figure_frequency_5_pct"] +
+            [f"frequency_quality_{label}_pct_joint_pooled" for label in ("0_1", "1", "10")]],
+            on="facility_code").rename(columns=frequency_columns)
+        provenance["frequency_aggregation"] = "pooled_valid_readings"
+        provenance["window_policy"] = "configured_source_start_and_inclusive_telemetry_exclusions;each_sensor_available_records"
+        provenance.to_csv(output / "protected_frequency_provenance.csv", index=False)
     print(f"figure 3 summary: {len(summary)} facilities")
 
 

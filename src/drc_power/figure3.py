@@ -22,7 +22,7 @@ def reconstructed_comparisons(inherited: pd.DataFrame, audit: pd.DataFrame,
         data.loc[facility, "uptime_pct"] = row.expected_window_uptime_pct
         data.loc[facility, "voltage_quality_pct"] = row[
             "legacy_joint_voltage_quality_pct" if policy == "joint" else "voltage_quality_pct"]
-        for tolerance in ("1", "5", "10"):
+        for tolerance in ("0_1", "1", "5", "10"):
             data.loc[facility, f"frequency_quality_{tolerance}_pct"] = row[f"frequency_quality_{tolerance}_pct"]
         data.loc[facility, "status"] = "reconstructed_existing_source_comparison"
         data.loc[facility, "baseline_sensor_basis"] = "single_powerwatch"
@@ -44,8 +44,10 @@ def reconstructed_comparisons(inherited: pd.DataFrame, audit: pd.DataFrame,
             data.loc[facility, "uptime_pct"] = row.expected_window_uptime_pct
             data.loc[facility, "voltage_quality_pct"] = row[
                 "legacy_joint_voltage_quality_pct" if policy == "joint" else "voltage_quality_pct"]
-            for tolerance in ("1", "5", "10"):
-                key = f"legacy_joint_frequency_{tolerance}_pct" if policy == "joint" else f"frequency_quality_{tolerance}_pct"
+            # The saved ±0.1% value uses the same joint-valid frequency readings
+            # and equal sensor means; older audits have no legacy alias for it.
+            for tolerance in ("0_1", "1", "5", "10"):
+                key = f"legacy_joint_frequency_{tolerance}_pct" if policy == "joint" and tolerance != "0_1" else f"frequency_quality_{tolerance}_pct"
                 data.loc[facility, f"frequency_quality_{tolerance}_pct"] = row[key]
             data.loc[facility, "status"] = "reconstructed_longitudinal_pre_source_window"
             data.loc[facility, "baseline_sensor_basis"] = "two_powerwatch_variable_coverage"

@@ -42,14 +42,14 @@ def main() -> None:
                       "voltage_quality_pct_pooled": voltage_num / voltage_den * 100,
                       "voltage_quality_pct_mean_sensor": group["voltage_quality_pct"].mean(),
                       "status": "provisional_pending_exact_intervention_windows"})
-        for tolerance in ("1", "5", "10"):
+        for tolerance in ("0_1", "1", "5", "10"):
             column = f"frequency_quality_{tolerance}_pct"
             numerator = (group[column] * group["valid_frequency_observations"] / 100).sum()
-            sites[-1][f"{column}_pooled"] = numerator / freq_den * 100
+            sites[-1][f"{column}_pooled"] = numerator / freq_den * 100 if freq_den else float("nan")
             sites[-1][f"{column}_mean_sensor"] = group[column].mean()
         joint_den = group["joint_valid_observations_joint"].sum()
         sites[-1]["joint_valid_observations"] = int(joint_den)
-        for column in ["voltage_quality_pct", "frequency_quality_1_pct",
+        for column in ["voltage_quality_pct", "frequency_quality_0_1_pct", "frequency_quality_1_pct",
                        "frequency_quality_5_pct", "frequency_quality_10_pct"]:
             numerator = (group[f"{column}_joint"] * group["joint_valid_observations_joint"] / 100).sum()
             sites[-1][f"{column}_joint_pooled"] = numerator / joint_den * 100 if joint_den else float("nan")
