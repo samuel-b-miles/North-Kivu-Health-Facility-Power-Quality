@@ -5,6 +5,19 @@ This guide answers two questions for each analytical domain:
 1. Which files are available immediately after cloning the public repository?
 2. Which authorized source files must be added locally before rebuilding an analysis?
 
+## Version and terminology
+
+This file describes the earlier `main` snapshot. Current submission results use
+[commit 61b8a328](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/tree/61b8a328b06e9d198fd9469dde0278128933172d).
+See the [reproduction guide](REVIEWER_REPRODUCTION.md) before running commands.
+That version adds a fourth baseline telemetry archive and public-panel health
+reproduction. The complete package remains a candidate pending rights and
+disclosure review; telemetry is not available from this GitHub clone.
+
+HOP is the hardware name retained in filenames; Prospect is the platform
+developer named in the manuscript. They refer to the same monitoring stream in
+this project. PowerWatch is the separate voltage/frequency stream.
+
 ## Storage classes
 
 - **Tracked public data:** anonymized files committed to GitHub and available after cloning.
@@ -150,7 +163,7 @@ Generated health tables, QA reports, and figures are written to:
 outputs/generated/health/
 ```
 
-Rebuild with:
+Rebuild from authorized sources on `main` with:
 
 ```bash
 python scripts/run_health.py

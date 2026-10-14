@@ -1,228 +1,82 @@
 # North Kivu Health-Facility Power Analysis
 
-Reproducible analysis of electricity reliability, conditional power quality,
-and energy use across six anonymized health facilities in North Kivu, DRC.
+Code and anonymized data for studying electricity reliability, power quality,
+energy use, payments, and routine health reporting in North Kivu, DRC. Electricity
+analyses cover six facilities; the DHIS2 panels cover twelve facilities.
 
-This repository contains the public, reproducible analysis scaffold derived
-from documented analytical requirements and approved anonymized release assets.
-Raw telemetry, raw DHIS2 exports, and the private facility identity key are
-intentionally excluded from version control.
+**Terminology:** HOP (the hardware name used in the data files) and Prospect
+(the platform developer named in the manuscript) refer to the same monitoring
+stream in this project. Hardware and platform are distinct; filenames and sensor
+IDs retain `HOP`. PowerWatch supplies the separate voltage/frequency stream.
 
-## Data locations at a glance
+## Current version
 
-| Domain | Available directly on GitHub | Local authorized inputs (not on GitHub) | Analysis command |
-|---|---|---|---|
-| **HOP and PowerWatch electricity telemetry** | Sensor inclusion maps and analysis windows in `config/energy_meters.csv`, `config/paired_sensors.csv`, `config/canonical_powerwatch.csv`, and `config/analysis_periods.csv` | Authorized ZIP files in `data/raw/downloads/`, extracted under `data/raw/extracted/` | `python scripts/run_energy.py`, `python scripts/run_reliability.py`, and `python scripts/run_power_quality.py` |
-| **Facility payment information** | Anonymized transaction ledger at `data/public/payments/payment_ledger_anonymized.csv` | Original identified financial records are not required by the public pipeline and are not tracked | `python scripts/run_payments.py` |
-| **DHIS2 health data** | Anonymized ward-month and facility-month panels at `data/public/dhis2_ward_month_anonymized.csv` and `data/public/dhis2_facility_month_anonymized.csv` | Authorized raw exports in `data/raw/dhis2/` and the identity crosswalk in `config/private/` | `python scripts/run_health.py` |
+The current submission analysis is on
+[`submission-six-facility-baselines`](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/tree/submission-six-facility-baselines),
+pinned at [`61b8a328`](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/tree/61b8a328b06e9d198fd9469dde0278128933172d) (14 October 2026).
+It reconstructs all six Figure 3 source comparisons and reports frequency
+compliance at ±0.1%, ±1%, ±5%, and ±10% of 50 Hz. See its
+[frequency methods and provenance](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/blob/61b8a328b06e9d198fd9469dde0278128933172d/docs/FREQUENCY_REPORTING.md).
 
-The payment ledger and processed DHIS2 panels are included in the public GitHub
-repository. The high-frequency HOP and PowerWatch files are **not** stored in
-GitHub: they are larger authorized release assets, verified using
-`config/data_sources.toml`, and remain local and Git-ignored. See
-[`docs/DATA_GUIDE.md`](docs/DATA_GUIDE.md) for the complete file map and the
-distinction between source data, tracked public data, configuration, and
-generated outputs.
+`main` contains an earlier analysis snapshot. Its code and figures have not been
+replaced by the submission revision. Use the pinned version for current results
+and the [reproduction guide](docs/REVIEWER_REPRODUCTION.md) for version-specific commands.
+The complete data package remains a release candidate pending rights and
+disclosure review. No published Zenodo record or DOI is asserted here.
 
-## Data availability
+## Contents and access
 
-The repository is designed to make the public analytical workflow inspectable
-without exposing raw or identified facility data.
+| Contents | Available on GitHub | Additional inputs |
+|---|---|---|
+| Electricity and energy | Code, sensor maps, analysis windows, Figure 3 snapshots | Authorized telemetry archives |
+| Payments | Anonymized transaction ledger and financial configuration | None for the public analysis |
+| Health reporting | Anonymized ward-month and facility-month DHIS2 panels | Identified exports and private crosswalk only for source cleaning |
 
-- Code, analytical configuration, tests, anonymized DHIS2 panels, and the
-  anonymized payment ledger are public.
-- Raw HOP and PowerWatch ZIP files are not committed to GitHub. Their expected
-  filenames and SHA-256 checksums are listed in `config/data_sources.toml` so
-  authorized users can verify exact source files before rebuilding analyses.
-- Raw DHIS2 exports and the private facility crosswalk are not public because
-  they contain identified facility information. The public DHIS2 panels can be
-  inspected directly, while source-level regeneration requires authorized local
-  files.
-- Generated figures, tables, and QA reports are written to `outputs/generated/`
-  and can be rebuilt locally; they are not tracked in Git.
+The public datasets are in [`data/public/`](data/public/), analysis settings in
+[`config/`](config/), reusable code in [`src/drc_power/`](src/drc_power/), and
+entry points in [`scripts/`](scripts/). Generated tables and SVG figures go to
+`outputs/generated/` and are Git-ignored. See the [data guide](docs/DATA_GUIDE.md)
+for filenames, checksums, and access boundaries.
 
-Reviewers with access to the restricted source-data bundle can follow
-[`docs/REVIEWER_REPRODUCTION.md`](docs/REVIEWER_REPRODUCTION.md) to verify
-checksums, prepare local inputs, and regenerate the manuscript outputs.
+## Reproduce
 
-## Analytical principles
-
-1. **Reliability and power quality are separate outcomes.** Availability asks
-   whether usable power is present. Conditional power quality asks whether
-   voltage/frequency are compliant while power is present.
-2. **Missing telemetry is not automatically an outage.** Missing intervals are
-   unknown electrical states. Expected-window uptime counts them against the
-   percentage; observed-evidence uptime excludes them and reports coverage.
-3. **Paired uptime and confirmed outages are distinguished.** A powered bin
-   requires either co-source sensor to report >23 V. A double-confirmed outage
-   requires both sensors to report low voltage; missing or discordant evidence
-   is reported separately.
-4. **Every inclusion and time window is configured, not buried in notebook cells.**
-5. **Private identities never enter public artifacts.** Public codes remain the
-   stable analysis identifiers.
-
-## Repository structure
-
-```text
-config/                 Public sensor map and reviewable analysis periods
-src/drc_power/          Reusable ingestion and analysis modules
-tests/                  Unit tests for key estimands
-docs/                   Decisions, open questions, and audit trail
-data/raw/               Local-only release assets (Git-ignored)
-data/private/           Local-only identity key (Git-ignored)
-data/public/            Tracked anonymized manuscript datasets
-outputs/generated/      Reproducible generated tables and figures
-```
-
-## Setup
+Use Python 3.11 or newer for the current submission version:
 
 ```bash
+git clone https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality.git
+cd North-Kivu-Health-Facility-Power-Quality
+git checkout 61b8a328b06e9d198fd9469dde0278128933172d
 python -m venv .venv
 source .venv/bin/activate
 pip install -e '.[dev]'
 pytest
-```
-
-## Add the raw data locally
-
-Download the three authorized release ZIPs to your computer. They are verified
-against the checksums in `config/data_sources.toml` and remain excluded from Git.
-
-```bash
-python scripts/bootstrap_data.py --source-dir ~/Downloads
-```
-
-Alternatively, set a machine-specific source location:
-
-```bash
-export DRC_DATA_DOWNLOADS="/path/to/authorized/release-zips"
-python scripts/bootstrap_data.py
-```
-
-Use `--verify-only` to check files without copying or extracting them. The
-resulting local structure is `data/raw/downloads/` plus `data/raw/extracted/`.
-
-For full reviewer reproduction from the restricted companion data bundle,
-including DHIS2 source regeneration, use:
-
-```bash
-python scripts/prepare_restricted_data.py --source /path/to/restricted-data-bundle
-```
-
-## Reproduce current analyses
-
-After bootstrapping the data and installing the package:
-
-```bash
-python scripts/run_all.py
-```
-
-Or run analyses separately:
-
-```bash
-python scripts/run_power_quality.py
-python scripts/run_reliability.py
-python scripts/run_energy.py
-python scripts/run_figure3_summary.py
 python scripts/run_payments.py
-python scripts/run_health.py
-python scripts/run_annex.py
+python scripts/run_health.py --from-public
 ```
 
-Generated CSVs and SVG figures are written to `outputs/generated/`. These are
-currently labeled **provisional** because exact intervention windows, conflict
-exclusions, and parts of the electrical topology remain under study-team review.
-
-To audit the short existing-source comparisons for CH1, CSR2, and CSR4 and
-distinguish single-sensor uptime from paired follow-up uptime, run:
+These payment and health commands use tracked anonymized data. Electricity
+reproduction also requires the four authorized archives listed in that version's
+`config/data_sources.toml`:
 
 ```bash
-python scripts/run_baseline_audit.py
+python scripts/bootstrap_data.py --source-dir /path/to/authorized/archives
+python scripts/run_all.py --from-public
 ```
 
-This writes input checksums, daily sensor coverage, single-sensor source
-comparisons, and paired-versus-single follow-up estimates to
-`outputs/generated/baseline_audit/`. Figure 3 now uses these reconstructed
-CH1/CSR2/CSR4 comparisons and explicitly retains the other three inherited
-baselines. See [`docs/BASELINE_RECONSTRUCTION.md`](docs/BASELINE_RECONSTRUCTION.md)
-for reproduced values and source-history limitations.
+The [reproduction guide](docs/REVIEWER_REPRODUCTION.md) maps commands to manuscript
+outputs and explains source-level DHIS2 cleaning. Figure 3 provenance is stored
+with the [current figure files](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/tree/61b8a328b06e9d198fd9469dde0278128933172d/publication/figure3).
 
-### Figure 3 delivery
+## Interpretation
 
-The inspected delivery snapshot is in [`publication/figure3/`](publication/figure3/),
-including SVG, 600-DPI PNG, vector PDF, plotted values, caption, and provenance.
-The summary uses existing-supply versus protected-circuit labels because the
-short source windows are not uniformly pre-installation observations. Its ±5%
-frequency panel retains the original figure's threshold; the time-series band
-is explicitly ±1%, and supplementary CSVs expose ±1%, ±5%, and ±10% estimates.
-See [`docs/FIGURE3_DELIVERY.md`](docs/FIGURE3_DELIVERY.md) before substituting the
-figure into the manuscript.
+Reliability and conditional power quality use different denominators. Missing
+telemetry is an unknown electrical state; it is not evidence of an outage.
+Paired expected-window uptime counts missing bins against availability, while
+observed-evidence uptime reports coverage separately. Sensor selection, source
+windows, and exclusions are configured and auditable.
 
-```bash
-python scripts/run_power_quality.py
-python scripts/run_reliability.py
-python scripts/run_baseline_audit.py
-python scripts/run_figure3_summary.py
-python scripts/run_figure3_summary.py --pqr-policy independent
-python scripts/run_figure3_timeseries.py
-pip install -e '.[publication]'
-python scripts/export_figure3.py
-```
-
-The comparable main summary uses jointly valid voltage/frequency observations
-in both reconstructed comparison and follow-up periods. The independent-
-denominator sensitivity keeps voltage observations even when frequency is
-missing or invalid. This choice is visible in output metadata and captions;
-the default reusable PQR library continues to use independent denominators.
-
-The implementation and analytical windows figure needs no raw data. Regenerate
-its tightly cropped, resolution-independent SVG and optional 3600-DPI PNG with:
-
-```bash
-python scripts/run_timeline_figure.py
-pip install -e '.[figures]'  # PNG export also requires the Cairo shared library
-python scripts/export_timeline_figure.py --dpi 3600 --width-inches 7.5
-```
-
-Both files are written to `outputs/generated/timeline/`. The SVG is the best
-source for further scaling or journal production; the PNG is rendered directly
-from it at 27,000 pixels wide with 3600-DPI metadata. The canvas has balanced
-side margins so the artwork fills the page width when inserted in a manuscript.
-
-## Current status
-
-- Raw-asset inventory complete.
-- Seven PowerWatch original/updated pairs audited; each updated file is an
-  exact superset of its original.
-- Analysis primitives implemented and tested.
-- Facility periods and exclusions remain provisional pending study-team review.
-- Provisional power-quality, paired-reliability, and energy regeneration is available.
-- Anonymized payment-ledger analysis and provisional Figure 6 are reproducible.
-- Anonymized DHIS2 ward-month and facility-month panels, Table 2, QA reports,
-  and an HGR1 health dashboard are reproducible.
-- Annex-ready electricity, energy, facility-selection, health, payment, and
-  capital tables are regenerated from the current outputs by `run_annex.py`.
-
-## Rebuild the DHIS2 health panels
-
-The public repository contains anonymized processed panels but not raw DHIS2
-exports or the private facility crosswalk. Authorized analysts should place the
-canonical files at:
-
-```text
-data/raw/dhis2/admissions.csv
-data/raw/dhis2/deaths.csv
-config/private/facility_crosswalk_private.csv
-```
-
-Then run `python scripts/run_health.py`. This regenerates:
-
-- `data/public/dhis2_ward_month_anonymized.csv`;
-- `data/public/dhis2_facility_month_anonymized.csv`;
-- Table 2 and descriptive health tables;
-- mapping, missingness, duplicate-column, and implausible-value QA reports; and
-- the HGR1 descriptive dashboard.
-
-The health analysis is descriptive. It evaluates whether routine reporting is
-sufficiently complete and continuous for future infrastructure-health
-evaluation; it does not estimate a causal treatment effect.
+Health reporting analyses are descriptive and do not estimate a causal treatment
+effect. Source-window comparability, telemetry gaps, energy topology, and active
+windows remain limitations; see the pinned version's
+[baseline audit](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/blob/61b8a328b06e9d198fd9469dde0278128933172d/docs/LONGITUDINAL_PRE_AUDIT.md)
+and [release limitations](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/blob/61b8a328b06e9d198fd9469dde0278128933172d/docs/PUBLIC_PACKAGE_REPRODUCTION.md).

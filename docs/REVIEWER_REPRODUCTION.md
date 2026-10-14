@@ -1,94 +1,77 @@
-# Reviewer Reproduction Guide
+# Reproduction guide
 
-This guide describes the shortest path from the public repository plus an
-authorized restricted-data bundle to regenerated manuscript tables and figures.
+## Choose the analysis version
 
-## What is public
+The default branch `main` is an earlier snapshot. Current submission results use
+[`61b8a328`](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/tree/61b8a328b06e9d198fd9469dde0278128933172d) on `submission-six-facility-baselines`.
+Check out that commit before using `--from-public` or the four-archive workflow.
+The README contains the clone and environment setup commands.
 
-The public repository includes the analysis code, tests, configuration files,
-anonymized DHIS2 analytical panels, and anonymized payment ledger. These files
-are enough to inspect the workflow, run unit tests, and reproduce analyses that
-depend only on public processed data.
+## Current submission: public inputs
 
-## What requires restricted data
-
-Full source-level reproduction also requires restricted local inputs:
-
-- HOP daily energy ZIP
-- HOP one-minute voltage/power ZIP
-- PowerWatch two-minute voltage/frequency ZIP
-- raw DHIS2 admissions export
-- raw DHIS2 deaths export
-- private facility crosswalk
-
-The required filenames, local destinations, classifications, and SHA-256
-checksums are listed in `config/restricted_data_sources.csv`.
-
-## Quickstart
-
-Clone the public analysis repository:
-
-```bash
-git clone https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality.git
-cd North-Kivu-Health-Facility-Power-Quality
-```
-
-Create the Python environment:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e '.[dev]'
-```
-
-Download or clone the authorized restricted-data bundle to a local folder. Then
-copy, verify, and extract the restricted inputs:
-
-```bash
-python scripts/prepare_restricted_data.py --source /path/to/restricted-data-bundle
-```
-
-Run the tests:
+After installing the pinned version with `pip install -e '.[dev]'`:
 
 ```bash
 pytest
+python scripts/run_payments.py
+python scripts/run_health.py --from-public
+python scripts/run_timeline_figure.py
 ```
 
-Rebuild all analyses:
+Payments use the tracked anonymized ledger. Health outputs use the tracked
+ward-month panel and rebuild facility-month aggregates. This mode does not
+recreate identified-source mapping or duplicate-column audits.
+
+## Current submission: electricity inputs
+
+Obtain the four authorized archives listed in the pinned version's
+[`config/data_sources.toml`](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/blob/61b8a328b06e9d198fd9469dde0278128933172d/config/data_sources.toml).
+Then verify, copy, and extract them:
 
 ```bash
-python scripts/run_all.py
+python scripts/bootstrap_data.py --source-dir /path/to/authorized/archives
+python scripts/run_all.py --from-public
 ```
 
-Generated outputs are written to `outputs/generated/`.
+`--verify-only` checks archives without copying or extracting. Telemetry remains
+under Git-ignored `data/raw/downloads/` and `data/raw/extracted/`. The full runner
+requires telemetry even when health inputs come from public panels.
 
-## Restricted-data bundle layout
+The complete companion package is a local candidate, not a verified public
+deposit. Its `run_public_package.py` requires the package manifest and included
+archives; it is not a substitute for missing inputs in a GitHub clone.
 
-The preparation script accepts either the canonical restricted repository layout
-or a folder containing uniquely named source files. The canonical layout is:
+## Manuscript output map
 
-```text
-data/restricted/electricity/v2.0/HOP_daily_energy.zip
-data/restricted/electricity/v2.0/HOP_voltage_power_1min.zip
-data/restricted/electricity/v2.0/PowerWatch_voltage_frequency_2min.zip
-data/restricted/dhis2/v1.0/admissions.csv
-data/restricted/dhis2/v1.0/deaths.csv
-data/private/facility_crosswalk_private.csv
-```
+| Output | Entry point | Generated directory |
+|---|---|---|
+| Figure 2 implementation/analysis timeline | `run_timeline_figure.py` | `timeline/` |
+| Figure 3 reliability and power quality | `run_power_quality.py`, `run_reliability.py`, `run_baseline_audit.py`, `run_longitudinal_pre_audit.py`, `run_figure3_summary.py`, `run_figure3_timeseries.py` | `power_quality/`, `reliability/`, `baseline_audit/`, `figure3/` |
+| Figure 4 energy use | `run_energy.py` | `energy/` |
+| Figure 6 payments and capital costs | `run_payments.py` | `payments/` |
+| Table 2 health reporting and descriptive dashboard | `run_health.py --from-public` | `health/` |
+| Supplementary tables | `run_annex.py` after upstream analyses | `annex/` |
 
-These files are copied into Git-ignored local paths expected by the analysis
-scripts:
+All directories above are under `outputs/generated/`. Run the Figure 3 summary
+with `--pqr-policy independent` for its denominator sensitivity; the default
+summary uses jointly valid voltage/frequency observations. Publication exports
+and exact provenance are documented in the pinned version's
+[Figure 3 guide](https://github.com/samuel-b-miles/North-Kivu-Health-Facility-Power-Quality/blob/61b8a328b06e9d198fd9469dde0278128933172d/docs/FIGURE3_DELIVERY.md).
+This map covers implemented outputs, not every manuscript claim.
 
-```text
-data/raw/downloads/
-data/raw/extracted/
-data/raw/dhis2/
-config/private/
-```
+## Source-level health cleaning
 
-## Access note
+Authorized analysts can use `prepare_restricted_data.py --source /path/to/bundle`
+to prepare raw DHIS2 exports and the private facility crosswalk, with checksums
+from `config/restricted_data_sources.csv`. Run `run_health.py` without
+`--from-public` to clean those sources and regenerate the panels and source QA.
+Keep identified inputs and mapping audits within the authorized study-data channel.
 
-Raw DHIS2 exports and the private facility crosswalk contain identified facility
-information or can reconstruct it. They should be shared only through the
-authorized study-data channel and under the approvals described in the
-manuscript data availability statement.
+## Earlier default-branch snapshot
+
+On `main`, `run_payments.py` and `run_timeline_figure.py` require no restricted
+inputs. `run_health.py` requires raw admissions/deaths and the private crosswalk;
+it does not support `--from-public`. Electricity bootstrapping uses the three
+archives listed in `main`'s `config/data_sources.toml`. With those inputs and the
+restricted health sources prepared, `python scripts/run_all.py` runs that earlier
+snapshot. Its baseline and frequency results differ from the current submission.
