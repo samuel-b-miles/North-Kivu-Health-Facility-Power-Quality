@@ -1,113 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1140" viewBox="0 0 1600 1140">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 60 1600 1200">
 <defs><style>
-.title{font:700 26px Arial,sans-serif;fill:#101820}.panel{font:700 24px Arial,sans-serif;fill:#101820}
-.row{font:17px Arial,sans-serif;fill:#101820}.meta{font:15px Arial,sans-serif;fill:#3f4d56}
-.axis{font:14px Arial,sans-serif;fill:#3f4d56}.note{font:14px Arial,sans-serif;fill:#3f4d56}
+.panel{font:700 30px Arial,sans-serif;fill:#101820}
+.row{font:24px Arial,sans-serif;fill:#101820}.meta{font:15px Arial,sans-serif;fill:#3f4d56}
+.axis{font:20px Arial,sans-serif;fill:#3f4d56}.note{font:22px Arial,sans-serif;fill:#3f4d56}
 </style><pattern id="hatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)"><rect width="9" height="9" fill="#ead3ca"/><line x1="0" y1="0" x2="0" y2="9" stroke="#9a503f" stroke-width="2.4" opacity=".9"/></pattern></defs>
-<rect width="100%" height="100%" fill="white"/>
-<text x="90" y="55" class="title">Implementation, monitoring, and analytical windows</text>
+<rect y="60" width="100%" height="100%" fill="white"/>
 
-<line x1="410.0" y1="120" x2="410.0" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="518.4" y1="120" x2="518.4" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="628.5" y1="120" x2="628.5" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="736.9" y1="120" x2="736.9" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="847.0" y1="120" x2="847.0" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="956.0" y1="120" x2="956.0" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="1066.1" y1="120" x2="1066.1" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="1174.5" y1="120" x2="1174.5" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="1284.6" y1="120" x2="1284.6" y2="685" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="919.4" y1="120" x2="919.4" y2="685" stroke="#101820" stroke-width="1.7" stroke-dasharray="5,5" opacity=".9"/>
-<line x1="410.0" y1="785" x2="410.0" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="518.4" y1="785" x2="518.4" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="628.5" y1="785" x2="628.5" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="736.9" y1="785" x2="736.9" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="847.0" y1="785" x2="847.0" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="956.0" y1="785" x2="956.0" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="1066.1" y1="785" x2="1066.1" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="1174.5" y1="785" x2="1174.5" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="1284.6" y1="785" x2="1284.6" y2="1025" stroke="#c5cdd2" stroke-width="1"/>
-<line x1="919.4" y1="785" x2="919.4" y2="1025" stroke="#101820" stroke-width="1.7" stroke-dasharray="5,5" opacity=".9"/>
-<text x="90" y="108" class="panel">A  Implementation and service delivery</text>
-<line x1="410" y1="165" x2="1375" y2="165" stroke="#dfe5e8"/>
-<text x="375" y="160" text-anchor="end" class="row">Existing supply,</text>
-<text x="375" y="180" text-anchor="end" class="row">longitudinal (n=3)</text>
-<rect x="513.0" y="150" width="414.3" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="225" x2="1375" y2="225" stroke="#dfe5e8"/>
-<text x="375" y="220" text-anchor="end" class="row">Existing supply,</text>
-<text x="375" y="240" text-anchor="end" class="row">short monitoring (n=3)*</text>
-<rect x="902.7" y="210" width="179.6" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="285" x2="1375" y2="285" stroke="#dfe5e8"/>
-<text x="375" y="290" text-anchor="end" class="row">Pre-installation surveys (n=6)</text>
-<rect x="774.0" y="270" width="144.9" height="30" rx="2" fill="#d9dde0" stroke="#5f6c73" stroke-width="2.1"/>
-<line x1="410" y1="345" x2="1375" y2="345" stroke="#dfe5e8"/>
-<text x="375" y="350" text-anchor="end" class="row">Intervention deployment (n=6)</text>
-<rect x="901.5" y="330" width="36.5" height="30" rx="2" fill="#d9dde0" stroke="#5f6c73" stroke-width="2.1"/>
-<line x1="410" y1="405" x2="1375" y2="405" stroke="#dfe5e8"/>
-<text x="375" y="410" text-anchor="end" class="row">Biomedical equipment</text>
-<rect x="927.8" y="390" width="18.6" height="30" rx="2" fill="#d9dde0" stroke="#5f6c73" stroke-width="2.1"/>
-<line x1="410" y1="465" x2="1375" y2="465" stroke="#dfe5e8"/>
-<text x="375" y="470" text-anchor="end" class="row">Post-intervention telemetry (n=6)</text>
-<rect x="932.0" y="450" width="359.2" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="525" x2="1375" y2="525" stroke="#dfe5e8"/>
-<text x="375" y="530" text-anchor="end" class="row">Facility payments (n=6)</text>
-<rect x="902.1" y="510" width="439.4" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="585" x2="1375" y2="585" stroke="#dfe5e8"/>
-<text x="375" y="580" text-anchor="end" class="row">Conflict-related operational</text>
-<text x="375" y="600" text-anchor="end" class="row">disruption (n=2)</text>
-<rect x="1066.1" y="570" width="53.9" height="30" rx="2" fill="url(#hatch)" stroke="#9a503f" stroke-width="2.1"/>
+<line x1="550.0" y1="120" x2="550.0" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="657.8" y1="120" x2="657.8" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="767.4" y1="120" x2="767.4" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="875.2" y1="120" x2="875.2" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="984.7" y1="120" x2="984.7" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1093.1" y1="120" x2="1093.1" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1202.7" y1="120" x2="1202.7" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1310.5" y1="120" x2="1310.5" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1420.1" y1="120" x2="1420.1" y2="685" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1056.8" y1="120" x2="1056.8" y2="685" stroke="#101820" stroke-width="1.7" stroke-dasharray="5,5" opacity=".9"/>
+<line x1="550.0" y1="785" x2="550.0" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="657.8" y1="785" x2="657.8" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="767.4" y1="785" x2="767.4" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="875.2" y1="785" x2="875.2" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="984.7" y1="785" x2="984.7" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1093.1" y1="785" x2="1093.1" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1202.7" y1="785" x2="1202.7" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1310.5" y1="785" x2="1310.5" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1420.1" y1="785" x2="1420.1" y2="1085" stroke="#c5cdd2" stroke-width="1"/>
+<line x1="1056.8" y1="785" x2="1056.8" y2="1085" stroke="#101820" stroke-width="1.7" stroke-dasharray="5,5" opacity=".9"/>
+<text x="50" y="108" class="panel">A  Implementation and service delivery</text>
+<line x1="550" y1="165" x2="1510" y2="165" stroke="#dfe5e8"/>
+<text x="510" y="156" text-anchor="end" class="row">Existing supply,</text>
+<text x="510" y="184" text-anchor="end" class="row">longitudinal (n=3)</text>
+<rect x="652.4" y="150" width="412.1" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="225" x2="1510" y2="225" stroke="#dfe5e8"/>
+<text x="510" y="216" text-anchor="end" class="row">Existing supply,</text>
+<text x="510" y="244" text-anchor="end" class="row">short monitoring (n=3)*</text>
+<rect x="1040.1" y="210" width="178.7" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="285" x2="1510" y2="285" stroke="#dfe5e8"/>
+<text x="510" y="290" text-anchor="end" class="row">Pre-installation surveys (n=6)</text>
+<rect x="912.1" y="270" width="144.1" height="30" rx="2" fill="#d9dde0" stroke="#5f6c73" stroke-width="2.1"/>
+<line x1="550" y1="345" x2="1510" y2="345" stroke="#dfe5e8"/>
+<text x="510" y="350" text-anchor="end" class="row">Intervention deployment (n=6)</text>
+<rect x="1038.9" y="330" width="36.3" height="30" rx="2" fill="#d9dde0" stroke="#5f6c73" stroke-width="2.1"/>
+<line x1="550" y1="405" x2="1510" y2="405" stroke="#dfe5e8"/>
+<text x="510" y="410" text-anchor="end" class="row">Biomedical equipment (n=6)</text>
+<rect x="1065.1" y="390" width="18.5" height="30" rx="2" fill="#d9dde0" stroke="#5f6c73" stroke-width="2.1"/>
+<line x1="550" y1="465" x2="1510" y2="465" stroke="#dfe5e8"/>
+<text x="510" y="470" text-anchor="end" class="row">Post-intervention telemetry (n=6)</text>
+<rect x="1069.3" y="450" width="357.3" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="525" x2="1510" y2="525" stroke="#dfe5e8"/>
+<text x="510" y="530" text-anchor="end" class="row">Facility payments (n=6)</text>
+<rect x="1039.5" y="510" width="437.1" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="585" x2="1510" y2="585" stroke="#dfe5e8"/>
+<text x="510" y="576" text-anchor="end" class="row">Conflict-related operational</text>
+<text x="510" y="604" text-anchor="end" class="row">disruption (n=2)</text>
+<rect x="1202.7" y="570" width="53.6" height="30" rx="2" fill="url(#hatch)" stroke="#9a503f" stroke-width="2.1"/>
 <line x1="90" y1="735" x2="1510" y2="735" stroke="#aeb8bd" stroke-width="1"/>
-<text x="90" y="775" class="panel">B  Measurement and analytical windows</text>
-<line x1="410" y1="835" x2="1375" y2="835" stroke="#dfe5e8"/>
-<text x="375" y="840" text-anchor="end" class="row">DHIS2 health outcomes (n=12)</text>
-<rect x="628.5" y="820" width="656.1" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="895" x2="1375" y2="895" stroke="#dfe5e8"/>
-<text x="375" y="880" text-anchor="end" class="row">Paired energy demand</text>
-<text x="375" y="900" text-anchor="end" class="row">and supply telemetry,</text>
-<text x="375" y="920" text-anchor="end" class="row">Prospect and GridWatch (n=6)</text>
-<rect x="932.0" y="880" width="330.4" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="955" x2="1375" y2="955" stroke="#dfe5e8"/>
-<text x="375" y="960" text-anchor="end" class="row">Payment and maintenance ledger (n = 6)</text>
-<rect x="902.1" y="940" width="439.4" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
-<line x1="410" y1="650" x2="1375" y2="650" stroke="#101820" stroke-width="1"/>
-<line x1="410.0" y1="650" x2="410.0" y2="657" stroke="#101820"/>
-<text x="410.0" y="677" text-anchor="end" transform="rotate(-35 410.0 677)" class="axis">01/2022</text>
-<line x1="518.4" y1="650" x2="518.4" y2="657" stroke="#101820"/>
-<text x="518.4" y="677" text-anchor="end" transform="rotate(-35 518.4 677)" class="axis">07/2022</text>
-<line x1="628.5" y1="650" x2="628.5" y2="657" stroke="#101820"/>
-<text x="628.5" y="677" text-anchor="end" transform="rotate(-35 628.5 677)" class="axis">01/2023</text>
-<line x1="736.9" y1="650" x2="736.9" y2="657" stroke="#101820"/>
-<text x="736.9" y="677" text-anchor="end" transform="rotate(-35 736.9 677)" class="axis">07/2023</text>
-<line x1="847.0" y1="650" x2="847.0" y2="657" stroke="#101820"/>
-<text x="847.0" y="677" text-anchor="end" transform="rotate(-35 847.0 677)" class="axis">01/2024</text>
-<line x1="956.0" y1="650" x2="956.0" y2="657" stroke="#101820"/>
-<text x="956.0" y="677" text-anchor="end" transform="rotate(-35 956.0 677)" class="axis">07/2024</text>
-<line x1="1066.1" y1="650" x2="1066.1" y2="657" stroke="#101820"/>
-<text x="1066.1" y="677" text-anchor="end" transform="rotate(-35 1066.1 677)" class="axis">01/2025</text>
-<line x1="1174.5" y1="650" x2="1174.5" y2="657" stroke="#101820"/>
-<text x="1174.5" y="677" text-anchor="end" transform="rotate(-35 1174.5 677)" class="axis">07/2025</text>
-<line x1="1284.6" y1="650" x2="1284.6" y2="657" stroke="#101820"/>
-<text x="1284.6" y="677" text-anchor="end" transform="rotate(-35 1284.6 677)" class="axis">01/2026</text>
-<line x1="410" y1="1020" x2="1375" y2="1020" stroke="#101820" stroke-width="1"/>
-<line x1="410.0" y1="1020" x2="410.0" y2="1027" stroke="#101820"/>
-<text x="410.0" y="1047" text-anchor="end" transform="rotate(-35 410.0 1047)" class="axis">01/2022</text>
-<line x1="518.4" y1="1020" x2="518.4" y2="1027" stroke="#101820"/>
-<text x="518.4" y="1047" text-anchor="end" transform="rotate(-35 518.4 1047)" class="axis">07/2022</text>
-<line x1="628.5" y1="1020" x2="628.5" y2="1027" stroke="#101820"/>
-<text x="628.5" y="1047" text-anchor="end" transform="rotate(-35 628.5 1047)" class="axis">01/2023</text>
-<line x1="736.9" y1="1020" x2="736.9" y2="1027" stroke="#101820"/>
-<text x="736.9" y="1047" text-anchor="end" transform="rotate(-35 736.9 1047)" class="axis">07/2023</text>
-<line x1="847.0" y1="1020" x2="847.0" y2="1027" stroke="#101820"/>
-<text x="847.0" y="1047" text-anchor="end" transform="rotate(-35 847.0 1047)" class="axis">01/2024</text>
-<line x1="956.0" y1="1020" x2="956.0" y2="1027" stroke="#101820"/>
-<text x="956.0" y="1047" text-anchor="end" transform="rotate(-35 956.0 1047)" class="axis">07/2024</text>
-<line x1="1066.1" y1="1020" x2="1066.1" y2="1027" stroke="#101820"/>
-<text x="1066.1" y="1047" text-anchor="end" transform="rotate(-35 1066.1 1047)" class="axis">01/2025</text>
-<line x1="1174.5" y1="1020" x2="1174.5" y2="1027" stroke="#101820"/>
-<text x="1174.5" y="1047" text-anchor="end" transform="rotate(-35 1174.5 1047)" class="axis">07/2025</text>
-<line x1="1284.6" y1="1020" x2="1284.6" y2="1027" stroke="#101820"/>
-<text x="1284.6" y="1047" text-anchor="end" transform="rotate(-35 1284.6 1047)" class="axis">01/2026</text>
-<text x="927.4" y="142" class="axis" font-weight="bold">Intervention period begins</text>
-<rect x="90" y="1090" width="28" height="16" fill="#b7d6e3" stroke="#1f5f7a"/><text x="128" y="1104" class="note">Time-series data</text>
-<rect x="380" y="1090" width="28" height="16" fill="#d9dde0" stroke="#5f6c73"/><text x="418" y="1104" class="note">Program documentation</text>
-<rect x="790" y="1090" width="28" height="16" fill="url(#hatch)" stroke="#9a503f"/><text x="828" y="1104" class="note">Contextual disruption</text>
+<text x="50" y="775" class="panel">B  Measurement and analytical windows</text>
+<line x1="550" y1="835" x2="1510" y2="835" stroke="#dfe5e8"/>
+<text x="510" y="840" text-anchor="end" class="row">DHIS2 health outcomes (n=12)</text>
+<rect x="767.4" y="820" width="652.7" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="925" x2="1510" y2="925" stroke="#dfe5e8"/>
+<text x="510" y="902" text-anchor="end" class="row">Paired energy demand</text>
+<text x="510" y="930" text-anchor="end" class="row">and supply telemetry,</text>
+<text x="510" y="958" text-anchor="end" class="row">Prospect and GridWatch (n=6)</text>
+<rect x="1069.3" y="910" width="328.7" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="1015" x2="1510" y2="1015" stroke="#dfe5e8"/>
+<text x="510" y="1006" text-anchor="end" class="row">Payment and maintenance</text>
+<text x="510" y="1034" text-anchor="end" class="row">ledger (n = 6)</text>
+<rect x="1039.5" y="1000" width="437.1" height="30" rx="2" fill="#b7d6e3" stroke="#1f5f7a" stroke-width="2.1"/>
+<line x1="550" y1="650" x2="1510" y2="650" stroke="#101820" stroke-width="1"/>
+<line x1="550.0" y1="650" x2="550.0" y2="657" stroke="#101820"/>
+<text x="550.0" y="677" text-anchor="end" transform="rotate(-35 550.0 677)" class="axis">01/2022</text>
+<line x1="657.8" y1="650" x2="657.8" y2="657" stroke="#101820"/>
+<text x="657.8" y="677" text-anchor="end" transform="rotate(-35 657.8 677)" class="axis">07/2022</text>
+<line x1="767.4" y1="650" x2="767.4" y2="657" stroke="#101820"/>
+<text x="767.4" y="677" text-anchor="end" transform="rotate(-35 767.4 677)" class="axis">01/2023</text>
+<line x1="875.2" y1="650" x2="875.2" y2="657" stroke="#101820"/>
+<text x="875.2" y="677" text-anchor="end" transform="rotate(-35 875.2 677)" class="axis">07/2023</text>
+<line x1="984.7" y1="650" x2="984.7" y2="657" stroke="#101820"/>
+<text x="984.7" y="677" text-anchor="end" transform="rotate(-35 984.7 677)" class="axis">01/2024</text>
+<line x1="1093.1" y1="650" x2="1093.1" y2="657" stroke="#101820"/>
+<text x="1093.1" y="677" text-anchor="end" transform="rotate(-35 1093.1 677)" class="axis">07/2024</text>
+<line x1="1202.7" y1="650" x2="1202.7" y2="657" stroke="#101820"/>
+<text x="1202.7" y="677" text-anchor="end" transform="rotate(-35 1202.7 677)" class="axis">01/2025</text>
+<line x1="1310.5" y1="650" x2="1310.5" y2="657" stroke="#101820"/>
+<text x="1310.5" y="677" text-anchor="end" transform="rotate(-35 1310.5 677)" class="axis">07/2025</text>
+<line x1="1420.1" y1="650" x2="1420.1" y2="657" stroke="#101820"/>
+<text x="1420.1" y="677" text-anchor="end" transform="rotate(-35 1420.1 677)" class="axis">01/2026</text>
+<line x1="550" y1="1080" x2="1510" y2="1080" stroke="#101820" stroke-width="1"/>
+<line x1="550.0" y1="1080" x2="550.0" y2="1087" stroke="#101820"/>
+<text x="550.0" y="1107" text-anchor="end" transform="rotate(-35 550.0 1107)" class="axis">01/2022</text>
+<line x1="657.8" y1="1080" x2="657.8" y2="1087" stroke="#101820"/>
+<text x="657.8" y="1107" text-anchor="end" transform="rotate(-35 657.8 1107)" class="axis">07/2022</text>
+<line x1="767.4" y1="1080" x2="767.4" y2="1087" stroke="#101820"/>
+<text x="767.4" y="1107" text-anchor="end" transform="rotate(-35 767.4 1107)" class="axis">01/2023</text>
+<line x1="875.2" y1="1080" x2="875.2" y2="1087" stroke="#101820"/>
+<text x="875.2" y="1107" text-anchor="end" transform="rotate(-35 875.2 1107)" class="axis">07/2023</text>
+<line x1="984.7" y1="1080" x2="984.7" y2="1087" stroke="#101820"/>
+<text x="984.7" y="1107" text-anchor="end" transform="rotate(-35 984.7 1107)" class="axis">01/2024</text>
+<line x1="1093.1" y1="1080" x2="1093.1" y2="1087" stroke="#101820"/>
+<text x="1093.1" y="1107" text-anchor="end" transform="rotate(-35 1093.1 1107)" class="axis">07/2024</text>
+<line x1="1202.7" y1="1080" x2="1202.7" y2="1087" stroke="#101820"/>
+<text x="1202.7" y="1107" text-anchor="end" transform="rotate(-35 1202.7 1107)" class="axis">01/2025</text>
+<line x1="1310.5" y1="1080" x2="1310.5" y2="1087" stroke="#101820"/>
+<text x="1310.5" y="1107" text-anchor="end" transform="rotate(-35 1310.5 1107)" class="axis">07/2025</text>
+<line x1="1420.1" y1="1080" x2="1420.1" y2="1087" stroke="#101820"/>
+<text x="1420.1" y="1107" text-anchor="end" transform="rotate(-35 1420.1 1107)" class="axis">01/2026</text>
+<text x="1064.8" y="142" class="axis" font-weight="bold">Intervention period begins</text>
+<rect x="50" y="1210" width="28" height="16" fill="#b7d6e3" stroke="#1f5f7a"/><text x="90" y="1228" class="note">Time-series data</text>
+<rect x="450" y="1210" width="28" height="16" fill="#d9dde0" stroke="#5f6c73"/><text x="490" y="1228" class="note">Program documentation</text>
+<rect x="1000" y="1210" width="28" height="16" fill="url(#hatch)" stroke="#9a503f"/><text x="1040" y="1228" class="note">Contextual disruption</text>
 </svg>

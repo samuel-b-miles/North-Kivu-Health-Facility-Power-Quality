@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="850" viewBox="0 0 1500 850">
+<defs><pattern id="telemetry-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#d9d9d9" fill-opacity="0.72"/><line x1="0" y1="0" x2="0" y2="10" stroke="#888" stroke-width="3"/></pattern></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="750.0" y="38" text-anchor="middle" font-family="Arial" font-size="30" font-weight="bold">Monthly monitored electricity consumption by facility</text>
+<text x="295.0" y="99" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold">HGR1</text>
+<line x1="149" y1="314.0" x2="488" y2="314.0" stroke="#e5e5e5"/>
+<text x="140" y="321.0" text-anchor="end" font-family="Arial" font-size="20">0</text>
+<line x1="149" y1="266.0" x2="488" y2="266.0" stroke="#e5e5e5"/>
+<text x="140" y="273.0" text-anchor="end" font-family="Arial" font-size="20">157</text>
+<line x1="149" y1="218.0" x2="488" y2="218.0" stroke="#e5e5e5"/>
+<text x="140" y="225.0" text-anchor="end" font-family="Arial" font-size="20">315</text>
+<line x1="149" y1="170.0" x2="488" y2="170.0" stroke="#e5e5e5"/>
+<text x="140" y="177.0" text-anchor="end" font-family="Arial" font-size="20">472</text>
+<line x1="149" y1="122.0" x2="488" y2="122.0" stroke="#e5e5e5"/>
+<text x="140" y="129.0" text-anchor="end" font-family="Arial" font-size="20">629</text>
+<rect x="150.27" y="314.00" width="11.58" height="0.00" fill="#edc948"/>
+<rect x="164.40" y="314.00" width="11.58" height="0.00" fill="#edc948"/>
+<rect x="178.52" y="314.00" width="11.58" height="0.00" fill="#edc948"/>
+<rect x="192.65" y="314.00" width="11.58" height="0.00" fill="#edc948"/>
+<rect x="206.77" y="291.53" width="11.58" height="22.47" fill="#edc948"/>
+<rect x="220.90" y="250.37" width="11.58" height="63.63" fill="#edc948"/>
+<rect x="235.02" y="261.25" width="11.58" height="52.75" fill="#edc948"/>
+<rect x="249.15" y="209.66" width="11.58" height="104.34" fill="#edc948"/>
+<rect x="263.27" y="189.94" width="11.58" height="124.06" fill="#edc948"/>
+<rect x="277.40" y="188.19" width="11.58" height="125.81" fill="#edc948"/>
+<rect x="291.52" y="285.18" width="11.58" height="28.82" fill="#edc948"/>
+<rect x="305.65" y="189.78" width="11.58" height="124.22" fill="#edc948"/>
+<rect x="319.77" y="174.16" width="11.58" height="139.84" fill="#edc948"/>
+<rect x="333.90" y="219.82" width="11.58" height="94.18" fill="#edc948"/>
+<rect x="348.02" y="191.51" width="11.58" height="122.49" fill="#edc948"/>
+<rect x="362.15" y="173.27" width="11.58" height="140.73" fill="#edc948"/>
+<rect x="376.27" y="206.86" width="11.58" height="107.14" fill="#edc948"/>
+<rect x="390.40" y="181.05" width="11.58" height="132.95" fill="#edc948"/>
+<rect x="404.52" y="163.47" width="11.58" height="150.53" fill="#edc948"/>
+<rect x="418.65" y="188.72" width="11.58" height="125.28" fill="#edc948"/>
+<rect x="432.77" y="184.06" width="11.58" height="129.94" fill="#edc948"/>
+<rect x="446.90" y="136.22" width="11.58" height="177.78" fill="#edc948"/>
+<rect x="461.02" y="200.23" width="11.58" height="113.77" fill="#edc948"/>
+<rect x="475.15" y="202.69" width="11.58" height="111.31" fill="#edc948"/>
+<line x1="149" y1="314" x2="488" y2="314" stroke="#444"/>
+<text transform="translate(96 218.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="22">kWh</text>
+<text x="156.1" y="341" text-anchor="middle" font-family="Arial" font-size="20">Jan 2024</text>
+<text x="325.6" y="341" text-anchor="middle" font-family="Arial" font-size="20">Jan 2025</text>
+<text x="480.9" y="341" text-anchor="middle" font-family="Arial" font-size="20">Dec 2025</text>
+<text x="785.0" y="99" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold">CH1</text>
+<line x1="639" y1="314.0" x2="978" y2="314.0" stroke="#e5e5e5"/>
+<text x="630" y="321.0" text-anchor="end" font-family="Arial" font-size="20">0</text>
+<line x1="639" y1="266.0" x2="978" y2="266.0" stroke="#e5e5e5"/>
+<text x="630" y="273.0" text-anchor="end" font-family="Arial" font-size="20">157</text>
+<line x1="639" y1="218.0" x2="978" y2="218.0" stroke="#e5e5e5"/>
+<text x="630" y="225.0" text-anchor="end" font-family="Arial" font-size="20">315</text>
+<line x1="639" y1="170.0" x2="978" y2="170.0" stroke="#e5e5e5"/>
+<text x="630" y="177.0" text-anchor="end" font-family="Arial" font-size="20">472</text>
+<line x1="639" y1="122.0" x2="978" y2="122.0" stroke="#e5e5e5"/>
+<text x="630" y="129.0" text-anchor="end" font-family="Arial" font-size="20">629</text>
+<rect x="640.27" y="314.00" width="11.58" height="0.00" fill="#2b8cbe"/>
+<rect x="654.40" y="314.00" width="11.58" height="0.00" fill="#2b8cbe"/>
+<rect x="668.52" y="314.00" width="11.58" height="0.00" fill="#2b8cbe"/>
+<rect x="682.65" y="314.00" width="11.58" height="0.00" fill="#2b8cbe"/>
+<rect x="696.77" y="311.08" width="11.58" height="2.92" fill="#2b8cbe"/>
+<rect x="710.90" y="297.44" width="11.58" height="16.56" fill="#2b8cbe"/>
+<rect x="725.02" y="298.12" width="11.58" height="15.88" fill="#2b8cbe"/>
+<rect x="739.15" y="297.56" width="11.58" height="16.44" fill="#2b8cbe"/>
+<rect x="753.27" y="295.40" width="11.58" height="18.60" fill="#2b8cbe"/>
+<rect x="767.40" y="290.98" width="11.58" height="23.02" fill="#2b8cbe"/>
+<rect x="781.52" y="295.33" width="11.58" height="18.67" fill="#2b8cbe"/>
+<rect x="795.65" y="294.61" width="11.58" height="19.39" fill="#2b8cbe"/>
+<rect x="809.77" y="295.66" width="11.58" height="18.34" fill="#2b8cbe"/>
+<rect x="823.90" y="297.00" width="11.58" height="17.00" fill="#2b8cbe"/>
+<rect x="838.02" y="293.65" width="11.58" height="20.35" fill="#2b8cbe"/>
+<rect x="852.15" y="295.29" width="11.58" height="18.71" fill="#2b8cbe"/>
+<rect x="866.27" y="291.97" width="11.58" height="22.03" fill="#2b8cbe"/>
+<rect x="880.40" y="294.72" width="11.58" height="19.28" fill="#2b8cbe"/>
+<rect x="894.52" y="293.44" width="11.58" height="20.56" fill="#2b8cbe"/>
+<rect x="908.65" y="292.82" width="11.58" height="21.18" fill="#2b8cbe"/>
+<rect x="922.77" y="290.84" width="11.58" height="23.16" fill="#2b8cbe"/>
+<rect x="936.90" y="295.00" width="11.58" height="19.00" fill="#2b8cbe"/>
+<rect x="951.02" y="297.24" width="11.58" height="16.76" fill="#2b8cbe"/>
+<rect x="965.15" y="291.70" width="11.58" height="22.30" fill="#2b8cbe"/>
+<line x1="639" y1="314" x2="978" y2="314" stroke="#444"/>
+<text transform="translate(586 218.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="22">kWh</text>
+<text x="646.1" y="341" text-anchor="middle" font-family="Arial" font-size="20">Jan 2024</text>
+<text x="815.6" y="341" text-anchor="middle" font-family="Arial" font-size="20">Jan 2025</text>
+<text x="970.9" y="341" text-anchor="middle" font-family="Arial" font-size="20">Dec 2025</text>
+<text x="1275.0" y="99" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold">CSR1</text>
+<line x1="1129" y1="314.0" x2="1468" y2="314.0" stroke="#e5e5e5"/>
+<text x="1120" y="321.0" text-anchor="end" font-family="Arial" font-size="20">0</text>
+<line x1="1129" y1="266.0" x2="1468" y2="266.0" stroke="#e5e5e5"/>
+<text x="1120" y="273.0" text-anchor="end" font-family="Arial" font-size="20">157</text>
+<line x1="1129" y1="218.0" x2="1468" y2="218.0" stroke="#e5e5e5"/>
+<text x="1120" y="225.0" text-anchor="end" font-family="Arial" font-size="20">315</text>
+<line x1="1129" y1="170.0" x2="1468" y2="170.0" stroke="#e5e5e5"/>
+<text x="1120" y="177.0" text-anchor="end" font-family="Arial" font-size="20">472</text>
+<line x1="1129" y1="122.0" x2="1468" y2="122.0" stroke="#e5e5e5"/>
+<text x="1120" y="129.0" text-anchor="end" font-family="Arial" font-size="20">629</text>
+<rect x="1130.27" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1144.40" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1158.52" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1172.65" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1186.77" y="301.94" width="11.58" height="12.06" fill="#f28e2b"/>
+<rect x="1200.90" y="278.88" width="11.58" height="35.12" fill="#f28e2b"/>
+<rect x="1215.02" y="276.63" width="11.58" height="37.37" fill="#f28e2b"/>
+<rect x="1229.15" y="278.63" width="11.58" height="35.37" fill="#f28e2b"/>
+<rect x="1243.27" y="272.08" width="11.58" height="41.92" fill="#f28e2b"/>
+<rect x="1257.40" y="255.00" width="11.58" height="59.00" fill="#f28e2b"/>
+<rect x="1271.52" y="251.47" width="11.58" height="62.53" fill="#f28e2b"/>
+<rect x="1285.65" y="274.97" width="11.58" height="39.03" fill="#f28e2b"/>
+<rect x="1299.77" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1313.90" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1328.02" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1342.15" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1356.27" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1370.40" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1384.52" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1398.65" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1412.77" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1426.90" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1441.02" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1455.15" y="314.00" width="11.58" height="0.00" fill="#f28e2b"/>
+<rect x="1293.49" y="122" width="5.01" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1298.50" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1312.62" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1326.75" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1340.88" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1355.00" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1369.12" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1383.25" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1397.38" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1411.50" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1425.62" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1439.75" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1453.88" y="122" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<line x1="1129" y1="314" x2="1468" y2="314" stroke="#444"/>
+<text transform="translate(1076 218.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="22">kWh</text>
+<text x="1136.1" y="341" text-anchor="middle" font-family="Arial" font-size="20">Jan 2024</text>
+<text x="1305.6" y="341" text-anchor="middle" font-family="Arial" font-size="20">Jan 2025</text>
+<text x="1425.0" y="341" text-anchor="middle" font-family="Arial" font-size="20">Dec 2025</text>
+<text x="295.0" y="484" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold">CSR2</text>
+<line x1="149" y1="699.0" x2="488" y2="699.0" stroke="#e5e5e5"/>
+<text x="140" y="706.0" text-anchor="end" font-family="Arial" font-size="20">0</text>
+<line x1="149" y1="651.0" x2="488" y2="651.0" stroke="#e5e5e5"/>
+<text x="140" y="658.0" text-anchor="end" font-family="Arial" font-size="20">157</text>
+<line x1="149" y1="603.0" x2="488" y2="603.0" stroke="#e5e5e5"/>
+<text x="140" y="610.0" text-anchor="end" font-family="Arial" font-size="20">315</text>
+<line x1="149" y1="555.0" x2="488" y2="555.0" stroke="#e5e5e5"/>
+<text x="140" y="562.0" text-anchor="end" font-family="Arial" font-size="20">472</text>
+<line x1="149" y1="507.0" x2="488" y2="507.0" stroke="#e5e5e5"/>
+<text x="140" y="514.0" text-anchor="end" font-family="Arial" font-size="20">629</text>
+<rect x="150.27" y="699.00" width="11.58" height="0.00" fill="#59a14f"/>
+<rect x="164.40" y="699.00" width="11.58" height="0.00" fill="#59a14f"/>
+<rect x="178.52" y="699.00" width="11.58" height="0.00" fill="#59a14f"/>
+<rect x="192.65" y="699.00" width="11.58" height="0.00" fill="#59a14f"/>
+<rect x="206.77" y="692.59" width="11.58" height="6.41" fill="#59a14f"/>
+<rect x="220.90" y="683.77" width="11.58" height="15.23" fill="#59a14f"/>
+<rect x="235.02" y="683.76" width="11.58" height="15.24" fill="#59a14f"/>
+<rect x="249.15" y="682.35" width="11.58" height="16.65" fill="#59a14f"/>
+<rect x="263.27" y="679.15" width="11.58" height="19.85" fill="#59a14f"/>
+<rect x="277.40" y="677.01" width="11.58" height="21.99" fill="#59a14f"/>
+<rect x="291.52" y="672.89" width="11.58" height="26.11" fill="#59a14f"/>
+<rect x="305.65" y="674.89" width="11.58" height="24.11" fill="#59a14f"/>
+<rect x="319.77" y="672.54" width="11.58" height="26.46" fill="#59a14f"/>
+<rect x="333.90" y="675.62" width="11.58" height="23.38" fill="#59a14f"/>
+<rect x="348.02" y="677.26" width="11.58" height="21.74" fill="#59a14f"/>
+<rect x="362.15" y="669.93" width="11.58" height="29.07" fill="#59a14f"/>
+<rect x="376.27" y="668.54" width="11.58" height="30.46" fill="#59a14f"/>
+<rect x="390.40" y="668.01" width="11.58" height="30.99" fill="#59a14f"/>
+<rect x="404.52" y="663.93" width="11.58" height="35.07" fill="#59a14f"/>
+<rect x="418.65" y="662.98" width="11.58" height="36.02" fill="#59a14f"/>
+<rect x="432.77" y="666.42" width="11.58" height="32.58" fill="#59a14f"/>
+<rect x="446.90" y="663.12" width="11.58" height="35.88" fill="#59a14f"/>
+<rect x="461.02" y="665.76" width="11.58" height="33.24" fill="#59a14f"/>
+<rect x="475.15" y="682.35" width="11.58" height="16.65" fill="#59a14f"/>
+<line x1="149" y1="699" x2="488" y2="699" stroke="#444"/>
+<text transform="translate(96 603.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="22">kWh</text>
+<text x="156.1" y="726" text-anchor="middle" font-family="Arial" font-size="20">Jan 2024</text>
+<text x="325.6" y="726" text-anchor="middle" font-family="Arial" font-size="20">Jan 2025</text>
+<text x="480.9" y="726" text-anchor="middle" font-family="Arial" font-size="20">Dec 2025</text>
+<text x="785.0" y="484" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold">CSR3</text>
+<line x1="639" y1="699.0" x2="978" y2="699.0" stroke="#e5e5e5"/>
+<text x="630" y="706.0" text-anchor="end" font-family="Arial" font-size="20">0</text>
+<line x1="639" y1="651.0" x2="978" y2="651.0" stroke="#e5e5e5"/>
+<text x="630" y="658.0" text-anchor="end" font-family="Arial" font-size="20">157</text>
+<line x1="639" y1="603.0" x2="978" y2="603.0" stroke="#e5e5e5"/>
+<text x="630" y="610.0" text-anchor="end" font-family="Arial" font-size="20">315</text>
+<line x1="639" y1="555.0" x2="978" y2="555.0" stroke="#e5e5e5"/>
+<text x="630" y="562.0" text-anchor="end" font-family="Arial" font-size="20">472</text>
+<line x1="639" y1="507.0" x2="978" y2="507.0" stroke="#e5e5e5"/>
+<text x="630" y="514.0" text-anchor="end" font-family="Arial" font-size="20">629</text>
+<rect x="640.27" y="699.00" width="11.58" height="0.00" fill="#e78ac3"/>
+<rect x="654.40" y="699.00" width="11.58" height="0.00" fill="#e78ac3"/>
+<rect x="668.52" y="699.00" width="11.58" height="0.00" fill="#e78ac3"/>
+<rect x="682.65" y="699.00" width="11.58" height="0.00" fill="#e78ac3"/>
+<rect x="696.77" y="697.08" width="11.58" height="1.92" fill="#e78ac3"/>
+<rect x="710.90" y="690.54" width="11.58" height="8.46" fill="#e78ac3"/>
+<rect x="725.02" y="689.93" width="11.58" height="9.07" fill="#e78ac3"/>
+<rect x="739.15" y="679.98" width="11.58" height="19.02" fill="#e78ac3"/>
+<rect x="753.27" y="673.04" width="11.58" height="25.96" fill="#e78ac3"/>
+<rect x="767.40" y="657.40" width="11.58" height="41.60" fill="#e78ac3"/>
+<rect x="781.52" y="624.61" width="11.58" height="74.39" fill="#e78ac3"/>
+<rect x="795.65" y="606.02" width="11.58" height="92.98" fill="#e78ac3"/>
+<rect x="809.77" y="618.12" width="11.58" height="80.88" fill="#e78ac3"/>
+<rect x="823.90" y="592.31" width="11.58" height="106.69" fill="#e78ac3"/>
+<rect x="838.02" y="581.64" width="11.58" height="117.36" fill="#e78ac3"/>
+<rect x="852.15" y="607.58" width="11.58" height="91.42" fill="#e78ac3"/>
+<rect x="866.27" y="576.59" width="11.58" height="122.41" fill="#e78ac3"/>
+<rect x="880.40" y="543.14" width="11.58" height="155.86" fill="#e78ac3"/>
+<rect x="894.52" y="540.37" width="11.58" height="158.63" fill="#e78ac3"/>
+<rect x="908.65" y="564.15" width="11.58" height="134.85" fill="#e78ac3"/>
+<rect x="922.77" y="530.21" width="11.58" height="168.79" fill="#e78ac3"/>
+<rect x="936.90" y="548.90" width="11.58" height="150.10" fill="#e78ac3"/>
+<rect x="951.02" y="544.59" width="11.58" height="154.41" fill="#e78ac3"/>
+<rect x="965.15" y="553.73" width="11.58" height="145.27" fill="#e78ac3"/>
+<line x1="639" y1="699" x2="978" y2="699" stroke="#444"/>
+<text transform="translate(586 603.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="22">kWh</text>
+<text x="646.1" y="726" text-anchor="middle" font-family="Arial" font-size="20">Jan 2024</text>
+<text x="815.6" y="726" text-anchor="middle" font-family="Arial" font-size="20">Jan 2025</text>
+<text x="970.9" y="726" text-anchor="middle" font-family="Arial" font-size="20">Dec 2025</text>
+<text x="1275.0" y="484" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold">CSR4</text>
+<line x1="1129" y1="699.0" x2="1468" y2="699.0" stroke="#e5e5e5"/>
+<text x="1120" y="706.0" text-anchor="end" font-family="Arial" font-size="20">0</text>
+<line x1="1129" y1="651.0" x2="1468" y2="651.0" stroke="#e5e5e5"/>
+<text x="1120" y="658.0" text-anchor="end" font-family="Arial" font-size="20">157</text>
+<line x1="1129" y1="603.0" x2="1468" y2="603.0" stroke="#e5e5e5"/>
+<text x="1120" y="610.0" text-anchor="end" font-family="Arial" font-size="20">315</text>
+<line x1="1129" y1="555.0" x2="1468" y2="555.0" stroke="#e5e5e5"/>
+<text x="1120" y="562.0" text-anchor="end" font-family="Arial" font-size="20">472</text>
+<line x1="1129" y1="507.0" x2="1468" y2="507.0" stroke="#e5e5e5"/>
+<text x="1120" y="514.0" text-anchor="end" font-family="Arial" font-size="20">629</text>
+<rect x="1130.27" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1144.40" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1158.52" y="697.35" width="11.58" height="1.65" fill="#756bb1"/>
+<rect x="1172.65" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1186.77" y="688.05" width="11.58" height="10.95" fill="#756bb1"/>
+<rect x="1200.90" y="642.04" width="11.58" height="56.96" fill="#756bb1"/>
+<rect x="1215.02" y="691.59" width="11.58" height="7.41" fill="#756bb1"/>
+<rect x="1229.15" y="688.01" width="11.58" height="10.99" fill="#756bb1"/>
+<rect x="1243.27" y="672.78" width="11.58" height="26.22" fill="#756bb1"/>
+<rect x="1257.40" y="652.74" width="11.58" height="46.26" fill="#756bb1"/>
+<rect x="1271.52" y="647.89" width="11.58" height="51.11" fill="#756bb1"/>
+<rect x="1285.65" y="693.80" width="11.58" height="5.20" fill="#756bb1"/>
+<rect x="1299.77" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1313.90" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1328.02" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1342.15" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1356.27" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1370.40" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1384.52" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1398.65" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1412.77" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1426.90" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1441.02" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1455.15" y="699.00" width="11.58" height="0.00" fill="#756bb1"/>
+<rect x="1286.65" y="507" width="11.85" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1298.50" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1312.62" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1326.75" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1340.88" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1355.00" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1369.12" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1383.25" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1397.38" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1411.50" y="507" width="14.12" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<rect x="1425.62" y="507" width="0.91" height="192" fill="url(#telemetry-hatch)" stroke="none"/>
+<line x1="1129" y1="699" x2="1468" y2="699" stroke="#444"/>
+<text transform="translate(1076 603.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="22">kWh</text>
+<text x="1136.1" y="726" text-anchor="middle" font-family="Arial" font-size="20">Jan 2024</text>
+<text x="1305.6" y="726" text-anchor="middle" font-family="Arial" font-size="20">Jan 2025</text>
+<text x="1425.0" y="726" text-anchor="middle" font-family="Arial" font-size="20">Dec 2025</text>
+<rect x="505.0" y="811" width="22" height="13" fill="url(#telemetry-hatch)"/>
+<text x="535.0" y="825" font-family="Arial" font-size="19" fill="#444">Confirmed unreliable or unavailable telemetry (not inferred system outage)</text>
+</svg>

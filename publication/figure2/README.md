@@ -33,3 +33,12 @@ release package in a later approved update if the revised figure should be inclu
 canvas matching the main manuscript's existing image aspect ratio. This avoids
 cropping labels when replacing its anchored image object and preserves the
 existing image box and caption layout.
+
+## 2026-10-21 presentation update
+
+The canonical submission build now regenerates all Figure 2 files directly
+from `scripts/run_timeline_figure.py`: SVG, vector PDF, 4500 × 3375 PNG at 600 DPI,
+and the optional padded manuscript replacement. The overall title is removed;
+row labels are 24 px, dates 20 px, legend 22 px, and panel headings 30 px.
+Biomedical equipment includes (n=6). Time windows, counts, colors and legend
+meaning are unchanged. Use `python scripts/build_submission_pdf.py`.

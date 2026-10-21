@@ -180,6 +180,42 @@ denominator sensitivity keeps voltage observations even when frequency is
 missing or invalid. This choice is visible in output metadata and captions;
 the default reusable PQR library continues to use independent denominators.
 
+### Canonical submission figures and tables
+
+```bash
+pip install -e '.[publication,figures]'
+python scripts/build_submission_pdf.py
+```
+
+The submission build writes `outputs/generated/submission/submission_figures_and_tables.pdf`
+and a source/hash manifest. It includes Figures 1-5 (Figure 3 on two pages) and
+Tables 1-2. GitHub Actions **Submission figures and tables** runs the same command
+and publishes the PDF in the `submission-figures-and-tables` artifact.
+
+The build always regenerates Figure 2 from `scripts/run_timeline_figure.py`,
+Table 1 from editable `publication/table1/source.json`, and Table 2 from the
+tracked anonymized DHIS2 panels. Table 1 preserves the six approved packages,
+separate ward circuits, Yes/No equipment entries, monthly contributions and
+acronym definitions. Its caption, CSR3 asterisk and negotiated-fee footnote are
+not embedded. Figure 2 has larger labels and legend, no overall title, and
+Biomedical equipment (n=6). Reviewed Figures 1 and 3-5 are reused without
+requiring restricted telemetry. All graphical content remains vector except
+Figure 1's original photographs. The Figure 2 PNG is also refreshed at 4500
+pixels wide / 600 DPI, including the optional padded anchored-image copy.
+
+To rerun the scientific analysis with installed, checksum-verified local
+restricted inputs and refresh the Figure 4-5 snapshots before assembly:
+
+```bash
+python scripts/build_submission_pdf.py --regenerate-analysis
+```
+
+This repository contains **no prose manuscript or manuscript captions**. The
+PDF is the submission figures-and-tables compilation, not an export of the
+current Google Doc. Existing manuscript captions must remain in the manuscript;
+this build does not retrieve, overwrite, or duplicate them. Figure 6 remains
+outside the documented canonical Figures 1-5 build scope.
+
 ### One-command large-format figure book
 
 With the checksum-verified telemetry installed locally, run:

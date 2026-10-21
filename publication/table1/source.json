@@ -1,0 +1,14 @@
+{
+  "approved_date": "2026-10-21",
+  "columns": ["Facility", "Power system configuration and wards served by the critical circuit", "Oxygen concentrator", "Infant warmer", "Autoclave", "Water filtration", "Monthly contribution (US$)"],
+  "equipment_heading": "Equipment provided",
+  "rows": [
+    ["HGR1", ["1 × FLEX (2 kVA): ICU"], "Yes", "No", "No", "Yes", 50],
+    ["CH1", ["1 × FLEX (2 kVA): Maternity"], "No", "No", "Yes", "No", 50],
+    ["CSR1", ["1 × FLEX (2 kVA): Surgery", "1 × FLEX (2 kVA): Morgue"], "Yes", "Yes", "Yes", "Yes", 100],
+    ["CSR2", ["1 × FLEX (2 kVA): Maternity"], "No", "No", "Yes", "Yes", 50],
+    ["CSR3", ["1 × FLEX (2 kVA): Maternity", "2 FLEX in parallel (4 kVA): Surgery", "1 × FLEX (2 kVA): Morgue"], "Yes", "Yes", "Yes", "Yes", 300],
+    ["CSR4", ["1 × FLEX (2 kVA): Surgery"], "No", "No", "Yes", "No", 50]
+  ],
+  "definitions": "HGR=Hôpital Général de Référence (General Referral Hospital). CH=Centre Hospitalier (Private Hospital). CSR=Centre de Santé de Référence (Referral Health Center). ICU=intensive care unit."
+}
