@@ -69,7 +69,7 @@ rows_a = [
     (225,"Existing supply,\nshort monitoring (n=3)*","n=3","facility-specific","2024-04-03","2025-01-28","data"),
     (285,"Pre-installation surveys (n=6)","n=6","7-mo window","2023-09-01","2024-04-30","implementation"),
     (345,"Intervention deployment (n=6)","n=6","Apr–May 2024","2024-04-01","2024-06-01","implementation"),
-    (405,"Biomedical equipment","n=6","≈1 mo","2024-05-15","2024-06-15","implementation"),
+    (405,"Biomedical equipment (n=6)","n=6","≈1 mo","2024-05-15","2024-06-15","implementation"),
     (465,"Post-intervention telemetry (n=6)","n=6","≤20 mo","2024-05-22","2026-01-12","data"),
     (525,"Facility payments (n=6)","n=6","Apr 2024–Apr 2026","2024-04-02","2026-04-06","data"),
     (585,"Conflict-related operational\ndisruption (n=2)","n=2","≈3 mo","2025-01-01","2025-04-01","context"),
