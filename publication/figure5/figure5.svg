@@ -1,333 +1,334 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="830" viewBox="0 0 1600 830">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1420" viewBox="0 0 1600 1420">
 <rect width="100%" height="100%" fill="white"/>
 <text x="800.0" y="34" font-family="Arial" font-size="31" text-anchor="middle" font-weight="bold">Capital investment and facility payment performance</text>
-<text x="65" y="58" font-family="Arial" font-size="23" font-weight="bold">Panel A — Standard reference package CAPEX</text>
-<rect x="89.0" y="181.8041166524335" width="62.0" height="133.1958833475665" fill="#334155"/>
-<text x="120.0" y="172.8041166524335" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$7,450</text>
-<text x="120.0" y="337" font-family="Arial" font-size="16" text-anchor="middle">Equipment</text>
-<text x="120.0" y="356" font-family="Arial" font-size="16" text-anchor="middle">subtotal</text>
-<rect x="189.0" y="172.23904315029282" width="62.0" height="9.565073502140677" fill="#64748b"/>
-<text x="220.0" y="163.23904315029282" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$535</text>
-<text x="220.0" y="337" font-family="Arial" font-size="16" text-anchor="middle">Freight +</text>
-<text x="220.0" y="356" font-family="Arial" font-size="16" text-anchor="middle">agent</text>
-<line x1="151.0" y1="181.8041166524335" x2="189.0" y2="181.8041166524335" stroke="#888" stroke-dasharray="4,3"/>
-<rect x="289.0" y="134.27821639623636" width="62.0" height="37.960826754056455" fill="#94a3b8"/>
-<text x="320.0" y="125.27821639623636" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$2,123</text>
-<text x="320.0" y="337" font-family="Arial" font-size="16" text-anchor="middle">Duties +</text>
-<text x="320.0" y="356" font-family="Arial" font-size="16" text-anchor="middle">port</text>
-<line x1="251.0" y1="172.23904315029282" x2="289.0" y2="172.23904315029282" stroke="#888" stroke-dasharray="4,3"/>
-<rect x="389.0" y="110.30295739367439" width="62.0" height="23.97525900256197" fill="#b6a6ca"/>
-<text x="420.0" y="101.30295739367439" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$1,341</text>
-<text x="420.0" y="337" font-family="Arial" font-size="16" text-anchor="middle">VAT</text>
-<line x1="351.0" y1="134.27821639623636" x2="389.0" y2="134.27821639623636" stroke="#888" stroke-dasharray="4,3"/>
-<rect x="489.0" y="101.36363636363637" width="62.0" height="8.939321030038016" fill="#8b6f47"/>
-<text x="520.0" y="92.36363636363637" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$500</text>
-<text x="520.0" y="337" font-family="Arial" font-size="16" text-anchor="middle">Delivery +</text>
-<text x="520.0" y="356" font-family="Arial" font-size="16" text-anchor="middle">installation</text>
-<line x1="451.0" y1="110.30295739367439" x2="489.0" y2="110.30295739367439" stroke="#888" stroke-dasharray="4,3"/>
-<rect x="589.0" y="101.36363636363637" width="62.0" height="213.63636363636363" fill="#0f766e"/>
-<text x="620.0" y="92.36363636363637" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$11,949</text>
-<text x="620.0" y="337" font-family="Arial" font-size="16" text-anchor="middle">Installed</text>
-<text x="620.0" y="356" font-family="Arial" font-size="16" text-anchor="middle">package</text>
-<text x="65" y="390" font-family="Arial" font-size="17" fill="#444">USAID-funded budget reference; one standardized package.</text>
-<text x="65" y="460" font-family="Arial" font-size="22" font-weight="bold">Panel D — Monthly payments, outflows, and cumulative balance</text>
-<line x1="130" y1="720.0" x2="665" y2="720.0" stroke="#ececec"/>
-<text x="121" y="726.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
-<text x="673" y="726.0" font-family="Arial" font-size="17" >$0</text>
-<line x1="130" y1="641.6666666666667" x2="665" y2="641.6666666666667" stroke="#ececec"/>
-<text x="121" y="647.6666666666667" font-family="Arial" font-size="18" text-anchor="end">$1,120</text>
-<text x="673" y="647.6666666666667" font-family="Arial" font-size="17" >$2,617</text>
-<line x1="130" y1="563.3333333333334" x2="665" y2="563.3333333333334" stroke="#ececec"/>
-<text x="121" y="569.3333333333334" font-family="Arial" font-size="18" text-anchor="end">$2,240</text>
-<text x="673" y="569.3333333333334" font-family="Arial" font-size="17" >$5,235</text>
-<line x1="130" y1="485.0" x2="665" y2="485.0" stroke="#ececec"/>
-<text x="121" y="491.0" font-family="Arial" font-size="18" text-anchor="end">$3,360</text>
-<text x="673" y="491.0" font-family="Arial" font-size="17" >$7,852</text>
-<text x="25" y="602.5" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 25 602.5)">Monthly cash flow (USD)</text>
-<text x="760" y="602.5" font-family="Arial" font-size="18" text-anchor="middle" transform="rotate(90 760 602.5)">Cumulative balance (USD)</text>
-<rect x="132.99599999999998" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="132.99599999999998" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="132.99599999999998" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="132.99599999999998" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="132.99599999999998" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="132.99599999999998" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="144.08975999999998" y="673.4891182245156" width="4.31424" height="46.510881775484414" fill="#6b7280"/>
-<rect x="154.396" y="720.0" width="10.785599999999997" height="0.0" fill="#2b8cbe"/>
-<rect x="154.396" y="720.0" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="154.396" y="720.0" width="10.785599999999997" height="0.0" fill="#59a14f"/>
-<rect x="154.396" y="720.0" width="10.785599999999997" height="0.0" fill="#e78ac3"/>
-<rect x="154.396" y="720.0" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="154.396" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="165.48976" y="699.7170590753526" width="4.31424" height="20.282940924647338" fill="#6b7280"/>
-<rect x="175.796" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="175.796" y="716.5029412198884" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="175.796" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#59a14f"/>
-<rect x="175.796" y="688.5264709789955" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="175.796" y="688.5264709789955" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="175.796" y="688.5264709789955" width="10.785599999999997" height="0.0" fill="#edc948"/>
-<rect x="186.88976" y="716.7127647466951" width="4.31424" height="3.2872352533049134" fill="#6b7280"/>
-<rect x="197.19599999999997" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="197.19599999999997" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="197.19599999999997" y="702.5147060994419" width="10.785599999999997" height="6.99411756022322" fill="#59a14f"/>
-<rect x="197.19599999999997" y="681.5323534187722" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="197.19599999999997" y="681.5323534187722" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="197.19599999999997" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="218.596" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="218.596" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="218.596" y="709.5088236596652" width="10.785599999999997" height="0.0" fill="#59a14f"/>
-<rect x="218.596" y="709.5088236596652" width="10.785599999999997" height="0.0" fill="#e78ac3"/>
-<rect x="218.596" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="218.596" y="702.5147060994419" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="229.68976" y="714.9635359448832" width="4.31424" height="5.036464055116741" fill="#6b7280"/>
-<rect x="239.99599999999998" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="239.99599999999998" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="239.99599999999998" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="239.99599999999998" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="239.99599999999998" y="685.0294121988838" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="239.99599999999998" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="251.08975999999998" y="655.3743537435374" width="4.31424" height="64.62564625646255" fill="#6b7280"/>
-<rect x="261.396" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="261.396" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="261.396" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="261.396" y="664.0470595182143" width="10.785599999999997" height="41.96470536133932" fill="#e78ac3"/>
-<rect x="261.396" y="657.052941957991" width="10.785599999999997" height="6.99411756022322" fill="#756bb1"/>
-<rect x="261.396" y="653.5558831778794" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="272.48976" y="717.1324118003084" width="4.31424" height="2.8675881996915202" fill="#6b7280"/>
-<rect x="282.796" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="282.796" y="702.5147060994419" width="10.785599999999997" height="13.98823512044644" fill="#f28e2b"/>
-<rect x="282.796" y="699.0176473193303" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="282.796" y="678.0352946386606" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="282.796" y="674.538235858549" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="282.796" y="671.0411770784374" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="293.88975999999997" y="717.901764731933" width="4.31424" height="2.098235268066966" fill="#6b7280"/>
-<rect x="304.19599999999997" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="304.19599999999997" y="716.5029412198884" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="304.19599999999997" y="713.0058824397768" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="304.19599999999997" y="692.0235297591071" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="304.19599999999997" y="692.0235297591071" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="304.19599999999997" y="688.5264709789955" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="315.28975999999994" y="713.7052941957991" width="4.31424" height="6.294705804200897" fill="#6b7280"/>
-<rect x="325.59599999999995" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="325.59599999999995" y="716.5029412198884" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="325.59599999999995" y="706.0117648795535" width="10.785599999999997" height="10.49117634033483" fill="#59a14f"/>
-<rect x="325.59599999999995" y="706.0117648795535" width="10.785599999999997" height="0.0" fill="#e78ac3"/>
-<rect x="325.59599999999995" y="706.0117648795535" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="325.59599999999995" y="706.0117648795535" width="10.785599999999997" height="0.0" fill="#edc948"/>
-<rect x="336.6897599999999" y="679.4341181507053" width="4.31424" height="40.565881849294676" fill="#6b7280"/>
-<rect x="346.996" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="346.996" y="716.5029412198884" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="346.996" y="713.0058824397768" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="346.996" y="692.0235297591071" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="346.996" y="688.5264709789955" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="346.996" y="685.0294121988838" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="358.08975999999996" y="715.8035294638661" width="4.31424" height="4.196470536133932" fill="#6b7280"/>
-<rect x="368.396" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="368.396" y="716.5029412198884" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="368.396" y="713.0058824397768" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="368.396" y="692.0235297591071" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="368.396" y="692.0235297591071" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="368.396" y="688.5264709789955" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="379.48976" y="710.6908295273429" width="4.31424" height="9.309170472657106" fill="#6b7280"/>
-<rect x="389.796" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="389.796" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="389.796" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="389.796" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="389.796" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="389.796" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="400.88975999999997" y="718.6011764879554" width="4.31424" height="1.398823512044644" fill="#6b7280"/>
-<rect x="411.19599999999997" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="411.19599999999997" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="411.19599999999997" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="411.19599999999997" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="411.19599999999997" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="411.19599999999997" y="674.538235858549" width="10.785599999999997" height="6.99411756022322" fill="#edc948"/>
-<rect x="432.59599999999995" y="720.0" width="10.785599999999997" height="0.0" fill="#2b8cbe"/>
-<rect x="432.59599999999995" y="713.0058824397768" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="432.59599999999995" y="713.0058824397768" width="10.785599999999997" height="0.0" fill="#59a14f"/>
-<rect x="432.59599999999995" y="692.0235297591071" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="432.59599999999995" y="688.5264709789955" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="432.59599999999995" y="688.5264709789955" width="10.785599999999997" height="0.0" fill="#edc948"/>
-<rect x="443.6897599999999" y="711.6770001033344" width="4.31424" height="8.322999896665632" fill="#6b7280"/>
-<rect x="453.996" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="453.996" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="453.996" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="453.996" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="453.996" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="453.996" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="465.08975999999996" y="718.2514706099442" width="4.31424" height="1.748529390055805" fill="#6b7280"/>
-<rect x="475.39599999999996" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="475.39599999999996" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="475.39599999999996" y="709.5088236596652" width="10.785599999999997" height="0.0" fill="#59a14f"/>
-<rect x="475.39599999999996" y="688.5264709789955" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="475.39599999999996" y="685.0294121988838" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="475.39599999999996" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="496.796" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="496.796" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="496.796" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="496.796" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="496.796" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="496.796" y="681.5323534187722" width="10.785599999999997" height="0.0" fill="#edc948"/>
-<rect x="507.88975999999997" y="704.2023866667238" width="4.31424" height="15.797613333276187" fill="#6b7280"/>
-<rect x="518.196" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="518.196" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="518.196" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="518.196" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="518.196" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="518.196" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="529.28976" y="718.8326817791988" width="4.31424" height="1.1673182208012554" fill="#6b7280"/>
-<rect x="529.28976" y="510.17857142857144" width="4.31424" height="208.6541103506273" fill="#9c2f2f"/>
-<rect x="539.596" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="539.596" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="539.596" y="706.0117648795535" width="10.785599999999997" height="3.49705878011161" fill="#59a14f"/>
-<rect x="539.596" y="685.0294121988838" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="539.596" y="681.5323534187722" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="539.596" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="550.68976" y="719.3005882439777" width="4.31424" height="0.699411756022322" fill="#6b7280"/>
-<rect x="560.9960000000001" y="713.0058824397768" width="10.785599999999997" height="6.99411756022322" fill="#2b8cbe"/>
-<rect x="560.9960000000001" y="699.0176473193303" width="10.785599999999997" height="13.98823512044644" fill="#f28e2b"/>
-<rect x="560.9960000000001" y="692.0235297591071" width="10.785599999999997" height="6.99411756022322" fill="#59a14f"/>
-<rect x="560.9960000000001" y="650.0588243977678" width="10.785599999999997" height="41.96470536133932" fill="#e78ac3"/>
-<rect x="560.9960000000001" y="643.0647068375446" width="10.785599999999997" height="6.99411756022322" fill="#756bb1"/>
-<rect x="560.9960000000001" y="636.0705892773213" width="10.785599999999997" height="6.99411756022322" fill="#edc948"/>
-<rect x="572.0897600000001" y="718.5312353123531" width="4.31424" height="1.468764687646876" fill="#6b7280"/>
-<rect x="582.396" y="720.0" width="10.785599999999997" height="0.0" fill="#2b8cbe"/>
-<rect x="582.396" y="720.0" width="10.785599999999997" height="0.0" fill="#f28e2b"/>
-<rect x="582.396" y="720.0" width="10.785599999999997" height="0.0" fill="#59a14f"/>
-<rect x="582.396" y="720.0" width="10.785599999999997" height="0.0" fill="#e78ac3"/>
-<rect x="582.396" y="720.0" width="10.785599999999997" height="0.0" fill="#756bb1"/>
-<rect x="582.396" y="720.0" width="10.785599999999997" height="0.0" fill="#edc948"/>
-<rect x="603.796" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="603.796" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="603.796" y="702.5147060994419" width="10.785599999999997" height="6.99411756022322" fill="#59a14f"/>
-<rect x="603.796" y="681.5323534187722" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="603.796" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="603.796" y="674.538235858549" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="625.196" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="625.196" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="625.196" y="702.5147060994419" width="10.785599999999997" height="6.99411756022322" fill="#59a14f"/>
-<rect x="625.196" y="681.5323534187722" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="625.196" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="625.196" y="674.538235858549" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="636.28976" y="718.2514706099442" width="4.31424" height="1.748529390055805" fill="#6b7280"/>
-<rect x="646.596" y="716.5029412198884" width="10.785599999999997" height="3.49705878011161" fill="#2b8cbe"/>
-<rect x="646.596" y="709.5088236596652" width="10.785599999999997" height="6.99411756022322" fill="#f28e2b"/>
-<rect x="646.596" y="702.5147060994419" width="10.785599999999997" height="6.99411756022322" fill="#59a14f"/>
-<rect x="646.596" y="681.5323534187722" width="10.785599999999997" height="20.98235268066966" fill="#e78ac3"/>
-<rect x="646.596" y="678.0352946386606" width="10.785599999999997" height="3.49705878011161" fill="#756bb1"/>
-<rect x="646.596" y="674.538235858549" width="10.785599999999997" height="3.49705878011161" fill="#edc948"/>
-<rect x="657.68976" y="712.2365295081522" width="4.31424" height="7.763470491847774" fill="#6b7280"/>
-<polyline points="140.70,721.95 162.10,729.13 183.50,717.07 204.90,699.11 226.30,693.78 247.70,704.98 269.10,677.77 290.50,657.72 311.90,646.95 333.30,658.32 354.70,645.15 376.10,635.67 397.50,618.31 418.90,598.86 440.30,588.95 461.70,571.74 483.10,555.28 504.50,545.58 525.90,617.41 547.30,599.75 568.70,564.47 590.10,564.47 611.50,545.01 632.90,526.31 654.30,510.18" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>
-<text x="140.7" y="745" font-family="Arial" font-size="18" text-anchor="middle">Apr 2024</text>
-<text x="397.5" y="745" font-family="Arial" font-size="18" text-anchor="middle">Apr 2025</text>
-<text x="654.3" y="745" font-family="Arial" font-size="18" text-anchor="middle">Apr 2026</text>
-<rect x="70" y="774" width="16" height="16" fill="#2b8cbe"/>
-<text x="92" y="789" font-family="Arial" font-size="18" >CH1</text>
-<rect x="180" y="774" width="16" height="16" fill="#f28e2b"/>
-<text x="202" y="789" font-family="Arial" font-size="18" >CSR1</text>
-<rect x="290" y="774" width="16" height="16" fill="#59a14f"/>
-<text x="312" y="789" font-family="Arial" font-size="18" >CSR2</text>
-<rect x="70" y="798" width="16" height="16" fill="#e78ac3"/>
-<text x="92" y="813" font-family="Arial" font-size="18" >CSR3</text>
-<rect x="180" y="798" width="16" height="16" fill="#756bb1"/>
-<text x="202" y="813" font-family="Arial" font-size="18" >CSR4</text>
-<rect x="290" y="798" width="16" height="16" fill="#edc948"/>
-<text x="312" y="813" font-family="Arial" font-size="18" >HGR1</text>
-<rect x="415" y="774" width="16" height="16" fill="#6b7280"/>
-<rect x="415" y="798" width="16" height="16" fill="#9c2f2f"/>
-<line x1="565" y1="782" x2="590" y2="782" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>
-<text x="437" y="789" font-family="Arial" font-size="17" >OPEX</text>
-<text x="437" y="813" font-family="Arial" font-size="17" >Expansion CAPEX</text>
-<text x="600" y="789" font-family="Arial" font-size="17" >Balance</text>
-<text x="845" y="58" font-family="Arial" font-size="23" font-weight="bold">Panel B — Deployment CAPEX and monthly commitment</text>
-<line x1="850" y1="315.0" x2="1435" y2="315.0" stroke="#ececec"/>
-<text x="842" y="321.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
-<text x="1440" y="321.0" font-family="Arial" font-size="17" >$0</text>
-<line x1="850" y1="236.66666666666669" x2="1435" y2="236.66666666666669" stroke="#ececec"/>
-<text x="842" y="242.66666666666669" font-family="Arial" font-size="18" text-anchor="end">$13,383</text>
-<text x="1440" y="242.66666666666669" font-family="Arial" font-size="17" >$112</text>
-<line x1="850" y1="158.33333333333334" x2="1435" y2="158.33333333333334" stroke="#ececec"/>
-<text x="842" y="164.33333333333334" font-family="Arial" font-size="18" text-anchor="end">$26,766</text>
-<text x="1440" y="164.33333333333334" font-family="Arial" font-size="17" >$224</text>
-<line x1="850" y1="80.0" x2="1435" y2="80.0" stroke="#ececec"/>
-<text x="842" y="86.0" font-family="Arial" font-size="18" text-anchor="end">$40,149</text>
-<text x="1440" y="86.0" font-family="Arial" font-size="17" >$336</text>
-<text x="745" y="197.5" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 745 197.5)">Deployment CAPEX (USD)</text>
-<text x="1530" y="197.5" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(90 1530 197.5)">Monthly commitment (USD)</text>
-<rect x="871.9375" y="245.0595238095238" width="53.62500000000001" height="69.94047619047619" fill="#2b8cbe"/>
-<text x="898.75" y="300" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
-<circle cx="898.75" cy="280.0297619047619" r="6" fill="#111"/>
-<text x="898.75" y="264.0297619047619" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
-<text x="898.75" y="339" font-family="Arial" font-size="19" text-anchor="middle">CH1</text>
-<rect x="969.4375" y="175.11904761904762" width="53.62500000000001" height="139.88095238095238" fill="#f28e2b"/>
-<text x="996.25" y="300" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$23,898</text>
-<circle cx="996.25" cy="245.05952380952382" r="6" fill="#111"/>
-<text x="996.25" y="229.05952380952382" font-family="Arial" font-size="16" text-anchor="middle">$100/mo</text>
-<text x="996.25" y="339" font-family="Arial" font-size="19" text-anchor="middle">CSR1</text>
-<rect x="1066.9375" y="245.0595238095238" width="53.62500000000001" height="69.94047619047619" fill="#59a14f"/>
-<text x="1093.75" y="300" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
-<circle cx="1093.75" cy="280.0297619047619" r="6" fill="#111"/>
-<text x="1093.75" y="264.0297619047619" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
-<text x="1093.75" y="339" font-family="Arial" font-size="19" text-anchor="middle">CSR2</text>
-<rect x="1164.4375" y="105.17857142857144" width="53.62500000000001" height="209.82142857142856" fill="#e78ac3"/>
-<text x="1191.25" y="300" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$35,848</text>
-<circle cx="1191.25" cy="105.17857142857147" r="6" fill="#111"/>
-<text x="1191.25" y="89.17857142857147" font-family="Arial" font-size="16" text-anchor="middle">$300/mo</text>
-<text x="1191.25" y="339" font-family="Arial" font-size="19" text-anchor="middle">CSR3</text>
-<rect x="1261.9375" y="245.0595238095238" width="53.62500000000001" height="69.94047619047619" fill="#756bb1"/>
-<text x="1288.75" y="300" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
-<circle cx="1288.75" cy="280.0297619047619" r="6" fill="#111"/>
-<text x="1288.75" y="264.0297619047619" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
-<text x="1288.75" y="339" font-family="Arial" font-size="19" text-anchor="middle">CSR4</text>
-<rect x="1359.4375" y="245.0595238095238" width="53.62500000000001" height="69.94047619047619" fill="#edc948"/>
-<text x="1386.25" y="300" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
-<circle cx="1386.25" cy="280.0297619047619" r="6" fill="#111"/>
-<text x="1386.25" y="264.0297619047619" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
-<text x="1386.25" y="339" font-family="Arial" font-size="19" text-anchor="middle">HGR1</text>
-<text x="845" y="390" font-family="Arial" font-size="17" fill="#444">Bars: standardized-package CAPEX. Points: monthly commitment.</text>
-<text x="845" y="460" font-family="Arial" font-size="23" font-weight="bold">Panel C — Actual payment revenue and timing</text>
-<line x1="920" y1="720.0" x2="1435" y2="720.0" stroke="#ececec"/>
-<text x="912" y="726.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
-<text x="1440" y="726.0" font-family="Arial" font-size="17" >0%</text>
-<line x1="920" y1="641.6666666666667" x2="1435" y2="641.6666666666667" stroke="#ececec"/>
-<text x="912" y="647.6666666666667" font-family="Arial" font-size="18" text-anchor="end">$2,576</text>
-<text x="1440" y="647.6666666666667" font-family="Arial" font-size="17" >33%</text>
-<line x1="920" y1="563.3333333333334" x2="1435" y2="563.3333333333334" stroke="#ececec"/>
-<text x="912" y="569.3333333333334" font-family="Arial" font-size="18" text-anchor="end">$5,152</text>
-<text x="1440" y="569.3333333333334" font-family="Arial" font-size="17" >67%</text>
-<line x1="920" y1="485.0" x2="1435" y2="485.0" stroke="#ececec"/>
-<text x="912" y="491.0" font-family="Arial" font-size="18" text-anchor="end">$7,728</text>
-<text x="1440" y="491.0" font-family="Arial" font-size="17" >100%</text>
-<text x="820" y="602.5" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 820 602.5)">Revenue received (USD)</text>
-<text x="1530" y="602.5" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(90 1530 602.5)">On-time remittances (%)</text>
-<rect x="939.3125" y="685.0297619047619" width="47.208333333333336" height="34.97023809523809" fill="#2b8cbe"/>
-<text x="962.9166666666666" y="676.0297619047619" font-family="Arial" font-size="16" text-anchor="middle">$1,150</text>
-<circle cx="962.9166666666666" cy="556.5217391304348" r="6" fill="#111"/>
-<text x="962.9166666666666" y="546.5217391304348" font-family="Arial" font-size="16" text-anchor="middle">69.6%</text>
-<text x="962.9166666666666" y="744" font-family="Arial" font-size="19" text-anchor="middle">CH1</text>
-<rect x="1025.1458333333333" y="659.1821946169772" width="47.208333333333336" height="60.817805383022765" fill="#f28e2b"/>
-<text x="1048.75" y="650.1821946169772" font-family="Arial" font-size="16" text-anchor="middle">$2,000</text>
-<circle cx="1048.75" cy="590.75" r="6" fill="#111"/>
-<text x="1048.75" y="580.75" font-family="Arial" font-size="16" text-anchor="middle">55.0%</text>
-<text x="1048.75" y="744" font-family="Arial" font-size="19" text-anchor="middle">CSR1</text>
-<rect x="1110.9791666666665" y="677.427536231884" width="47.208333333333336" height="42.57246376811594" fill="#59a14f"/>
-<text x="1134.5833333333333" y="668.427536231884" font-family="Arial" font-size="16" text-anchor="middle">$1,400</text>
-<circle cx="1134.5833333333333" cy="699.5652173913044" r="6" fill="#111"/>
-<text x="1134.5833333333333" y="689.5652173913044" font-family="Arial" font-size="16" text-anchor="middle">8.7%</text>
-<text x="1134.5833333333333" y="744" font-family="Arial" font-size="19" text-anchor="middle">CSR2</text>
-<rect x="1196.8124999999998" y="510.17857142857144" width="47.208333333333336" height="209.82142857142856" fill="#e78ac3"/>
-<text x="1220.4166666666665" y="501.17857142857144" font-family="Arial" font-size="16" text-anchor="middle">$6,900</text>
-<circle cx="1220.4166666666665" cy="658.695652173913" r="6" fill="#111"/>
-<text x="1220.4166666666665" y="648.695652173913" font-family="Arial" font-size="16" text-anchor="middle">26.1%</text>
-<text x="1220.4166666666665" y="744" font-family="Arial" font-size="19" text-anchor="middle">CSR3</text>
-<rect x="1282.6458333333333" y="691.1115424430642" width="47.208333333333336" height="28.888457556935816" fill="#756bb1"/>
-<text x="1306.25" y="682.1115424430642" font-family="Arial" font-size="16" text-anchor="middle">$950</text>
-<circle cx="1306.25" cy="583.9473684210526" r="6" fill="#111"/>
-<text x="1306.25" y="573.9473684210526" font-family="Arial" font-size="16" text-anchor="middle">57.9%</text>
-<text x="1306.25" y="744" font-family="Arial" font-size="19" text-anchor="middle">CSR4</text>
-<rect x="1368.4791666666665" y="686.5502070393375" width="47.208333333333336" height="33.44979296066252" fill="#edc948"/>
-<text x="1392.0833333333333" y="677.5502070393375" font-family="Arial" font-size="16" text-anchor="middle">$1,100</text>
-<circle cx="1392.0833333333333" cy="591.8181818181819" r="6" fill="#111"/>
-<text x="1392.0833333333333" y="581.8181818181819" font-family="Arial" font-size="16" text-anchor="middle">54.5%</text>
-<text x="1392.0833333333333" y="744" font-family="Arial" font-size="19" text-anchor="middle">HGR1</text>
-<text x="845" y="780" font-family="Arial" font-size="17" fill="#444">Bars: revenue received. Points: share recorded on time.</text>
+<text x="65" y="78" font-family="Arial" font-size="23" font-weight="bold">Panel A — Standard reference package CAPEX</text>
+<rect x="172.43333333333334" y="211.8041166524335" width="138.46666666666667" height="133.1958833475665" fill="#334155"/>
+<text x="241.66666666666669" y="202.8041166524335" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$7,450</text>
+<text x="241.66666666666669" y="367" font-family="Arial" font-size="16" text-anchor="middle">Equipment</text>
+<text x="241.66666666666669" y="386" font-family="Arial" font-size="16" text-anchor="middle">subtotal</text>
+<rect x="395.76666666666665" y="202.23904315029282" width="138.46666666666667" height="9.565073502140677" fill="#64748b"/>
+<text x="465.0" y="193.23904315029282" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$535</text>
+<text x="465.0" y="367" font-family="Arial" font-size="16" text-anchor="middle">Freight +</text>
+<text x="465.0" y="386" font-family="Arial" font-size="16" text-anchor="middle">agent</text>
+<line x1="310.90000000000003" y1="211.8041166524335" x2="395.76666666666665" y2="211.8041166524335" stroke="#888" stroke-dasharray="4,3"/>
+<rect x="619.1" y="164.27821639623636" width="138.46666666666667" height="37.960826754056455" fill="#94a3b8"/>
+<text x="688.3333333333334" y="155.27821639623636" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$2,123</text>
+<text x="688.3333333333334" y="367" font-family="Arial" font-size="16" text-anchor="middle">Duties +</text>
+<text x="688.3333333333334" y="386" font-family="Arial" font-size="16" text-anchor="middle">port</text>
+<line x1="534.2333333333333" y1="202.23904315029282" x2="619.1" y2="202.23904315029282" stroke="#888" stroke-dasharray="4,3"/>
+<rect x="842.4333333333334" y="140.3029573936744" width="138.46666666666667" height="23.975259002561955" fill="#b6a6ca"/>
+<text x="911.6666666666667" y="131.3029573936744" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$1,341</text>
+<text x="911.6666666666667" y="367" font-family="Arial" font-size="16" text-anchor="middle">VAT</text>
+<line x1="757.5666666666667" y1="164.27821639623636" x2="842.4333333333334" y2="164.27821639623636" stroke="#888" stroke-dasharray="4,3"/>
+<rect x="1065.7666666666667" y="131.36363636363637" width="138.46666666666667" height="8.93932103003803" fill="#8b6f47"/>
+<text x="1135.0" y="122.36363636363637" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$500</text>
+<text x="1135.0" y="367" font-family="Arial" font-size="16" text-anchor="middle">Delivery +</text>
+<text x="1135.0" y="386" font-family="Arial" font-size="16" text-anchor="middle">installation</text>
+<line x1="980.9000000000001" y1="140.3029573936744" x2="1065.7666666666667" y2="140.3029573936744" stroke="#888" stroke-dasharray="4,3"/>
+<rect x="1289.1000000000001" y="131.36363636363637" width="138.46666666666667" height="213.63636363636363" fill="#0f766e"/>
+<text x="1358.3333333333335" y="122.36363636363637" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$11,949</text>
+<text x="1358.3333333333335" y="367" font-family="Arial" font-size="16" text-anchor="middle">Installed</text>
+<text x="1358.3333333333335" y="386" font-family="Arial" font-size="16" text-anchor="middle">package</text>
+<text x="65" y="420" font-family="Arial" font-size="17" fill="#444">USAID-funded budget reference; one standardized package.</text>
+<text x="65" y="490" font-family="Arial" font-size="23" font-weight="bold">Panel B — Deployment CAPEX and</text>
+<text x="65" y="520" font-family="Arial" font-size="23" font-weight="bold">monthly commitment</text>
+<line x1="130" y1="810.0" x2="665" y2="810.0" stroke="#ececec"/>
+<text x="122" y="816.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
+<text x="670" y="816.0" font-family="Arial" font-size="17" >$0</text>
+<line x1="130" y1="723.3333333333334" x2="665" y2="723.3333333333334" stroke="#ececec"/>
+<text x="122" y="729.3333333333334" font-family="Arial" font-size="18" text-anchor="end">$13,383</text>
+<text x="670" y="729.3333333333334" font-family="Arial" font-size="17" >$112</text>
+<line x1="130" y1="636.6666666666666" x2="665" y2="636.6666666666666" stroke="#ececec"/>
+<text x="122" y="642.6666666666666" font-family="Arial" font-size="18" text-anchor="end">$26,766</text>
+<text x="670" y="642.6666666666666" font-family="Arial" font-size="17" >$224</text>
+<line x1="130" y1="550.0" x2="665" y2="550.0" stroke="#ececec"/>
+<text x="122" y="556.0" font-family="Arial" font-size="18" text-anchor="end">$40,149</text>
+<text x="670" y="556.0" font-family="Arial" font-size="17" >$336</text>
+<text x="25" y="680.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 25 680.0)">Deployment CAPEX (USD)</text>
+<text x="760" y="680.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(90 760 680.0)">Monthly commitment (USD)</text>
+<rect x="150.0625" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#2b8cbe"/>
+<text x="174.58333333333334" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<circle cx="174.58333333333334" cy="771.3095238095239" r="6" fill="#111"/>
+<text x="174.58333333333334" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
+<text x="174.58333333333334" y="834" font-family="Arial" font-size="19" text-anchor="middle">CH1</text>
+<rect x="239.22916666666666" y="655.2380952380952" width="49.04166666666667" height="154.76190476190476" fill="#f28e2b"/>
+<text x="263.75" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$23,898</text>
+<circle cx="263.75" cy="732.6190476190476" r="6" fill="#111"/>
+<text x="263.75" y="716.6190476190476" font-family="Arial" font-size="16" text-anchor="middle">$100/mo</text>
+<text x="263.75" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR1</text>
+<rect x="328.39583333333337" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#59a14f"/>
+<text x="352.9166666666667" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<circle cx="352.9166666666667" cy="771.3095238095239" r="6" fill="#111"/>
+<text x="352.9166666666667" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
+<text x="352.9166666666667" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR2</text>
+<rect x="417.56250000000006" y="577.8571428571429" width="49.04166666666667" height="232.1428571428571" fill="#e78ac3"/>
+<text x="442.08333333333337" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$35,848</text>
+<circle cx="442.08333333333337" cy="577.8571428571429" r="6" fill="#111"/>
+<text x="442.08333333333337" y="561.8571428571429" font-family="Arial" font-size="16" text-anchor="middle">$300/mo</text>
+<text x="442.08333333333337" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR3</text>
+<rect x="506.7291666666667" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#756bb1"/>
+<text x="531.25" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<circle cx="531.25" cy="771.3095238095239" r="6" fill="#111"/>
+<text x="531.25" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
+<text x="531.25" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR4</text>
+<rect x="595.8958333333334" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#edc948"/>
+<text x="620.4166666666667" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<circle cx="620.4166666666667" cy="771.3095238095239" r="6" fill="#111"/>
+<text x="620.4166666666667" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
+<text x="620.4166666666667" y="834" font-family="Arial" font-size="19" text-anchor="middle">HGR1</text>
+<text x="65" y="880" font-family="Arial" font-size="17" fill="#444">Bars: standardized-package CAPEX. Points: monthly commitment.</text>
+<text x="845" y="520" font-family="Arial" font-size="23" font-weight="bold">Panel C — Actual payment revenue and timing</text>
+<line x1="920" y1="810.0" x2="1435" y2="810.0" stroke="#ececec"/>
+<text x="912" y="816.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
+<text x="1440" y="816.0" font-family="Arial" font-size="17" >0%</text>
+<line x1="920" y1="723.3333333333334" x2="1435" y2="723.3333333333334" stroke="#ececec"/>
+<text x="912" y="729.3333333333334" font-family="Arial" font-size="18" text-anchor="end">$2,576</text>
+<text x="1440" y="729.3333333333334" font-family="Arial" font-size="17" >33%</text>
+<line x1="920" y1="636.6666666666666" x2="1435" y2="636.6666666666666" stroke="#ececec"/>
+<text x="912" y="642.6666666666666" font-family="Arial" font-size="18" text-anchor="end">$5,152</text>
+<text x="1440" y="642.6666666666666" font-family="Arial" font-size="17" >67%</text>
+<line x1="920" y1="550.0" x2="1435" y2="550.0" stroke="#ececec"/>
+<text x="912" y="556.0" font-family="Arial" font-size="18" text-anchor="end">$7,728</text>
+<text x="1440" y="556.0" font-family="Arial" font-size="17" >100%</text>
+<text x="820" y="680.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 820 680.0)">Revenue received (USD)</text>
+<text x="1530" y="680.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(90 1530 680.0)">On-time remittances (%)</text>
+<rect x="939.3125" y="771.3095238095239" width="47.208333333333336" height="38.69047619047618" fill="#2b8cbe"/>
+<text x="962.9166666666666" y="762.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$1,150</text>
+<circle cx="962.9166666666666" cy="629.1304347826087" r="6" fill="#111"/>
+<text x="962.9166666666666" y="619.1304347826087" font-family="Arial" font-size="16" text-anchor="middle">69.6%</text>
+<text x="962.9166666666666" y="834" font-family="Arial" font-size="19" text-anchor="middle">CH1</text>
+<rect x="1025.1458333333333" y="742.712215320911" width="47.208333333333336" height="67.28778467908901" fill="#f28e2b"/>
+<text x="1048.75" y="733.712215320911" font-family="Arial" font-size="16" text-anchor="middle">$2,000</text>
+<circle cx="1048.75" cy="667.0" r="6" fill="#111"/>
+<text x="1048.75" y="657.0" font-family="Arial" font-size="16" text-anchor="middle">55.0%</text>
+<text x="1048.75" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR1</text>
+<rect x="1110.9791666666665" y="762.8985507246377" width="47.208333333333336" height="47.10144927536231" fill="#59a14f"/>
+<text x="1134.5833333333333" y="753.8985507246377" font-family="Arial" font-size="16" text-anchor="middle">$1,400</text>
+<circle cx="1134.5833333333333" cy="787.3913043478261" r="6" fill="#111"/>
+<text x="1134.5833333333333" y="777.3913043478261" font-family="Arial" font-size="16" text-anchor="middle">8.7%</text>
+<text x="1134.5833333333333" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR2</text>
+<rect x="1196.8124999999998" y="577.8571428571429" width="47.208333333333336" height="232.1428571428571" fill="#e78ac3"/>
+<text x="1220.4166666666665" y="568.8571428571429" font-family="Arial" font-size="16" text-anchor="middle">$6,900</text>
+<circle cx="1220.4166666666665" cy="742.1739130434783" r="6" fill="#111"/>
+<text x="1220.4166666666665" y="732.1739130434783" font-family="Arial" font-size="16" text-anchor="middle">26.1%</text>
+<text x="1220.4166666666665" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR3</text>
+<rect x="1282.6458333333333" y="778.0383022774328" width="47.208333333333336" height="31.961697722567283" fill="#756bb1"/>
+<text x="1306.25" y="769.0383022774328" font-family="Arial" font-size="16" text-anchor="middle">$950</text>
+<circle cx="1306.25" cy="659.4736842105264" r="6" fill="#111"/>
+<text x="1306.25" y="649.4736842105264" font-family="Arial" font-size="16" text-anchor="middle">57.9%</text>
+<text x="1306.25" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR4</text>
+<rect x="1368.4791666666665" y="772.991718426501" width="47.208333333333336" height="37.00828157349896" fill="#edc948"/>
+<text x="1392.0833333333333" y="763.991718426501" font-family="Arial" font-size="16" text-anchor="middle">$1,100</text>
+<circle cx="1392.0833333333333" cy="668.1818181818182" r="6" fill="#111"/>
+<text x="1392.0833333333333" y="658.1818181818182" font-family="Arial" font-size="16" text-anchor="middle">54.5%</text>
+<text x="1392.0833333333333" y="834" font-family="Arial" font-size="19" text-anchor="middle">HGR1</text>
+<text x="845" y="880" font-family="Arial" font-size="17" fill="#444">Bars: revenue received. Points: share recorded on time.</text>
+<text x="65" y="990" font-family="Arial" font-size="22" font-weight="bold">Panel D — Monthly payments, outflows, and cumulative balance</text>
+<line x1="130" y1="1290.0" x2="1430" y2="1290.0" stroke="#ececec"/>
+<text x="121" y="1296.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
+<text x="1438" y="1296.0" font-family="Arial" font-size="17" >$0</text>
+<line x1="130" y1="1203.3333333333333" x2="1430" y2="1203.3333333333333" stroke="#ececec"/>
+<text x="121" y="1209.3333333333333" font-family="Arial" font-size="18" text-anchor="end">$1,120</text>
+<text x="1438" y="1209.3333333333333" font-family="Arial" font-size="17" >$2,617</text>
+<line x1="130" y1="1116.6666666666667" x2="1430" y2="1116.6666666666667" stroke="#ececec"/>
+<text x="121" y="1122.6666666666667" font-family="Arial" font-size="18" text-anchor="end">$2,240</text>
+<text x="1438" y="1122.6666666666667" font-family="Arial" font-size="17" >$5,235</text>
+<line x1="130" y1="1030.0" x2="1430" y2="1030.0" stroke="#ececec"/>
+<text x="121" y="1036.0" font-family="Arial" font-size="18" text-anchor="end">$3,360</text>
+<text x="1438" y="1036.0" font-family="Arial" font-size="17" >$7,852</text>
+<text x="25" y="1160.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 25 1160.0)">Monthly cash flow (USD)</text>
+<text x="1525" y="1160.0" font-family="Arial" font-size="18" text-anchor="middle" transform="rotate(90 1525 1160.0)">Cumulative balance (USD)</text>
+<rect x="137.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="137.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="137.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="137.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="137.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="137.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="164.2368" y="1238.5411520781875" width="10.4832" height="51.45884792181254" fill="#6b7280"/>
+<rect x="189.28" y="1290.0" width="26.208" height="0.0" fill="#2b8cbe"/>
+<rect x="189.28" y="1290.0" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="189.28" y="1290.0" width="26.208" height="0.0" fill="#59a14f"/>
+<rect x="189.28" y="1290.0" width="26.208" height="0.0" fill="#e78ac3"/>
+<rect x="189.28" y="1290.0" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="189.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="216.2368" y="1267.5592994025178" width="10.4832" height="22.44070059748216" fill="#6b7280"/>
+<rect x="241.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="241.28" y="1286.1309136900893" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="241.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#59a14f"/>
+<rect x="241.28" y="1255.1782232108037" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="241.28" y="1255.1782232108037" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="241.28" y="1255.1782232108037" width="26.208" height="0.0" fill="#edc948"/>
+<rect x="268.2368" y="1286.363058868684" width="10.4832" height="3.636941131316074" fill="#6b7280"/>
+<rect x="293.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="293.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="293.28" y="1270.6545684504465" width="26.208" height="7.738172619821435" fill="#59a14f"/>
+<rect x="293.28" y="1247.4400505909823" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="293.28" y="1247.4400505909823" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="293.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="345.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="345.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="345.28" y="1278.392741070268" width="26.208" height="0.0" fill="#59a14f"/>
+<rect x="345.28" y="1278.392741070268" width="26.208" height="0.0" fill="#e78ac3"/>
+<rect x="345.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="345.28" y="1270.6545684504465" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="372.23679999999996" y="1284.4277418964666" width="10.4832" height="5.572258103533415" fill="#6b7280"/>
+<rect x="397.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="397.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="397.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="397.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="397.28" y="1251.309136900893" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="397.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="424.23679999999996" y="1218.4992849928499" width="10.4832" height="71.50071500715006" fill="#6b7280"/>
+<rect x="449.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="449.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="449.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="449.28" y="1228.0946190414286" width="26.208" height="46.42903571892861" fill="#e78ac3"/>
+<rect x="449.28" y="1220.3564464216072" width="26.208" height="7.738172619821435" fill="#756bb1"/>
+<rect x="449.28" y="1216.4873601116965" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="476.23679999999996" y="1286.8273492258731" width="10.4832" height="3.1726507741267884" fill="#6b7280"/>
+<rect x="501.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="501.28" y="1270.6545684504465" width="26.208" height="15.47634523964287" fill="#f28e2b"/>
+<rect x="501.28" y="1266.7854821405358" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="501.28" y="1243.5709642810716" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="501.28" y="1239.701877971161" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="501.28" y="1235.8327916612502" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="528.2368" y="1287.6785482140535" width="10.4832" height="2.3214517859464303" fill="#6b7280"/>
+<rect x="553.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="553.28" y="1286.1309136900893" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="553.28" y="1282.2618273801786" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="553.28" y="1259.0473095207144" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="553.28" y="1259.0473095207144" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="553.28" y="1255.1782232108037" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="580.2368" y="1283.0356446421606" width="10.4832" height="6.964355357839291" fill="#6b7280"/>
+<rect x="605.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="605.28" y="1286.1309136900893" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="605.28" y="1274.5236547603572" width="26.208" height="11.607258929732152" fill="#59a14f"/>
+<rect x="605.28" y="1274.5236547603572" width="26.208" height="0.0" fill="#e78ac3"/>
+<rect x="605.28" y="1274.5236547603572" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="605.28" y="1274.5236547603572" width="26.208" height="0.0" fill="#edc948"/>
+<rect x="632.2368" y="1245.1185988050356" width="10.4832" height="44.88140119496432" fill="#6b7280"/>
+<rect x="657.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="657.28" y="1286.1309136900893" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="657.28" y="1282.2618273801786" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="657.28" y="1259.0473095207144" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="657.28" y="1255.1782232108037" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="657.28" y="1251.309136900893" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="684.2368" y="1285.357096428107" width="10.4832" height="4.642903571892861" fill="#6b7280"/>
+<rect x="709.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="709.28" y="1286.1309136900893" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="709.28" y="1282.2618273801786" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="709.28" y="1259.0473095207144" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="709.28" y="1259.0473095207144" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="709.28" y="1255.1782232108037" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="736.2368" y="1279.7004922430176" width="10.4832" height="10.29950775698233" fill="#6b7280"/>
+<rect x="761.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="761.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="761.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="761.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="761.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="761.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="788.2368" y="1288.4523654760358" width="10.4832" height="1.547634523964287" fill="#6b7280"/>
+<rect x="813.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="813.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="813.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="813.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="813.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="813.28" y="1239.701877971161" width="26.208" height="7.738172619821435" fill="#edc948"/>
+<rect x="865.28" y="1290.0" width="26.208" height="0.0" fill="#2b8cbe"/>
+<rect x="865.28" y="1282.2618273801786" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="865.28" y="1282.2618273801786" width="26.208" height="0.0" fill="#59a14f"/>
+<rect x="865.28" y="1259.0473095207144" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="865.28" y="1255.1782232108037" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="865.28" y="1255.1782232108037" width="26.208" height="0.0" fill="#edc948"/>
+<rect x="892.2368" y="1280.7915745824125" width="10.4832" height="9.208425417587508" fill="#6b7280"/>
+<rect x="917.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="917.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="917.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="917.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="917.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="917.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="944.2368" y="1288.0654568450445" width="10.4832" height="1.9345431549553587" fill="#6b7280"/>
+<rect x="969.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="969.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="969.28" y="1278.392741070268" width="26.208" height="0.0" fill="#59a14f"/>
+<rect x="969.28" y="1255.1782232108037" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="969.28" y="1251.309136900893" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="969.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="1021.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="1021.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="1021.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="1021.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="1021.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="1021.28" y="1247.4400505909823" width="26.208" height="0.0" fill="#edc948"/>
+<rect x="1048.2368" y="1272.5217895036094" width="10.4832" height="17.478210496390677" fill="#6b7280"/>
+<rect x="1073.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="1073.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="1073.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="1073.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="1073.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="1073.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="1100.2368" y="1288.708498989752" width="10.4832" height="1.2915010102481976" fill="#6b7280"/>
+<rect x="1100.2368" y="1057.857142857143" width="10.4832" height="230.8513561326089" fill="#9c2f2f"/>
+<rect x="1125.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="1125.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="1125.28" y="1274.5236547603572" width="26.208" height="3.8690863099107173" fill="#59a14f"/>
+<rect x="1125.28" y="1251.309136900893" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="1125.28" y="1247.4400505909823" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="1125.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="1152.2368" y="1289.2261827380178" width="10.4832" height="0.7738172619821435" fill="#6b7280"/>
+<rect x="1177.28" y="1282.2618273801786" width="26.208" height="7.738172619821435" fill="#2b8cbe"/>
+<rect x="1177.28" y="1266.7854821405358" width="26.208" height="15.47634523964287" fill="#f28e2b"/>
+<rect x="1177.28" y="1259.0473095207144" width="26.208" height="7.738172619821435" fill="#59a14f"/>
+<rect x="1177.28" y="1212.6182738017858" width="26.208" height="46.42903571892861" fill="#e78ac3"/>
+<rect x="1177.28" y="1204.8801011819644" width="26.208" height="7.738172619821435" fill="#756bb1"/>
+<rect x="1177.28" y="1197.141928562143" width="26.208" height="7.738172619821435" fill="#edc948"/>
+<rect x="1204.2368" y="1288.3749837498376" width="10.4832" height="1.6250162501625012" fill="#6b7280"/>
+<rect x="1229.28" y="1290.0" width="26.208" height="0.0" fill="#2b8cbe"/>
+<rect x="1229.28" y="1290.0" width="26.208" height="0.0" fill="#f28e2b"/>
+<rect x="1229.28" y="1290.0" width="26.208" height="0.0" fill="#59a14f"/>
+<rect x="1229.28" y="1290.0" width="26.208" height="0.0" fill="#e78ac3"/>
+<rect x="1229.28" y="1290.0" width="26.208" height="0.0" fill="#756bb1"/>
+<rect x="1229.28" y="1290.0" width="26.208" height="0.0" fill="#edc948"/>
+<rect x="1281.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="1281.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="1281.28" y="1270.6545684504465" width="26.208" height="7.738172619821435" fill="#59a14f"/>
+<rect x="1281.28" y="1247.4400505909823" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="1281.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="1281.28" y="1239.701877971161" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="1333.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="1333.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="1333.28" y="1270.6545684504465" width="26.208" height="7.738172619821435" fill="#59a14f"/>
+<rect x="1333.28" y="1247.4400505909823" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="1333.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="1333.28" y="1239.701877971161" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="1360.2368" y="1288.0654568450445" width="10.4832" height="1.9345431549553587" fill="#6b7280"/>
+<rect x="1385.28" y="1286.1309136900893" width="26.208" height="3.8690863099107173" fill="#2b8cbe"/>
+<rect x="1385.28" y="1278.392741070268" width="26.208" height="7.738172619821435" fill="#f28e2b"/>
+<rect x="1385.28" y="1270.6545684504465" width="26.208" height="7.738172619821435" fill="#59a14f"/>
+<rect x="1385.28" y="1247.4400505909823" width="26.208" height="23.214517859464305" fill="#e78ac3"/>
+<rect x="1385.28" y="1243.5709642810716" width="26.208" height="3.8690863099107173" fill="#756bb1"/>
+<rect x="1385.28" y="1239.701877971161" width="26.208" height="3.8690863099107173" fill="#edc948"/>
+<rect x="1412.2368" y="1281.4106283919982" width="10.4832" height="8.589371608001793" fill="#6b7280"/>
+<polyline points="156.00,1292.15 208.00,1300.10 260.00,1286.76 312.00,1266.89 364.00,1261.00 416.00,1273.38 468.00,1243.28 520.00,1221.10 572.00,1209.18 624.00,1221.76 676.00,1207.19 728.00,1196.70 780.00,1177.49 832.00,1155.97 884.00,1145.01 936.00,1125.97 988.00,1107.76 1040.00,1097.03 1092.00,1176.49 1144.00,1156.96 1196.00,1117.92 1248.00,1117.92 1300.00,1096.40 1352.00,1075.70 1404.00,1057.86" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="156.0" y="1315" font-family="Arial" font-size="18" text-anchor="middle">Apr 2024</text>
+<text x="780.0" y="1315" font-family="Arial" font-size="18" text-anchor="middle">Apr 2025</text>
+<text x="1404.0" y="1315" font-family="Arial" font-size="18" text-anchor="middle">Apr 2026</text>
+<rect x="130" y="1344" width="16" height="16" fill="#2b8cbe"/>
+<text x="152" y="1359" font-family="Arial" font-size="18" >CH1</text>
+<rect x="320" y="1344" width="16" height="16" fill="#f28e2b"/>
+<text x="342" y="1359" font-family="Arial" font-size="18" >CSR1</text>
+<rect x="510" y="1344" width="16" height="16" fill="#59a14f"/>
+<text x="532" y="1359" font-family="Arial" font-size="18" >CSR2</text>
+<rect x="130" y="1368" width="16" height="16" fill="#e78ac3"/>
+<text x="152" y="1383" font-family="Arial" font-size="18" >CSR3</text>
+<rect x="320" y="1368" width="16" height="16" fill="#756bb1"/>
+<text x="342" y="1383" font-family="Arial" font-size="18" >CSR4</text>
+<rect x="510" y="1368" width="16" height="16" fill="#edc948"/>
+<text x="532" y="1383" font-family="Arial" font-size="18" >HGR1</text>
+<rect x="800" y="1344" width="16" height="16" fill="#6b7280"/>
+<rect x="800" y="1368" width="16" height="16" fill="#9c2f2f"/>
+<line x1="1220" y1="1352" x2="1250" y2="1352" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="822" y="1359" font-family="Arial" font-size="17" >OPEX</text>
+<text x="822" y="1383" font-family="Arial" font-size="17" >Expansion CAPEX</text>
+<text x="1260" y="1359" font-family="Arial" font-size="17" >Balance</text>
 </svg>

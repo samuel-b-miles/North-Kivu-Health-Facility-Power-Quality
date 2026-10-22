@@ -48,8 +48,8 @@ def standard_package_steps(components: pd.DataFrame) -> list[tuple[str, float, s
 
 
 def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 70, 80, 600, 235
-    text(parts, 65, 58, "Panel A — Standard reference package CAPEX", 23, font_weight="bold")
+    left, top, plot_w, plot_h = 130, 110, 1340, 235
+    text(parts, 65, 78, "Panel A — Standard reference package CAPEX", 23, font_weight="bold")
     steps = standard_package_steps(components); maximum = steps[-1][1] * 1.10
     cell = plot_w / len(steps); bar_w = cell * 0.62; running = 0.0
     step_colors = ["#334155", "#64748b", "#94a3b8", "#b6a6ca", "#8b6f47", "#0f766e"]
@@ -72,12 +72,12 @@ def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
             previous_x = left + (index - 0.5) * cell + bar_w / 2
             parts.append(f'<line x1="{previous_x}" y1="{y}" x2="{x}" y2="{y}" stroke="#888" stroke-dasharray="4,3"/>')
         prior_level = top_value
-    text(parts, 65, 390, "USAID-funded budget reference; one standardized package.", 17, fill="#444")
+    text(parts, 65, 420, "USAID-funded budget reference; one standardized package.", 17, fill="#444")
 
 
 def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 130, 485, 535, 235
-    text(parts, 65, 460, "Panel D — Monthly payments, outflows, and cumulative balance", 22, font_weight="bold")
+    left, top, plot_w, plot_h = 130, 1030, 1300, 260
+    text(parts, 65, 990, "Panel D — Monthly payments, outflows, and cumulative balance", 22, font_weight="bold")
     monthly_max = max(float(monthly["facility_payments_usd"].max()), float(monthly["recorded_outflows_usd"].max()), 1) * 1.12
     cumulative_max = max(float(monthly["cumulative_ledger_balance_usd"].max()), 1) * 1.12
     cell = plot_w / len(monthly); bar_w = cell * 0.72
@@ -112,19 +112,20 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
         text(parts, x, top + plot_h + 25, pd.Timestamp(monthly.index[index]).strftime("%b %Y"), 18, text_anchor="middle")
     legend_y = top + plot_h + 54
     for index, code in enumerate(FACILITY_CODES):
-        col, row = index % 3, index // 3; x = 70 + col * 110; y = legend_y + row * 24
+        col, row = index % 3, index // 3; x = 130 + col * 190; y = legend_y + row * 24
         parts.append(f'<rect x="{x}" y="{y}" width="16" height="16" fill="{FACILITY_COLORS[code]}"/>')
         text(parts, x + 22, y + 15, code, 18)
-    parts += [f'<rect x="415" y="{legend_y}" width="16" height="16" fill="#6b7280"/>',
-              f'<rect x="415" y="{legend_y+24}" width="16" height="16" fill="#9c2f2f"/>',
-              f'<line x1="565" y1="{legend_y+8}" x2="590" y2="{legend_y+8}" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>']
-    text(parts, 437, legend_y + 15, "OPEX", 17); text(parts, 437, legend_y + 39, "Expansion CAPEX", 17)
-    text(parts, 600, legend_y + 15, "Balance", 17)
+    parts += [f'<rect x="800" y="{legend_y}" width="16" height="16" fill="#6b7280"/>',
+              f'<rect x="800" y="{legend_y+24}" width="16" height="16" fill="#9c2f2f"/>',
+              f'<line x1="1220" y1="{legend_y+8}" x2="1250" y2="{legend_y+8}" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>']
+    text(parts, 822, legend_y + 15, "OPEX", 17); text(parts, 822, legend_y + 39, "Expansion CAPEX", 17)
+    text(parts, 1260, legend_y + 15, "Balance", 17)
 
 
 def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 850, 80, 585, 235
-    text(parts, 845, 58, "Panel B — Deployment CAPEX and monthly commitment", 23, font_weight="bold")
+    left, top, plot_w, plot_h = 130, 550, 535, 260
+    text(parts, 65, 490, "Panel B — Deployment CAPEX and", 23, font_weight="bold")
+    text(parts, 65, 520, "monthly commitment", 23, font_weight="bold")
     maximum = max(reference["deployment_capex_usd"].max(), 1) * 1.12
     commitment_max = max(reference["monthly_commitment_usd"].max(), 1) * 1.12
     cell = plot_w / len(reference); bar_w = cell * 0.55
@@ -147,12 +148,12 @@ def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
         text(parts, x, y_point - 16, f'${row["monthly_commitment_usd"]:,.0f}/mo', 16, text_anchor="middle")
         text(parts, x, top + plot_h + 24, code, 19, text_anchor="middle")
-    text(parts, 845, 390, "Bars: standardized-package CAPEX. Points: monthly commitment.", 17, fill="#444")
+    text(parts, 65, 880, "Bars: standardized-package CAPEX. Points: monthly commitment.", 17, fill="#444")
 
 
 def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
-    left, top, plot_w, plot_h = 920, 485, 515, 235
-    text(parts, 845, 460, "Panel C — Actual payment revenue and timing", 23, font_weight="bold")
+    left, top, plot_w, plot_h = 920, 550, 515, 260
+    text(parts, 845, 520, "Panel C — Actual payment revenue and timing", 23, font_weight="bold")
     maximum = max(float(facility["received_usd"].max()), 1) * 1.12; cell = plot_w / len(facility); bar_w = cell * 0.55
     for tick in range(4):
         value = maximum * tick / 3; y = top + plot_h * (1 - tick / 3)
@@ -172,20 +173,21 @@ def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
         text(parts, x, y_point - 10, f'{row["on_time_pct"]:.1f}%', 16, text_anchor="middle")
         text(parts, x, top + plot_h + 24, code, 19, text_anchor="middle")
-    text(parts, 845, 780, "Bars: revenue received. Points: share recorded on time.", 17, fill="#444")
+    text(parts, 845, 880, "Bars: revenue received. Points: share recorded on time.", 17, fill="#444")
 
 
 def write_figure(path: Path, components: pd.DataFrame, monthly: pd.DataFrame,
                  reference: pd.DataFrame, facility: pd.DataFrame) -> None:
-    width, height = 1600, 830
+    width, height = 1600, 1420
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
              '<rect width="100%" height="100%" fill="white"/>']
     text(parts, width / 2, 34, "Capital investment and facility payment performance", 31,
          text_anchor="middle", font_weight="bold")
+    # Reading order: full-width A, middle-row B/C, full-width D.
     draw_package_waterfall(parts, components)
-    draw_monthly_cash_flow(parts, monthly)
     draw_deployment_capex(parts, reference)
     draw_revenue(parts, facility)
+    draw_monthly_cash_flow(parts, monthly)
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")
 
