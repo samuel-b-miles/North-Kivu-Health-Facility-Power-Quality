@@ -29,7 +29,6 @@
 <text x="1358.3333333333335" y="122.36363636363637" font-family="Arial" font-size="17" text-anchor="middle" font-weight="bold">$11,949</text>
 <text x="1358.3333333333335" y="367" font-family="Arial" font-size="16" text-anchor="middle">Installed</text>
 <text x="1358.3333333333335" y="386" font-family="Arial" font-size="16" text-anchor="middle">package</text>
-<text x="65" y="420" font-family="Arial" font-size="17" fill="#444">USAID-funded budget reference; one standardized package.</text>
 <text x="65" y="490" font-family="Arial" font-size="23" font-weight="bold">Panel B — Deployment CAPEX and</text>
 <text x="65" y="520" font-family="Arial" font-size="23" font-weight="bold">monthly commitment</text>
 <line x1="130" y1="810.0" x2="665" y2="810.0" stroke="#ececec"/>
@@ -47,36 +46,35 @@
 <text x="25" y="680.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 25 680.0)">Deployment CAPEX (USD)</text>
 <text x="760" y="680.0" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(90 760 680.0)">Monthly commitment (USD)</text>
 <rect x="150.0625" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#2b8cbe"/>
-<text x="174.58333333333334" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<text x="174.58333333333334" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold">$11,949</text>
 <circle cx="174.58333333333334" cy="771.3095238095239" r="6" fill="#111"/>
 <text x="174.58333333333334" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
 <text x="174.58333333333334" y="834" font-family="Arial" font-size="19" text-anchor="middle">CH1</text>
 <rect x="239.22916666666666" y="655.2380952380952" width="49.04166666666667" height="154.76190476190476" fill="#f28e2b"/>
-<text x="263.75" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$23,898</text>
+<text x="263.75" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold">$23,898</text>
 <circle cx="263.75" cy="732.6190476190476" r="6" fill="#111"/>
 <text x="263.75" y="716.6190476190476" font-family="Arial" font-size="16" text-anchor="middle">$100/mo</text>
 <text x="263.75" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR1</text>
 <rect x="328.39583333333337" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#59a14f"/>
-<text x="352.9166666666667" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<text x="352.9166666666667" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold">$11,949</text>
 <circle cx="352.9166666666667" cy="771.3095238095239" r="6" fill="#111"/>
 <text x="352.9166666666667" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
 <text x="352.9166666666667" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR2</text>
 <rect x="417.56250000000006" y="577.8571428571429" width="49.04166666666667" height="232.1428571428571" fill="#e78ac3"/>
-<text x="442.08333333333337" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$35,848</text>
+<text x="442.08333333333337" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold">$35,848</text>
 <circle cx="442.08333333333337" cy="577.8571428571429" r="6" fill="#111"/>
 <text x="442.08333333333337" y="561.8571428571429" font-family="Arial" font-size="16" text-anchor="middle">$300/mo</text>
 <text x="442.08333333333337" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR3</text>
 <rect x="506.7291666666667" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#756bb1"/>
-<text x="531.25" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<text x="531.25" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold">$11,949</text>
 <circle cx="531.25" cy="771.3095238095239" r="6" fill="#111"/>
 <text x="531.25" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
 <text x="531.25" y="834" font-family="Arial" font-size="19" text-anchor="middle">CSR4</text>
 <rect x="595.8958333333334" y="732.6190476190476" width="49.04166666666667" height="77.38095238095238" fill="#edc948"/>
-<text x="620.4166666666667" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff" font-weight="bold">$11,949</text>
+<text x="620.4166666666667" y="795" font-family="Arial" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold">$11,949</text>
 <circle cx="620.4166666666667" cy="771.3095238095239" r="6" fill="#111"/>
 <text x="620.4166666666667" y="755.3095238095239" font-family="Arial" font-size="16" text-anchor="middle">$50/mo</text>
 <text x="620.4166666666667" y="834" font-family="Arial" font-size="19" text-anchor="middle">HGR1</text>
-<text x="65" y="880" font-family="Arial" font-size="17" fill="#444">Bars: standardized-package CAPEX. Points: monthly commitment.</text>
 <text x="845" y="520" font-family="Arial" font-size="23" font-weight="bold">Panel C — Actual payment revenue and timing</text>
 <line x1="920" y1="810.0" x2="1435" y2="810.0" stroke="#ececec"/>
 <text x="912" y="816.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
@@ -122,7 +120,6 @@
 <circle cx="1392.0833333333333" cy="668.1818181818182" r="6" fill="#111"/>
 <text x="1392.0833333333333" y="658.1818181818182" font-family="Arial" font-size="16" text-anchor="middle">54.5%</text>
 <text x="1392.0833333333333" y="834" font-family="Arial" font-size="19" text-anchor="middle">HGR1</text>
-<text x="845" y="880" font-family="Arial" font-size="17" fill="#444">Bars: revenue received. Points: share recorded on time.</text>
 <text x="65" y="990" font-family="Arial" font-size="22" font-weight="bold">Panel D — Monthly payments, outflows, and cumulative balance</text>
 <line x1="130" y1="1290.0" x2="1430" y2="1290.0" stroke="#ececec"/>
 <text x="121" y="1296.0" font-family="Arial" font-size="18" text-anchor="end">$0</text>
@@ -328,7 +325,7 @@
 <rect x="800" y="1344" width="16" height="16" fill="#6b7280"/>
 <rect x="800" y="1368" width="16" height="16" fill="#9c2f2f"/>
 <line x1="1220" y1="1352" x2="1250" y2="1352" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>
-<text x="822" y="1359" font-family="Arial" font-size="17" >OPEX</text>
-<text x="822" y="1383" font-family="Arial" font-size="17" >Expansion CAPEX</text>
+<text x="822" y="1359" font-family="Arial" font-size="18" >Operations and maintenance expenses</text>
+<text x="822" y="1383" font-family="Arial" font-size="18" >System upgrade expenses</text>
 <text x="1260" y="1359" font-family="Arial" font-size="17" >Balance</text>
 </svg>

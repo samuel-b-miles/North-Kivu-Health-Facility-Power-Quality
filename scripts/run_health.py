@@ -18,6 +18,7 @@ from drc_power.dhis2 import (
     missing_months,
     table2_metrics,
 )
+from drc_power.dhis2_statistics import facility_cluster_mean_interval
 from pipeline_common import DEFAULT_OUTPUT_ROOT, PROJECT_ROOT
 
 
@@ -132,6 +133,12 @@ def main() -> None:
     if not args.from_public:
         ward.to_csv(args.public_root / "dhis2_ward_month_anonymized.csv", index=False)
         facility.to_csv(args.public_root / "dhis2_facility_month_anonymized.csv", index=False)
+    intervals = []
+    for arm, group in facility[facility.facility_month_reported].groupby('arm'):
+        interval = facility_cluster_mean_interval(100 * group.mortality_rate, group.facility_id_anonymized)
+        interval['arm'] = arm
+        intervals.append(interval)
+    pd.DataFrame(intervals).to_csv(tables / 'table2_mortality_cluster_intervals.csv', index=False)
     table2.to_csv(tables / "table2_health_data_quality.csv", index=False)
     parameters = pd.read_csv(PROJECT_ROOT / "config" / "dhis2_analysis.csv").set_index("parameter")["value"].astype(str)
     descriptive_prepost(facility, parameters["intervention_month"]).to_csv(tables / "table_health_descriptive_prepost.csv", index=False)

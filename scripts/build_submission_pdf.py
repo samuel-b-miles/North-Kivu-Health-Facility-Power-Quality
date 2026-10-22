@@ -60,6 +60,7 @@ def build(regenerate_analysis=False):
     # The compilation uses the unpadded vector PDF.
     run('scripts/run_health.py', '--from-public')
     table1, table2 = build_table1(), build_table2()
+    run("scripts/export_submission_tables.py")
     sources = [
         ('Figure 1', ROOT / 'publication/figure1/figure1_full_frames.pdf'),
         ('Figure 2', Path(str(figure2) + '.pdf')),

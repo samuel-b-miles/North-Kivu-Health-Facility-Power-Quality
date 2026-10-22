@@ -72,7 +72,6 @@ def draw_package_waterfall(parts: list[str], components: pd.DataFrame) -> None:
             previous_x = left + (index - 0.5) * cell + bar_w / 2
             parts.append(f'<line x1="{previous_x}" y1="{y}" x2="{x}" y2="{y}" stroke="#888" stroke-dasharray="4,3"/>')
         prior_level = top_value
-    text(parts, 65, 420, "USAID-funded budget reference; one standardized package.", 17, fill="#444")
 
 
 def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
@@ -118,7 +117,8 @@ def draw_monthly_cash_flow(parts: list[str], monthly: pd.DataFrame) -> None:
     parts += [f'<rect x="800" y="{legend_y}" width="16" height="16" fill="#6b7280"/>',
               f'<rect x="800" y="{legend_y+24}" width="16" height="16" fill="#9c2f2f"/>',
               f'<line x1="1220" y1="{legend_y+8}" x2="1250" y2="{legend_y+8}" stroke="#111" stroke-width="3" stroke-dasharray="8,5"/>']
-    text(parts, 822, legend_y + 15, "OPEX", 17); text(parts, 822, legend_y + 39, "Expansion CAPEX", 17)
+    text(parts, 822, legend_y + 15, "Operations and maintenance expenses", 18)
+    text(parts, 822, legend_y + 39, "System upgrade expenses", 18)
     text(parts, 1260, legend_y + 15, "Balance", 17)
 
 
@@ -143,12 +143,11 @@ def draw_deployment_capex(parts: list[str], reference: pd.DataFrame) -> None:
         height = plot_h * row["deployment_capex_usd"] / maximum
         parts.append(f'<rect x="{x-bar_w/2}" y="{top+plot_h-height}" width="{bar_w}" height="{height}" fill="{FACILITY_COLORS[code]}"/>')
         text(parts, x, top + plot_h - 15, f'${row["deployment_capex_usd"]:,.0f}', 15,
-             text_anchor="middle", fill="#ffffff", font_weight="bold")
+             text_anchor="middle", fill="#000000", font_weight="bold")
         y_point = top + plot_h * (1 - row["monthly_commitment_usd"] / commitment_max)
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
         text(parts, x, y_point - 16, f'${row["monthly_commitment_usd"]:,.0f}/mo', 16, text_anchor="middle")
         text(parts, x, top + plot_h + 24, code, 19, text_anchor="middle")
-    text(parts, 65, 880, "Bars: standardized-package CAPEX. Points: monthly commitment.", 17, fill="#444")
 
 
 def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
@@ -173,7 +172,6 @@ def draw_revenue(parts: list[str], facility: pd.DataFrame) -> None:
         parts.append(f'<circle cx="{x}" cy="{y_point}" r="6" fill="#111"/>')
         text(parts, x, y_point - 10, f'{row["on_time_pct"]:.1f}%', 16, text_anchor="middle")
         text(parts, x, top + plot_h + 24, code, 19, text_anchor="middle")
-    text(parts, 845, 880, "Bars: revenue received. Points: share recorded on time.", 17, fill="#444")
 
 
 def write_figure(path: Path, components: pd.DataFrame, monthly: pd.DataFrame,
